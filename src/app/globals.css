@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+/* 
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,4 +23,137 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+@keyframes moving-line {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* about */
+.animated-blue-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-blue-line::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  height: 3px;
+  background-color: #2563eb; /* Blue-600 */
+  animation: moving-line 2.8s linear infinite;
+}
+
+/* exp */
+/* ===================== Timeline & Animations ===================== */
+
+/* Pulse Animation for Circle */
+@keyframes pulse-circle {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45);
+  }
+  70% {
+    transform: scale(1.12);
+    box-shadow: 0 0 12px 6px rgba(37, 99, 235, 0.1);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+
+/* Moving stripe stays INSIDE the line only */
+@keyframes move-vertical-line {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* Timeline container */
+.timeline-line {
+  position: relative;
+  padding-left: 34px;
+  margin-bottom: 0.5rem;
+}
+
+/* Blue pulsing dot */
+.timeline-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background-color: #1d4ed8; /* blue-700 */
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.06);
+  animation: pulse-circle 1.8s infinite ease-in-out;
+}
+
+/* Light blue main line */
+.timeline-line::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 20px;
+  width: 4px;
+  height: calc(100% - 20px);
+  background-color: rgba(59, 130, 246, 0.55); /* blue-500 خفيف */
+  border-radius: 2px;
+  z-index: 1;
+}
+
+/* Moving heavy-blue stripe INSIDE only */
+.timeline-line .moving-line {
+  position: absolute;
+  left: 6px;
+  width: 4px;
+  height: 28%;
+  background: blue;
+  border-radius: 2px;
+  z-index: 2;
+  top: 20px; /* يبدأ تحت الدائرة مباشرة */
+  animation: move-vertical-line 1.6s linear infinite;
+}
+
+/* =============== Hover Effect for Cards =============== */
+.experience-card {
+  transition: transform 240ms cubic-bezier(.2,.8,.2,1), box-shadow 240ms;
+}
+
+.experience-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(2,6,23,0.18);
+}
+
+/* mobile disable hover */
+@media (hover: none) {
+  .experience-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* Responsive fix */
+@media (max-width: 768px) {
+  .timeline-line { padding-left: 25px; }
+  .timeline-line::after,
+  .timeline-line .moving-line { left: 4px; width: 3px; }
 }
