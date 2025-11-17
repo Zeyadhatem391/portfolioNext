@@ -1,36 +1,25 @@
 @import "tailwindcss";
-/* 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* hrro */
+.blinking-cursor {
+  display: inline-block;
+  width: 1ch;
+  animation: blink 1s steps(2, start) infinite;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
 
 @keyframes moving-line {
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(100%);
+  }
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
   }
 }
 
@@ -47,7 +36,8 @@ body {
   left: 0;
   width: 40%;
   height: 3px;
-  background-color: #2563eb; /* Blue-600 */
+  background-color: #2563eb;
+  /* Blue-600 */
   animation: moving-line 2.8s linear infinite;
 }
 
@@ -60,10 +50,12 @@ body {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45);
   }
+
   70% {
     transform: scale(1.12);
     box-shadow: 0 0 12px 6px rgba(37, 99, 235, 0.1);
   }
+
   100% {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
@@ -76,9 +68,11 @@ body {
     top: 0%;
     opacity: 0;
   }
+
   10% {
     opacity: 1;
   }
+
   100% {
     top: 100%;
     opacity: 0;
@@ -100,10 +94,11 @@ body {
   top: 0;
   width: 16px;
   height: 16px;
-  background-color: #1d4ed8; /* blue-700 */
+  background-color: #1d4ed8;
+  /* blue-700 */
   border-radius: 50%;
   z-index: 3;
-  box-shadow: 0 0 0 3px rgba(255,255,255,0.06);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
   animation: pulse-circle 1.8s infinite ease-in-out;
 }
 
@@ -115,7 +110,8 @@ body {
   top: 20px;
   width: 4px;
   height: calc(100% - 20px);
-  background-color: rgba(59, 130, 246, 0.55); /* blue-500 خفيف */
+  background-color: rgba(59, 130, 246, 0.55);
+  /* blue-500 خفيف */
   border-radius: 2px;
   z-index: 1;
 }
@@ -129,18 +125,19 @@ body {
   background: blue;
   border-radius: 2px;
   z-index: 2;
-  top: 20px; /* يبدأ تحت الدائرة مباشرة */
+  top: 20px;
+  /* يبدأ تحت الدائرة مباشرة */
   animation: move-vertical-line 1.6s linear infinite;
 }
 
 /* =============== Hover Effect for Cards =============== */
 .experience-card {
-  transition: transform 240ms cubic-bezier(.2,.8,.2,1), box-shadow 240ms;
+  transition: transform 240ms cubic-bezier(.2, .8, .2, 1), box-shadow 240ms;
 }
 
 .experience-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(2,6,23,0.18);
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.18);
 }
 
 /* mobile disable hover */
@@ -153,7 +150,13 @@ body {
 
 /* Responsive fix */
 @media (max-width: 768px) {
-  .timeline-line { padding-left: 25px; }
+  .timeline-line {
+    padding-left: 25px;
+  }
+
   .timeline-line::after,
-  .timeline-line .moving-line { left: 4px; width: 3px; }
+  .timeline-line .moving-line {
+    left: 4px;
+    width: 3px;
+  }
 }

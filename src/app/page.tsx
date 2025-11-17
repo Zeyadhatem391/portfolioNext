@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
+import Projects from "./components/Progects";
 import Contact from "./components/Contact";
 import SocialMedia from "./components/SocialMedia";
 import ScrollToTop from "./components/ScrollToTop";
@@ -29,6 +30,7 @@ export default function Home() {
       <About theme={theme} />
       <Experience theme={theme} />
       <Skills theme={theme} />
+      <Projects theme={theme} />
       <Contact theme={theme} />
       <SocialMedia theme={theme} />
       <ScrollToTop theme={theme} />

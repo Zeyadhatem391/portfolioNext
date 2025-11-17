@@ -6,10 +6,10 @@ interface HeroProps {
   theme?: "light" | "dark";
 }
 
-export default function Hero({ theme  }: HeroProps) {
-  const bgPrimary = theme === "light" ? "bg-amber-500" : "bg-gray-900";
-  const bgCard = theme === "light" ? "bg-white" : "bg-gray-800";
+export default function Hero({ theme }: HeroProps) {
+  const bgPrimary = theme === "light" ? "bg-gray-100" : "bg-gray-900";
   const textColor = theme === "light" ? "text-gray-900" : "text-white";
+  const bgCard = theme === "light" ? "bg-white" : "bg-gray-800";
   const btnPrimary =
     theme === "light"
       ? "bg-blue-600 text-white hover:bg-blue-700"
@@ -32,11 +32,11 @@ export default function Hero({ theme  }: HeroProps) {
       setDisplayedText(current.slice(0, charIndex + 1));
       charIndex++;
       if (charIndex === current.length) clearInterval(typeInterval);
-    }, 150); 
+    }, 150);
 
     const changePhraseTimeout = setTimeout(() => {
       setCurrentPhrase((prev) => (prev + 1) % phrases.length);
-    }, current.length * 150 + 1000); 
+    }, current.length * 150 + 1000);
 
     return () => {
       clearInterval(typeInterval);
@@ -50,7 +50,7 @@ export default function Hero({ theme  }: HeroProps) {
     >
       {/* صورة */}
       <div
-        className={`w-full lg:w-1/2 ${bgCard} flex items-center justify-center p-8 order-first lg:order-last`}
+        className={`w-full lg:w-1/2  flex items-center justify-center p-8 order-first lg:order-last`}
       >
         <div className="relative w-full max-w-md h-[400px] md:h-[500px]">
           <Image
@@ -64,7 +64,7 @@ export default function Hero({ theme  }: HeroProps) {
 
       {/* نصوص الكارد */}
       <div
-        className={`w-full lg:w-1/2 ${bgCard} p-8 md:p-16 flex flex-col justify-center order-last lg:order-first`}
+        className={`w-full lg:w-1/2  p-8 md:p-16 flex flex-col justify-center order-last lg:order-first`}
       >
         <h1 className={`text-4xl md:text-5xl font-bold mb-4 ${textColor}`}>
           Hi, I&apos;m <span className="text-blue-600">Zeyad Hatem</span>
@@ -94,19 +94,6 @@ export default function Hero({ theme  }: HeroProps) {
         </div>
       </div>
 
-      {/* CSS للـ blinking cursor */}
-      <style>
-        {`
-          .blinking-cursor {
-            display: inline-block;
-            width: 1ch;
-            animation: blink 1s steps(2, start) infinite;
-          }
-          @keyframes blink {
-            to { visibility: hidden; }
-          }
-        `}
-      </style>
     </div>
   );
 }

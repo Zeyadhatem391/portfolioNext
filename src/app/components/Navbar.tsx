@@ -13,7 +13,7 @@ export default function Navbar({ theme  }: NavbarProps) {
   // Theme classes
   const themeClasses =
     theme === "light"
-      ? "bg-white/90 text-gray-900"
+      ? "bg-gray-100 text-gray-900"
       : "bg-gray-800 text-white";
 
   const mobileThemeClasses =
@@ -75,9 +75,9 @@ export default function Navbar({ theme  }: NavbarProps) {
 
       {/* MOBILE POPUP MENU */}
       {open && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center">
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center ">
           <div
-            className={`w-80 rounded-2xl shadow-2xl overflow-hidden animate-pop relative ${mobileThemeClasses}`}
+            className={`w-80 rounded-2xl shadow-2xl overflow-hidden animate-pop relative p-2 ${mobileThemeClasses}`}
           >
             {/* Close Button */}
             <button

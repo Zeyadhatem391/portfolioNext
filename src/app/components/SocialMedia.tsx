@@ -5,15 +5,16 @@ import {
   FaInstagram,
   FaWhatsapp,
   FaEnvelope,
+  FaLinkedinIn,
   FaPlus,
   FaTimes,
 } from "react-icons/fa";
 
 interface SocialMediaProps {
-  theme?: "light" | "dark"; 
+  theme?: "light" | "dark";
 }
 
-export default function SocialMedia({ theme  }: SocialMediaProps) {
+export default function SocialMedia({ theme }: SocialMediaProps) {
   const [open, setOpen] = useState(false);
 
   const icons = [
@@ -21,6 +22,7 @@ export default function SocialMedia({ theme  }: SocialMediaProps) {
     { icon: <FaInstagram />, link: "https://instagram.com", bg: "#E1306C" },
     { icon: <FaWhatsapp />, link: "https://wa.me", bg: "#25D366" },
     { icon: <FaEnvelope />, link: "mailto:example@gmail.com", bg: "#EA4335" },
+    { icon: <FaLinkedinIn />, link: "https://linkedin.com", bg: "#0A66C2" },
   ];
 
   const themeClasses =
@@ -52,7 +54,7 @@ export default function SocialMedia({ theme  }: SocialMediaProps) {
       <div className="md:hidden fixed right-6 bottom-20 z-50">
         <div className="relative w-12 h-12">
           {icons.map((item, index) => {
-            const angle = (index / (icons.length - 1)) * (Math.PI / 2); 
+            const angle = (index / (icons.length - 1)) * (Math.PI / 2);
             const radius = open ? 80 : 0;
 
             const x = Math.cos(angle + Math.PI) * radius;
