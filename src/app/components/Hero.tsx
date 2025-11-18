@@ -9,7 +9,6 @@ interface HeroProps {
 export default function Hero({ theme }: HeroProps) {
   const bgPrimary = theme === "light" ? "bg-gray-100" : "bg-gray-900";
   const textColor = theme === "light" ? "text-gray-900" : "text-white";
-  const bgCard = theme === "light" ? "bg-white" : "bg-gray-800";
   const btnPrimary =
     theme === "light"
       ? "bg-blue-600 text-white hover:bg-blue-700"
@@ -47,6 +46,7 @@ export default function Hero({ theme }: HeroProps) {
   return (
     <div
       className={`w-full min-h-screen flex flex-col lg:flex-row items-center lg:items-stretch ${bgPrimary} pt-15`}
+      id="home"
     >
       {/* صورة */}
       <div
@@ -93,7 +93,6 @@ export default function Hero({ theme }: HeroProps) {
           </a>
         </div>
       </div>
-
     </div>
   );
 }

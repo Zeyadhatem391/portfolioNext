@@ -20,20 +20,20 @@ export default function Contact({ theme = "light" }: ContactProps) {
     message: "",
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  // const handleChange = (
+  //   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  // ) => {
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  // };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert("Message sent!");
-    setFormData({ name: "", email: "", subject: "", message: "" });
-  };
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   alert("Message sent!");
+  //   setFormData({ name: "", email: "", subject: "", message: "" });
+  // };
 
   return (
-    <section className={`py-24 ${bgPrimary}`}>
+    <section className={`py-24 ${bgPrimary}`} id="contact">
       {/* العنوان */}
       <div className="text-center mb-14">
         <h2 className={`text-5xl font-bold mb-4 ${textColor}`}>Contact Me</h2>
@@ -48,9 +48,9 @@ export default function Contact({ theme = "light" }: ContactProps) {
         {/* الكروت */}
         <div className="flex flex-col gap-6">
           {[
-            { icon: <FaPhone />, title: "Phone", info: "+20 123 456 789" },
-            { icon: <FaEnvelope />, title: "Email", info: "example@gmail.com" },
-            { icon: <FaMapMarkerAlt />, title: "Location", info: "Cairo, Egypt" },
+            { icon: <FaPhone />, title: "Phone", info: "+20 111 207 9724" },
+            { icon: <FaEnvelope />, title: "Email", info: "zeyadhatem151177" },
+            { icon: <FaMapMarkerAlt />, title: "Location", info: "Mansoura, Egypt" },
           ].map((item, index) => (
             <div
               key={index}
@@ -67,8 +67,8 @@ export default function Contact({ theme = "light" }: ContactProps) {
         </div>
 
         {/* الفورم */}
-        <form
-          onSubmit={handleSubmit}
+        <form action="https://formspree.io/f/mqaevapl" method="post"
+          // onSubmit={handleSubmit}
           className={`lg:col-span-2 p-10 rounded-2xl shadow-xl border ${borderColor} ${cardBg}
           grid grid-cols-1 md:grid-cols-2 gap-6`}
         >
@@ -76,8 +76,8 @@ export default function Contact({ theme = "light" }: ContactProps) {
             type="text"
             name="name"
             placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
+            // value={formData.name}
+            // onChange={handleChange}
             className={`p-4 rounded-xl border ${borderColor} ${inputBg} ${textColor}
             focus:ring-2 focus:ring-blue-600 shadow-sm`}
           />
@@ -86,8 +86,8 @@ export default function Contact({ theme = "light" }: ContactProps) {
             type="email"
             name="email"
             placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
+            // value={formData.email}
+            // onChange={handleChange}
             className={`p-4 rounded-xl border ${borderColor} ${inputBg} ${textColor}
             focus:ring-2 focus:ring-blue-600 shadow-sm`}
           />
@@ -96,8 +96,8 @@ export default function Contact({ theme = "light" }: ContactProps) {
             type="text"
             name="subject"
             placeholder="Subject"
-            value={formData.subject}
-            onChange={handleChange}
+            // value={formData.subject}
+            // onChange={handleChange}
             className={`p-4 md:col-span-2 rounded-xl border ${borderColor} ${inputBg} ${textColor}
             focus:ring-2 focus:ring-blue-600 shadow-sm`}
           />
@@ -106,8 +106,8 @@ export default function Contact({ theme = "light" }: ContactProps) {
             name="message"
             rows={6}
             placeholder="Message"
-            value={formData.message}
-            onChange={handleChange}
+            // value={formData.message}
+            // onChange={handleChange}
             className={`p-4 md:col-span-2 rounded-xl border ${borderColor} ${inputBg} ${textColor}
             focus:ring-2 focus:ring-blue-600 shadow-sm`}
           ></textarea>

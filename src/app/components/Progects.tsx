@@ -25,16 +25,20 @@ export default function Projects({ theme }: ProjectsProps) {
 
   const projects: Project[] = [
     {
-      title: "Next.js App",
+      title: "PopFlix",
       img: "/images/popflix.png",
-      tech: ["Next.js", "React", "TailwindCSS", "API"],
-      desc: "A modern Next.js project with clean UI, API integration, and advanced animations.",
+      tech: ["JavaScript", "Bootstrap", "React", "Laravel", "MySQL"],
+      desc: "Movie discovery platform to explore, search, and save favorite films by genres, ratings, and release years.",
+      demoLink: "https://popflix-ff5ab.web.app/",
+      githubLink: "https://github.com/Zeyadhatem391/Popfilex_Laravel",
     },
     {
-      title: "Next.js App 2",
-      img: "/images/popflix.png",
-      tech: ["Next.js", "TypeScript", "TailwindCSS"],
+      title: "Task Manager",
+      img: "/images/task_m.png",
+      tech: ["TypeScript", "TailwindCSS", "Next", "Laravel", "MySQL"],
       desc: "Another project built with TypeScript and modern UI/UX patterns.",
+      demoLink: "",
+      githubLink: "https://github.com/Zeyadhatem391",
     },
   ];
 
@@ -46,12 +50,15 @@ export default function Projects({ theme }: ProjectsProps) {
 
   return (
     <>
-      <section className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary}`}>
+      <section
+        className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary}`}
+        id="projects"
+      >
         {/* Title */}
         <div className="text-center mb-14">
           <h2 className={`text-5xl font-bold mb-4 ${textColor}`}>Projects</h2>
           <p className={`text-lg opacity-70 ${textColor}`}>
-            Let&apos;s build something great together
+            Building projects that make an impact
           </p>
           <div className="w-28 h-1 mx-auto mt-4 bg-blue-600 rounded-full"></div>
         </div>
@@ -63,7 +70,9 @@ export default function Projects({ theme }: ProjectsProps) {
               {/* Blue animated border */}
               <div className="absolute inset-0 rounded-xl border-2 border-blue-600 animate-borderLoop pointer-events-none"></div>
 
-              <div className={`rounded-xl overflow-hidden shadow-lg border ${borderColor} ${cardBg} project-card`}>
+              <div
+                className={`rounded-xl overflow-hidden shadow-lg border ${borderColor} ${cardBg} project-card`}
+              >
                 {/* Image */}
                 <div className="relative w-full h-56 overflow-hidden">
                   <Image
@@ -76,19 +85,31 @@ export default function Projects({ theme }: ProjectsProps) {
 
                 <div className="p-6 relative">
                   {/* Title + Arrow */}
-                  <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleProject(index)}>
-                    <h3 className={`text-2xl font-semibold ${textColor}`}>{project.title}</h3>
+                  <div
+                    className="flex items-center justify-between cursor-pointer"
+                    onClick={() => toggleProject(index)}
+                  >
+                    <h3 className={`text-2xl font-semibold ${textColor}`}>
+                      {project.title}
+                    </h3>
                     <FiChevronDown
-                      className={`text-3xl text-blue-500 transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""}`}
+                      className={`text-3xl text-blue-500 transition-transform duration-300 ${
+                        openIndex === index ? "rotate-180" : ""
+                      }`}
                     />
                   </div>
 
-                  <p className={`mt-1 opacity-70 ${textColor}`}>Web Application</p>
+                  <p className={`mt-1 opacity-70 ${textColor}`}>
+                    Web Application
+                  </p>
 
                   {/* Tech Stack */}
                   <div className="mt-3 flex flex-wrap gap-2">
                     {project.tech.map((tech, i) => (
-                      <span key={i} className="px-3 py-1 text-sm bg-blue-600 text-white rounded-full">
+                      <span
+                        key={i}
+                        className="px-3 py-1 text-sm bg-blue-600 text-white rounded-full"
+                      >
                         {tech}
                       </span>
                     ))}
@@ -96,17 +117,31 @@ export default function Projects({ theme }: ProjectsProps) {
 
                   {/* Buttons */}
                   <div className="flex items-center gap-5 mt-5">
-                    <a href={project.demoLink || "#"} className="px-5 py-2 bg-blue-600 text-white text-sm rounded-full hover:bg-blue-700 transition-all">
+                    <a
+                      href={project.demoLink || "#"}
+                      className="px-5 py-2 bg-blue-600 text-white text-sm rounded-full hover:bg-blue-700 transition-all"
+                      target="_blank"
+                    >
                       Live Demo
                     </a>
-                    <a href={project.githubLink || "#"} className="flex items-center gap-2 px-5 py-2 border border-blue-500 text-blue-500 text-sm rounded-full hover:bg-blue-600 hover:text-white transition-all">
+                    <a
+                      href={project.githubLink || "#"}
+                      className="flex items-center gap-2 px-5 py-2 border border-blue-500 text-blue-500 text-sm rounded-full hover:bg-blue-600 hover:text-white transition-all"
+                      target="_blank"
+                    >
                       <FaGithub />
                       GitHub
                     </a>
                   </div>
 
                   {/* Description */}
-                  <div className={`transition-all duration-500 overflow-hidden ${openIndex === index ? "max-h-40 mt-4 opacity-100" : "max-h-0 opacity-0"}`}>
+                  <div
+                    className={`transition-all duration-500 overflow-hidden ${
+                      openIndex === index
+                        ? "max-h-40 mt-4 opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
                     <p className={`text-sm leading-relaxed ${textColor}`}>
                       {project.desc}
                     </p>
@@ -121,11 +156,21 @@ export default function Projects({ theme }: ProjectsProps) {
       {/* Animations */}
       <style jsx>{`
         @keyframes borderLoop {
-          0% { clip-path: inset(0 100% 100% 0); }
-          25% { clip-path: inset(0 0 100% 0); }
-          50% { clip-path: inset(0 0 0 0); }
-          75% { clip-path: inset(100% 0 0 0); }
-          100% { clip-path: inset(0 100% 100% 0); }
+          0% {
+            clip-path: inset(0 100% 100% 0);
+          }
+          25% {
+            clip-path: inset(0 0 100% 0);
+          }
+          50% {
+            clip-path: inset(0 0 0 0);
+          }
+          75% {
+            clip-path: inset(100% 0 0 0);
+          }
+          100% {
+            clip-path: inset(0 100% 100% 0);
+          }
         }
         .animate-borderLoop {
           animation: borderLoop 3s linear infinite;

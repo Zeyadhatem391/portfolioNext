@@ -10,12 +10,13 @@ export default function About({ theme }: AboutProps) {
     <>
       <section
         className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary}`}
+        id="about"
       >
         {/* Title */}
         <div className="text-center mb-14">
           <h2 className={`text-5xl font-bold mb-4 ${textColor}`}>About</h2>
           <p className={`text-lg opacity-70 ${textColor}`}>
-            Let&apos;s build something great together
+            Crafting ideas into real experiences
           </p>
           <div className="w-28 h-1 mx-auto mt-4 bg-blue-600 rounded-full"></div>
         </div>
@@ -23,7 +24,7 @@ export default function About({ theme }: AboutProps) {
         <div className="mb-10">
           <p className={`mb-5 text-3xl font-bold ${textColor}`}>
             I&apos;m Zeyad Hatem and{" "}
-            <span className="text-green-700">Web Developer</span>
+            <span className="text-blue-600">Web Developer</span>
           </p>
 
           <p className={`text-xl leading-relaxed ${textColor}`}>
@@ -90,7 +91,6 @@ export default function About({ theme }: AboutProps) {
             View CV
           </a>
         </div>
-
       </section>
     </>
   );

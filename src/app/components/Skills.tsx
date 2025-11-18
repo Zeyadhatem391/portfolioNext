@@ -62,12 +62,12 @@ export default function Skills({ theme }: SkillsProps) {
   ];
 
   return (
-    <section className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary}`}>
+    <section className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary}`} id="skills">
       {/* Title */}
       <div className="text-center mb-14">
         <h2 className={`text-5xl font-bold mb-4 ${textColor}`}>Skills</h2>
         <p className={`text-lg opacity-70 ${textColor}`}>
-          Technologies I work with every day
+          Technologies I master every day
         </p>
         <div className="w-28 h-1 mx-auto mt-4 bg-blue-600 rounded-full"></div>
       </div>

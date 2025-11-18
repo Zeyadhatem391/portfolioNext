@@ -18,11 +18,10 @@ export default function SocialMedia({ theme }: SocialMediaProps) {
   const [open, setOpen] = useState(false);
 
   const icons = [
-    { icon: <FaFacebookF />, link: "https://facebook.com", bg: "#1877F2" },
-    { icon: <FaInstagram />, link: "https://instagram.com", bg: "#E1306C" },
-    { icon: <FaWhatsapp />, link: "https://wa.me", bg: "#25D366" },
-    { icon: <FaEnvelope />, link: "mailto:example@gmail.com", bg: "#EA4335" },
-    { icon: <FaLinkedinIn />, link: "https://linkedin.com", bg: "#0A66C2" },
+    { icon: <FaFacebookF />, link: "https://www.facebook.com/share/19wmyZPHU6/?mibextid=wwXIfr", bg: "#1877F2" },
+    { icon: <FaInstagram />, link: "https://www.instagram.com/zeyad_hatme", bg: "#E1306C" },
+    { icon: <FaWhatsapp />, link: "https://wa.me/+201112079745", bg: "#25D366" },
+    { icon: <FaLinkedinIn />, link: "https://www.linkedin.com/in/zeyad-hatem-b95034340", bg: "#0A66C2" },
   ];
 
   const themeClasses =

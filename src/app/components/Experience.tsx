@@ -14,12 +14,13 @@ export default function Experience({ theme }: ExperienceProps) {
     <>
       <section
         className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary}`}
+        id="experience"
       >
         {/* Title */}
         <div className="text-center mb-14">
           <h2 className={`text-5xl font-bold mb-4 ${textColor}`}>Experience</h2>
           <p className={`text-lg opacity-70 ${textColor}`}>
-            Let&apos;s build something great together
+            Turning challenges into achievements
           </p>
           <div className="w-28 h-1 mx-auto mt-4 bg-blue-600 rounded-full"></div>
         </div>
@@ -30,7 +31,9 @@ export default function Experience({ theme }: ExperienceProps) {
           <div className="timeline-line">
             <div className="moving-line" />
             <div
-              className={` card w-full p-5 rounded-xl border-2 ${borderColor} ${cardBg}`}
+              className={` card w-full p-5 rounded-xl border-2 ${borderColor} ${cardBg}
+               duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]
+              `}
             >
               <div className="flex items-center gap-3 mb-3">
                 <Briefcase size={28} className="text-blue-600" />
@@ -40,12 +43,15 @@ export default function Experience({ theme }: ExperienceProps) {
               </div>
 
               <div className="text-green-400 text-xl font-semibold mb-2">
-                31/8/25 - 30/9/25
+                31/8/25 - 25/9/25
               </div>
 
               <p className={`text-lg leading-relaxed ${textColor}`}>
-                I bring strong technical skills supported by teamwork,
-                communication, and adaptability.
+                pleted 120 hours of intensive Full Stack Web Development
+                training, focusing on frontend and Laravel for backend. Gained
+                practical experience in building and deploying full-stack
+                applications, covering both frontend design and backend API
+                development with database integration.
               </p>
             </div>
           </div>
@@ -55,22 +61,26 @@ export default function Experience({ theme }: ExperienceProps) {
             <div className="moving-line" />
 
             <div
-              className={`card w-full p-5 rounded-xl border-2 ${borderColor} ${cardBg}`}
+              className={`card w-full p-5 rounded-xl border-2 ${borderColor} ${cardBg}
+              duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]
+            `}
             >
               <div className="flex items-center gap-3 mb-3">
                 <Briefcase size={28} className="text-blue-600" />
                 <h3 className={`text-2xl font-bold ${textColor}`}>
-                  Frontend Developer – Freelance
+                  Intern at digital training center in Mansura university
                 </h3>
               </div>
 
               <div className="text-green-400 text-xl font-semibold mb-2">
-                2023 - Present
+                06/8/24 - 24/11/24
               </div>
 
               <p className={`text-lg leading-relaxed ${textColor}`}>
-                Building modern, responsive, and interactive websites using
-                React, Tailwind and clean component architecture.
+                Built full web applications using HTML, CSS, JavaScript, and
+                React.js, gaining hands-on experience with APIs, databases, and
+                Git, and completed 120 hours of training in full stack
+                development.
               </p>
             </div>
           </div>

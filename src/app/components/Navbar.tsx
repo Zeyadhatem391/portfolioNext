@@ -6,20 +6,23 @@ interface NavbarProps {
   theme?: "light" | "dark";
 }
 
-export default function Navbar({ theme  }: NavbarProps) {
+export default function Navbar({ theme }: NavbarProps) {
   const [open, setOpen] = useState(false);
-  const menu = ["Home", "About", "Services", "Portfolio", "Contact"];
+  const menu = [
+    { name: "Home", path: "#home" },
+    { name: "About", path: "#about" },
+    { name: "Experience", path: "#experience" },
+    { name: "Skills", path: "#skills" },
+    { name: "Projects", path: "#projects" },
+    { name: "Contact", path: "#contact" },
+  ];
 
   // Theme classes
   const themeClasses =
-    theme === "light"
-      ? "bg-gray-100 text-gray-900"
-      : "bg-gray-800 text-white";
+    theme === "light" ? "bg-gray-100 text-gray-900" : "bg-gray-800 text-white";
 
   const mobileThemeClasses =
-    theme === "light"
-      ? "bg-white text-gray-800"
-      : "bg-gray-900 text-white";
+    theme === "light" ? "bg-white text-gray-800" : "bg-gray-900 text-white";
 
   return (
     <>
@@ -30,31 +33,36 @@ export default function Navbar({ theme  }: NavbarProps) {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
           <a
             href="#"
-            className={`text-2xl font-bold tracking-wide p-5 ${theme === "light" ? "text-gray-900" : "text-white"}`}
+            className={`text-2xl font-extrabold tracking-wide px-5 py-3 ${
+              theme === "light" ? "text-gray-900" : "text-white"
+            } hover:text-blue-500 transition-colors duration-300`}
           >
-            Flowbite
+            &lt;Zeyad Hatem&gt;
           </a>
 
           {/* DESKTOP MENU */}
+
           <ul className="hidden md:flex items-center">
             {menu.map((item, index) => (
               <li
                 key={index}
-                className="group relative cursor-pointer py-4 px-5"
+                className="group relative cursor-pointer py-5 px-5"
               >
                 <a
-                  href="#"
+                  href={item.path}
                   className={`text-xl font-semibold transition-all duration-300 ${
                     theme === "light"
                       ? "text-gray-700 group-hover:text-blue-600"
                       : "text-gray-200 group-hover:text-blue-400"
                   }`}
                 >
-                  {item}
+                  {item.name}
                 </a>
                 <span
                   className={`absolute left-1/2 -bottom-1 w-0 h-[3px] rounded-full transition-all duration-300 ${
-                    theme === "light" ? "bg-blue-600 group-hover:w-full group-hover:left-0" : "bg-blue-400 group-hover:w-full group-hover:left-0"
+                    theme === "light"
+                      ? "bg-blue-600 group-hover:w-full group-hover:left-0"
+                      : "bg-blue-400 group-hover:w-full group-hover:left-0"
                   }`}
                 />
               </li>
@@ -96,14 +104,14 @@ export default function Navbar({ theme  }: NavbarProps) {
                   className="group cursor-pointer w-full hover:bg-blue-50 transition-all duration-300 border-b border-gray-100 last:border-none"
                 >
                   <a
-                    href="#"
+                    href={item.path}
                     className={`block py-4 px-6 text-lg font-semibold transition ${
                       theme === "light"
                         ? "text-gray-800 group-hover:text-blue-600"
                         : "text-white group-hover:text-blue-400"
                     }`}
                   >
-                    {item}
+                    {item.name}
                   </a>
                 </li>
               ))}
