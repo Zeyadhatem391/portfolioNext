@@ -19,7 +19,7 @@ export default function Navbar({ theme }: NavbarProps) {
 
   // Theme classes
   const themeClasses =
-    theme === "light" ? "bg-gray-100 text-gray-900" : "bg-gray-800 text-white";
+    theme === "light" ? "bg-gray-100 text-gray-900" : "bg-gray-900 text-white";
 
   const mobileThemeClasses =
     theme === "light" ? "bg-white text-gray-800" : "bg-gray-900 text-white";
@@ -42,7 +42,7 @@ export default function Navbar({ theme }: NavbarProps) {
 
           {/* DESKTOP MENU */}
 
-          <ul className="hidden md:flex items-center">
+          <ul className="hidden lg:flex items-center">
             {menu.map((item, index) => (
               <li
                 key={index}
@@ -71,7 +71,7 @@ export default function Navbar({ theme }: NavbarProps) {
 
           {/* MOBILE BUTTON */}
           <button
-            className={`md:hidden text-2xl ${
+            className={`lg:hidden text-2xl ${
               theme === "light" ? "text-gray-900" : "text-white"
             }`}
             onClick={() => setOpen(true)}

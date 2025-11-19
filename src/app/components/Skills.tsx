@@ -6,6 +6,7 @@ import {
   SiTypescript,
   SiJavascript,
   SiBootstrap,
+  SiThreedotjs,
   SiPhp,
   SiLaravel,
   SiMysql,
@@ -35,9 +36,16 @@ export default function Skills({ theme }: SkillsProps) {
         { icon: <SiReact size={40} color="#61DAFB" />, name: "React" },
         { icon: <SiTailwindcss size={40} color="#38BDF8" />, name: "Tailwind" },
         { icon: <SiMui size={40} color="#007FFF" />, name: "Material UI" },
-        { icon: <SiTypescript size={40} color="#3178C6" />, name: "TypeScript" },
-        { icon: <SiJavascript size={40} color="#F7DF1E" />, name: "JavaScript" },
+        {
+          icon: <SiTypescript size={40} color="#3178C6" />,
+          name: "TypeScript",
+        },
+        {
+          icon: <SiJavascript size={40} color="#F7DF1E" />,
+          name: "JavaScript",
+        },
         { icon: <SiBootstrap size={40} color="#7952B3" />, name: "Bootstrap" },
+        { icon: <SiThreedotjs size={40} color="#000000" />, name: "Three JS" },
       ],
     },
     {
@@ -56,13 +64,15 @@ export default function Skills({ theme }: SkillsProps) {
         { icon: <SiGithub size={40} color="#181717" />, name: "GitHub" },
         { icon: <SiFirebase size={40} color="#FFCA28" />, name: "Firebase" },
         { icon: <SiFigma size={40} color="#F24E1E" />, name: "Figma" },
-        { icon: <SiMui size={40} color="#007FFF" />, name: "Material UI" },
       ],
     },
   ];
 
   return (
-    <section className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary}`} id="skills">
+    <section
+      className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary}`}
+      id="skills"
+    >
       {/* Title */}
       <div className="text-center mb-14">
         <h2 className={`text-5xl font-bold mb-4 ${textColor}`}>Skills</h2>
@@ -86,7 +96,9 @@ export default function Skills({ theme }: SkillsProps) {
             <span className="absolute inset-0 border-2 border-blue-500 rounded-2xl animate-borderLoop pointer-events-none"></span>
 
             {/* Category Title */}
-            <h3 className={`text-3xl font-bold mb-5 ${textColor}`}>{category.category}</h3>
+            <h3 className={`text-3xl font-bold mb-5 ${textColor}`}>
+              {category.category}
+            </h3>
 
             {/* Skills Grid */}
             <div className="grid grid-cols-3 gap-6">

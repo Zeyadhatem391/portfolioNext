@@ -26,7 +26,7 @@ export default function Experience({ theme }: ExperienceProps) {
         </div>
 
         {/* Cards  */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* CARD 1 */}
           <div className="timeline-line">
             <div className="moving-line" />

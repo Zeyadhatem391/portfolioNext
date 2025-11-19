@@ -9,8 +9,9 @@ export default function About({ theme }: AboutProps) {
   return (
     <>
       <section
-        className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary}`}
+        className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary} `}
         id="about"
+        
       >
         {/* Title */}
         <div className="text-center mb-14">

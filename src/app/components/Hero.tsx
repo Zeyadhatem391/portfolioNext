@@ -45,8 +45,11 @@ export default function Hero({ theme }: HeroProps) {
 
   return (
     <div
-      className={`w-full min-h-screen flex flex-col lg:flex-row items-center lg:items-stretch ${bgPrimary} pt-15`}
+      className={`w-full min-h-screen flex flex-col lg:flex-row items-center lg:items-stretch  ${bgPrimary} pt-15 relative bg-cover bg-center bg-no-repeat`}
       id="home"
+      style={{
+        backgroundImage: "url('/images/hero-bg.png')",
+      }}
     >
       {/* صورة */}
       <div
@@ -57,7 +60,7 @@ export default function Hero({ theme }: HeroProps) {
             src="/images/Portfolio.png"
             alt="zeyad hatem"
             fill
-            className="object-contain rounded-lg shadow-lg"
+            className="object-contain rounded-lg "
           />
         </div>
       </div>

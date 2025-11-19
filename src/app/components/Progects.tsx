@@ -64,7 +64,7 @@ export default function Projects({ theme }: ProjectsProps) {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 place-items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-center">
           {projects.map((project, index) => (
             <div key={index} className="relative w-[90%] md:w-[85%] group">
               {/* Blue animated border */}
