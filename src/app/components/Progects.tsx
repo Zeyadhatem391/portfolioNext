@@ -26,7 +26,7 @@ export default function Projects({ theme }: ProjectsProps) {
   const projects: Project[] = [
     {
       title: "PopFlix",
-      img: "/images/popflix.png",
+      img: "/images/popflix.webp",
       tech: ["JavaScript", "Bootstrap", "React", "Laravel", "MySQL"],
       desc: "Movie discovery platform to explore, search, and save favorite films by genres, ratings, and release years.",
       demoLink: "https://popflix-ff5ab.web.app/",
@@ -34,7 +34,7 @@ export default function Projects({ theme }: ProjectsProps) {
     },
     {
       title: "Task Manager",
-      img: "/images/task_m.png",
+      img: "/images/task_m.webp",
       tech: ["TypeScript", "TailwindCSS", "Next", "Laravel", "MySQL"],
       desc: "Another project built with TypeScript and modern UI/UX patterns.",
       demoLink: "",

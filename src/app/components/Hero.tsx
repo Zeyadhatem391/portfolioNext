@@ -48,7 +48,7 @@ export default function Hero({ theme }: HeroProps) {
       className={`w-full min-h-screen flex flex-col lg:flex-row items-center lg:items-stretch  ${bgPrimary} pt-15 relative bg-cover bg-center bg-no-repeat`}
       id="home"
       style={{
-        backgroundImage: "url('/images/hero-bg.png')",
+        backgroundImage: "url('/images/hero-bg.webp')",
       }}
     >
       {/* صورة */}
@@ -57,7 +57,7 @@ export default function Hero({ theme }: HeroProps) {
       >
         <div className="relative w-full max-w-md h-[400px] md:h-[500px]">
           <Image
-            src="/images/Portfolio.png"
+            src="/images/Portfolio.webp"
             alt="zeyad hatem"
             fill
             className="object-contain rounded-lg "
@@ -90,7 +90,7 @@ export default function Hero({ theme }: HeroProps) {
           </a>
           <a
             className={`py-4 px-8 rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105 text-center ${btnOutline}`}
-            href="#project"
+            href="#projects"
           >
             Latest Works
           </a>
