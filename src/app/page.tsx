@@ -35,7 +35,9 @@ export default function Home() {
       <SocialMedia theme={theme} />
       <ScrollToTop theme={theme} />
       <ModeSwitcher theme={theme} onToggle={handleModeChange} />
-      <CustomCursor />
+      <div className="hidden lg:block">
+        <CustomCursor />
+      </div>
     </>
   );
 }

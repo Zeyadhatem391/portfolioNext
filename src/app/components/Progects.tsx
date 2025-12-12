@@ -28,9 +28,9 @@ export default function Projects({ theme }: ProjectsProps) {
       title: "PopFlix",
       img: "/images/popflix.webp",
       tech: ["JavaScript", "Bootstrap", "React", "Laravel", "MySQL"],
-      desc: "Movie discovery platform to explore, search, and save favorite films by genres, ratings, and release years.",
+      desc: "A full-featured movie discovery platform that allows users to explore, search, and save their favorite films with ease. The platform provides detailed movie information including cast members, ratings, trailers, and full descriptions. Users can also filter movies by release year, genre, and rating to quickly find exactly what they’re looking for. Designed to deliver a smooth and engaging browsing experience.",
       demoLink: "https://popflix-ff5ab.web.app/",
-      githubLink: "https://github.com/Zeyadhatem391/Popfilex_Laravel",
+      githubLink: "https://github.com/Zeyadhatem391/Popfilex_React.git",
     },
     {
       title: "Task Manager",

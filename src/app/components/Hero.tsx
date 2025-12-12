@@ -77,9 +77,8 @@ export default function Hero({ theme }: HeroProps) {
           <span className="blinking-cursor">|</span>
         </h2>
         <p className={`mb-8 text-lg md:text-xl ${textColor}`}>
-          I&apos;m a passionate developer specialized in Computer Science. I
-          build efficient, user-friendly web applications that make a
-          difference.
+          Passionate Computer Science Developer crafting efficient,
+          user-friendly web applications that make a real impact.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
           <a

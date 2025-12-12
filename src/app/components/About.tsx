@@ -11,7 +11,6 @@ export default function About({ theme }: AboutProps) {
       <section
         className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary} `}
         id="about"
-        
       >
         {/* Title */}
         <div className="text-center mb-14">
@@ -29,10 +28,11 @@ export default function About({ theme }: AboutProps) {
           </p>
 
           <p className={`text-xl leading-relaxed ${textColor}`}>
-            In addition to my technical abilities, I bring a strong set of soft
-            skills including problem solving, self-learning, teamwork, time
-            management, attention to detail, and adaptability — all of which
-            help me thrive in both individual and collaborative environments.
+            Beyond my technical expertise, I bring strong soft skills including
+            problem-solving, self-learning, teamwork, time management, attention
+            to detail, and adaptability. These abilities enable me to excel in
+            both independent and collaborative environments — and to
+            consistently deliver high-quality results.
           </p>
         </div>
 
