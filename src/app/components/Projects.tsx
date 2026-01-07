@@ -10,6 +10,7 @@ interface ProjectsProps {
 
 interface Project {
   title: string;
+  subtitle: string;
   img: string;
   tech: string[];
   desc: string;
@@ -26,6 +27,7 @@ export default function Projects({ theme }: ProjectsProps) {
   const projects: Project[] = [
     {
       title: "PopFlix",
+      subtitle: "Movies website",
       img: "/images/popflix.webp",
       tech: ["JavaScript", "Bootstrap", "React", "Laravel", "MySQL"],
       desc: "A full-featured movie discovery platform that allows users to explore, search, and save their favorite films with ease. The platform provides detailed movie information including cast members, ratings, trailers, and full descriptions. Users can also filter movies by release year, genre, and rating to quickly find exactly what they’re looking for. Designed to deliver a smooth and engaging browsing experience.",
@@ -34,11 +36,30 @@ export default function Projects({ theme }: ProjectsProps) {
     },
     {
       title: "Task Manager",
+      subtitle: "Web Application",
       img: "/images/task_m.webp",
-      tech: ["TypeScript", "TailwindCSS", "Next", "Laravel", "MySQL"],
+      tech: ["TypeScript", "TailwindCSS", "Next.js", "Laravel", "MySQL"],
       desc: "Another project built with TypeScript and modern UI/UX patterns.",
-      demoLink: "",
-      githubLink: "https://github.com/Zeyadhatem391",
+      demoLink: "https://task-manager-eight-gray.vercel.app/",
+      githubLink: "https://github.com/Zeyadhatem391/task_manager",
+    },
+    {
+      title: "Portfolio",
+      subtitle: "Old Portfolio",
+      img: "/images/old-portfolio.jpg",
+      tech: ["HTML", "CSS", "Bootstrap", "JavaScript", "React.js"],
+      desc: "Responsive web application built with HTML, CSS, Bootstrap, JavaScript, and React.js, showcasing interactive UI components and modern frontend development skills.",
+      demoLink: "https://portfolio-88fc5.web.app/",
+      githubLink: "https://github.com/Zeyadhatem391/portfolio_old",
+    },
+    {
+      title: "Faster",
+      subtitle: "NTI Task",
+      img: "/images/faster.webp",
+      tech: ["HTML", "CSS", "Bootstrap", "Responsive"],
+      desc: "A responsive frontend web project developed as part of the NTI Full Stack Web Development training.The project was built using HTML, CSS, and Bootstrap, focusing on clean UI design, responsive layouts, and proper code structure.",
+      demoLink: "https://zeyadhatem391.github.io/NTI_Faster/",
+      githubLink: "https://github.com/Zeyadhatem391/NTI_Faster",
     },
   ];
 
@@ -100,7 +121,7 @@ export default function Projects({ theme }: ProjectsProps) {
                   </div>
 
                   <p className={`mt-1 opacity-70 ${textColor}`}>
-                    Web Application
+                    {project.subtitle}
                   </p>
 
                   {/* Tech Stack */}

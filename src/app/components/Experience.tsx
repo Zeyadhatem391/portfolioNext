@@ -47,7 +47,7 @@ export default function Experience({ theme }: ExperienceProps) {
               </div>
 
               <p className={`text-lg leading-relaxed ${textColor}`}>
-                pleted 120 hours of intensive Full Stack Web Development
+                Pleted 120 hours of intensive Full Stack Web Development
                 training, focusing on frontend and Laravel for backend. Gained
                 practical experience in building and deploying full-stack
                 applications, covering both frontend design and backend API

@@ -6,12 +6,13 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
-import Projects from "./components/Progects";
+import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import SocialMedia from "./components/SocialMedia";
 import ScrollToTop from "./components/ScrollToTop";
 import ModeSwitcher from "./components/ModeSwitcher";
 import CustomCursor from "./components/CustomCursor";
+import StarsBackground from "./components/StarsBackground";
 
 export default function Home() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
@@ -25,6 +26,7 @@ export default function Home() {
 
   return (
     <>
+      <StarsBackground theme={theme}/>
       <Navbar theme={theme} />
       <Hero theme={theme} />
       <About theme={theme} />

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 /* hrro */
 .blinking-cursor {
   display: inline-block;
@@ -158,5 +159,52 @@
   .timeline-line .moving-line {
     left: 4px;
     width: 3px;
+  }
+}
+
+/*  ============== stars ==============  */
+/* Wrapper */
+.stars-wrapper {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+}
+
+/* Star */
+.star {
+  position: absolute;
+  top: -10px;
+  width: var(--star-size);
+  height: var(--star-size);
+  border-radius: 50%;
+  animation: fall linear infinite;
+}
+
+/*  Dark Mode */
+.stars-wrapper.dark .star {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4 6px rgba(255, 255, 255, 0.6);
+}
+
+/*  Light Mode */
+.stars-wrapper.light .star {
+  background: rgba(70, 70, 70, 0.5);
+  box-shadow: 4 4 8px rgba(70, 70, 70, 0.3);
+}
+
+/* Animation */
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0;
   }
 }

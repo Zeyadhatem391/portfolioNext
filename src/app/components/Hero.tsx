@@ -18,7 +18,7 @@ export default function Hero({ theme }: HeroProps) {
       ? "border border-blue-600 text-blue-600 hover:bg-blue-50"
       : "border border-blue-500 text-blue-500 hover:bg-gray-700";
 
-  const phrases = ["Full Stack Developer", "Web Developer", "UI/UX Designer"];
+  const phrases = ["Full Stack Developer", "Web Developer", "Computer Science"];
   const [currentPhrase, setCurrentPhrase] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
 
