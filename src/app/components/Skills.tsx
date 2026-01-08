@@ -17,6 +17,10 @@ import {
   SiFigma,
 } from "react-icons/si";
 
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 interface SkillsProps {
   theme?: "light" | "dark";
 }
@@ -26,7 +30,13 @@ export default function Skills({ theme }: SkillsProps) {
   const textColor = theme === "light" ? "text-gray-900" : "text-white";
   const cardBg = theme === "light" ? "bg-white" : "bg-gray-800";
   const borderColor = theme === "light" ? "border-gray-300" : "border-gray-700";
-
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: "ease",
+    });
+  }, []);
   // Skills categorized
   const skillsData = [
     {
@@ -91,6 +101,7 @@ export default function Skills({ theme }: SkillsProps) {
               relative p-6 rounded-2xl border-2 ${borderColor} ${cardBg} overflow-hidden
               group transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]
             `}
+            data-aos="fade-up"
           >
             {/* Border Animation Loop */}
             <span className="absolute inset-0 border-2 border-blue-500 rounded-2xl animate-borderLoop pointer-events-none"></span>

@@ -1,8 +1,11 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface ProjectsProps {
   theme?: "light" | "dark";
@@ -23,7 +26,13 @@ export default function Projects({ theme }: ProjectsProps) {
   const textColor = theme === "light" ? "text-gray-900" : "text-white";
   const cardBg = theme === "light" ? "bg-white" : "bg-gray-800";
   const borderColor = theme === "light" ? "border-gray-300" : "border-gray-700";
-
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: "ease",
+    });
+  }, []);
   const projects: Project[] = [
     {
       title: "PopFlix",
@@ -87,7 +96,11 @@ export default function Projects({ theme }: ProjectsProps) {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-center">
           {projects.map((project, index) => (
-            <div key={index} className="relative w-[90%] md:w-[85%] group">
+            <div
+              key={index}
+              className="relative w-[90%] md:w-[85%] group"
+              data-aos="fade-up"
+            >
               {/* Blue animated border */}
               <div className="absolute inset-0 rounded-xl border-2 border-blue-600 animate-borderLoop pointer-events-none"></div>
 

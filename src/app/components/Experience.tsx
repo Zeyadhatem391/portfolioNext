@@ -1,4 +1,7 @@
 import { Briefcase } from "lucide-react";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface ExperienceProps {
   theme?: "light" | "dark";
@@ -9,7 +12,13 @@ export default function Experience({ theme }: ExperienceProps) {
   const textColor = theme === "light" ? "text-gray-900" : "text-white";
   const cardBg = theme === "light" ? "bg-white" : "bg-gray-800";
   const borderColor = theme === "light" ? "border-gray-300" : "border-gray-600";
-
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: "ease",
+    });
+  }, []);
   return (
     <>
       <section
@@ -28,7 +37,7 @@ export default function Experience({ theme }: ExperienceProps) {
         {/* Cards  */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* CARD 1 */}
-          <div className="timeline-line">
+          <div className="timeline-line"  data-aos="fade-up">
             <div className="moving-line" />
             <div
               className={` card w-full p-5 rounded-xl border-2 ${borderColor} ${cardBg}
@@ -36,7 +45,7 @@ export default function Experience({ theme }: ExperienceProps) {
               `}
             >
               <div className="flex items-center gap-3 mb-3">
-                <Briefcase size={28} className="text-blue-600" />
+                <Briefcase size={48} className="text-blue-600" />
                 <h3 className={`text-2xl font-bold ${textColor}`}>
                   National Telecommunications Institute (NTI)
                 </h3>
@@ -57,7 +66,7 @@ export default function Experience({ theme }: ExperienceProps) {
           </div>
 
           {/* CARD 2 */}
-          <div className="timeline-line">
+          <div className="timeline-line"  data-aos="fade-up">
             <div className="moving-line" />
 
             <div
@@ -66,7 +75,7 @@ export default function Experience({ theme }: ExperienceProps) {
             `}
             >
               <div className="flex items-center gap-3 mb-3">
-                <Briefcase size={28} className="text-blue-600" />
+                <Briefcase size={48} className="text-blue-600" />
                 <h3 className={`text-2xl font-bold ${textColor}`}>
                   Intern at digital training center in Mansura university
                 </h3>
