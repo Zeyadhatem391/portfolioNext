@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+// import { useState } from "react";
 import { FaPhone, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 
 interface ContactProps {
@@ -13,12 +13,12 @@ export default function Contact({ theme = "light" }: ContactProps) {
   const inputBg = theme === "light" ? "bg-white" : "bg-gray-700";
   const borderColor = theme === "light" ? "border-gray-300" : "border-gray-600";
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   subject: "",
+  //   message: "",
+  // });
 
   // const handleChange = (
   //   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

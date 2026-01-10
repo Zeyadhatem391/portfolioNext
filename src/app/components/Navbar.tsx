@@ -32,12 +32,12 @@ export default function Navbar({ theme }: NavbarProps) {
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
           <a
-            href="#"
+            href=""
             className={`text-2xl font-extrabold tracking-wide px-5 py-3  ${
               theme === "light" ? "text-gray-900" : "text-blue-500"
             } hover:text-blue-900 transition-colors duration-300`}
           >
-             ZH
+            ZH
           </a>
 
           {/* DESKTOP MENU */}

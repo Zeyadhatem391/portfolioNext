@@ -8,6 +8,7 @@ import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import SocialMedia from "./components/SocialMedia";
 import ScrollToTop from "./components/ScrollToTop";
 import ModeSwitcher from "./components/ModeSwitcher";
@@ -26,7 +27,7 @@ export default function Home() {
 
   return (
     <>
-      <StarsBackground theme={theme}/>
+      <StarsBackground theme={theme} />
       <Navbar theme={theme} />
       <Hero theme={theme} />
       <About theme={theme} />
@@ -34,6 +35,7 @@ export default function Home() {
       <Skills theme={theme} />
       <Projects theme={theme} />
       <Contact theme={theme} />
+      <Footer theme={theme} />
       <SocialMedia theme={theme} />
       <ScrollToTop theme={theme} />
       <ModeSwitcher theme={theme} onToggle={handleModeChange} />
