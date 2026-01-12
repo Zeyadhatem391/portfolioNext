@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Experience from "./components/Experience";
+import Certification from "./components/Certification";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
@@ -32,6 +33,7 @@ export default function Home() {
       <Hero theme={theme} />
       <About theme={theme} />
       <Experience theme={theme} />
+      <Certification theme={theme} />
       <Skills theme={theme} />
       <Projects theme={theme} />
       <Contact theme={theme} />
