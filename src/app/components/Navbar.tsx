@@ -11,7 +11,8 @@ export default function Navbar({ theme }: NavbarProps) {
   const menu = [
     { name: "Home", path: "#home" },
     { name: "About", path: "#about" },
-    { name: "Experience", path: "#experience" },
+    { name: "Exp", path: "#experience" },
+    { name: "Cer", path: "#certification" },
     { name: "Skills", path: "#skills" },
     { name: "Projects", path: "#projects" },
     { name: "Contact", path: "#contact" },
@@ -111,7 +112,11 @@ export default function Navbar({ theme }: NavbarProps) {
                         : "text-white group-hover:text-blue-400"
                     }`}
                   >
-                    {item.name}
+                    {item.name === "Exp"
+                      ? "Experiences"
+                      : item.name === "Cer"
+                      ? "Certifications"
+                      : item.name}
                   </a>
                 </li>
               ))}

@@ -12,7 +12,7 @@ interface CertificationProps {
 
 interface Certification {
   title: string;
-  subtitle: string;
+  date: string;
   img: string;
   desc: string;
   demoLink?: string;
@@ -32,32 +32,20 @@ export default function Certification({ theme }: CertificationProps) {
   }, []);
   const Certifications: Certification[] = [
     {
-      title: "PopFlix",
-      subtitle: "Movies website",
-      img: "/images/popflix.webp",
-      desc: "A full-featured movie discovery platform that allows users to explore.",
-      demoLink: "",
+      title: "NTI",
+      date: "31/8/25 - 25/9/25",
+      img: "/images/nti.jpeg",
+      desc: "Full Stack Web Development training with hands-on experience.",
+      demoLink:
+        "https://drive.google.com/drive/folders/1uRaLfSiZY_RVPGxgPCZ-cVCXTyij2bU4?usp=sharing",
     },
     {
-      title: "Task Manager",
-      subtitle: "Web Application",
-      img: "/images/task_m.webp",
-      desc: "Another project built with TypeScript and modern UI/UX patterns.",
-      demoLink: "",
-    },
-    {
-      title: "Portfolio",
-      subtitle: "Old Portfolio",
-      img: "/images/old-portfolio.jpg",
-      desc: "Responsive web application built with HTML, CSS, Bootstrap, JavaScript",
-      demoLink: "",
-    },
-    {
-      title: "Faster",
-      subtitle: "NTI Task",
-      img: "/images/faster.webp",
-      desc: "A responsive frontend web project developed as part of the NTI Full Stack Web Development .",
-      demoLink: "",
+      title: "Intern training",
+      date: "06/8/24 - 24/11/24",
+      img: "/images/dtm.jpeg",
+      desc: "Hands-on experience in modern full stack web development.",
+      demoLink:
+        "https://drive.google.com/drive/folders/1-VVPHAivFw_JouhUB4CczJkgDyxCI5Yx?usp=sharing",
     },
   ];
 
@@ -65,7 +53,7 @@ export default function Certification({ theme }: CertificationProps) {
     <>
       <section
         className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary}`}
-        id="projects"
+        id="certification"
       >
         {/* Title */}
         <div className="text-center mb-14">
@@ -78,7 +66,7 @@ export default function Certification({ theme }: CertificationProps) {
           <div className="w-28 h-1 mx-auto mt-4 bg-blue-600 rounded-full"></div>
         </div>
 
-        {/* Projects Grid */}
+        {/* Certification Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 place-items-center">
           {Certifications.map((Certification, index) => (
             <div
@@ -104,6 +92,7 @@ export default function Certification({ theme }: CertificationProps) {
                   <a
                     href={Certification.demoLink}
                     className="absolute z-50 top-4 right-4 p-3 rounded-full text-white bg-black/60 hover:bg-blue-600/50"
+                    target="_blank"
                   >
                     <FaExternalLinkAlt className="w-3 h-3" />
                   </a>
@@ -118,7 +107,7 @@ export default function Certification({ theme }: CertificationProps) {
                   </div>
 
                   <p className={`mt-1 opacity-70 ${textColor}`}>
-                    {Certification.subtitle}
+                    {Certification.date}
                   </p>
 
                   {/* Description */}
