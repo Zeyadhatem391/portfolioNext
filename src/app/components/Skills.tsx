@@ -15,6 +15,10 @@ import {
   SiGithub,
   SiFirebase,
   SiFigma,
+  SiZod,
+  SiReactquery,
+  SiRedux,
+  SiReacthookform,
 } from "react-icons/si";
 
 import { useEffect } from "react";
@@ -74,6 +78,26 @@ export default function Skills({ theme }: SkillsProps) {
         { icon: <SiGithub size={40} color="#181717" />, name: "GitHub" },
         { icon: <SiFirebase size={40} color="#FFCA28" />, name: "Firebase" },
         { icon: <SiFigma size={40} color="#F24E1E" />, name: "Figma" },
+      ],
+    },
+    {
+      category: "Packages",
+      skills: [
+        { icon: <SiZod size={40} color="#7C3AED" />, name: "Zod" },
+        {
+          icon: <SiReacthookform size={40} color="#EC5990" />,
+          name: "React Hook Form",
+        },
+        {
+          icon: <SiRedux size={40} color="#764ABC" />,
+          name: "redux toolkit",
+        },
+        {
+          icon: <SiReactquery size={40} color="#FF4154" />,
+          name: "Tanstack query",
+        },
+        { icon: <SiNextdotjs size={40} color="#000000" />, name: "Next Auth" },
+        { icon: <SiNextdotjs size={40} color="#4B5563" />, name: "Next Intl" },
       ],
     },
   ];
