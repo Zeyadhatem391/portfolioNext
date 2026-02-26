@@ -42,7 +42,7 @@ export default function Certification({ theme }: CertificationProps) {
     {
       title: "NTI",
       date: "31/8/2025 - 25/9/2025",
-      img: "/images/nti.jpeg",
+      img: "/images/nti.webp",
       desc: "Full Stack Web Development training with hands-on experience.",
       demoLink:
         "https://drive.google.com/drive/folders/1uRaLfSiZY_RVPGxgPCZ-cVCXTyij2bU4?usp=sharing",
@@ -50,7 +50,7 @@ export default function Certification({ theme }: CertificationProps) {
     {
       title: "Intern training",
       date: "06/8/2024 - 24/11/2024",
-      img: "/images/dtm.jpeg",
+      img: "/images/dtm.webp",
       desc: "Hands-on experience in modern full stack web development.",
       demoLink:
         "https://drive.google.com/drive/folders/1-VVPHAivFw_JouhUB4CczJkgDyxCI5Yx?usp=sharing",
