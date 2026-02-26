@@ -32,8 +32,16 @@ export default function Certification({ theme }: CertificationProps) {
   }, []);
   const Certifications: Certification[] = [
     {
+      title: "Huma Volve",
+      date: "20/2/2026 - 5/12/2025",
+      img: "/images/huma.webp",
+      desc: "Practical training on real projects and simulations of the work environment and teamwork.",
+      demoLink:
+        "https://drive.google.com/drive/folders/1d_m0wAhjN1ZMxexNxSmh2bfrS-efKBLK",
+    },
+    {
       title: "NTI",
-      date: "31/8/25 - 25/9/25",
+      date: "31/8/2025 - 25/9/2025",
       img: "/images/nti.jpeg",
       desc: "Full Stack Web Development training with hands-on experience.",
       demoLink:
@@ -41,7 +49,7 @@ export default function Certification({ theme }: CertificationProps) {
     },
     {
       title: "Intern training",
-      date: "06/8/24 - 24/11/24",
+      date: "06/8/2024 - 24/11/2024",
       img: "/images/dtm.jpeg",
       desc: "Hands-on experience in modern full stack web development.",
       demoLink:
@@ -148,7 +156,9 @@ export default function Certification({ theme }: CertificationProps) {
           animation: borderLoop 3s linear infinite;
         }
         .project-card {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
         }
         .project-card:hover {
           transform: translateY(-6px);
