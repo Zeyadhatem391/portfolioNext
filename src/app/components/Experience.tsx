@@ -37,7 +37,7 @@ export default function Experience({ theme }: ExperienceProps) {
         {/* Cards  */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* CARD 1 */}
-          <div className="timeline-line"  data-aos="fade-up">
+          <div className="timeline-line" data-aos="fade-up">
             <div className="moving-line" />
             <div
               className={` card w-full p-5 rounded-xl border-2 ${borderColor} ${cardBg}
@@ -66,7 +66,7 @@ export default function Experience({ theme }: ExperienceProps) {
           </div>
 
           {/* CARD 2 */}
-          <div className="timeline-line"  data-aos="fade-up">
+          <div className="timeline-line" data-aos="fade-up">
             <div className="moving-line" />
 
             <div
@@ -90,6 +90,39 @@ export default function Experience({ theme }: ExperienceProps) {
                 React.js, gaining hands-on experience with APIs, databases, and
                 Git, and completed 120 hours of training in full stack
                 development.
+              </p>
+            </div>
+          </div>
+
+          {/* CARD 2 */}
+          <div className="timeline-line" data-aos="fade-up">
+            <div className="moving-line" />
+
+            <div
+              className={`card w-full p-5 rounded-xl border-2 ${borderColor} ${cardBg}
+              duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]
+            `}
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <Briefcase size={48} className="text-blue-600" />
+                <h3 className={`text-2xl font-bold ${textColor}`}>
+                  Huma Volve
+                </h3>
+              </div>
+
+              <div className="text-green-400 text-xl font-semibold mb-2">
+                19/2/2026 - 5/12/2025
+              </div>
+
+              <p className={`text-lg leading-relaxed ${textColor}`}>
+                Completed an intensive, fully practical Frontend Development
+                training focused on React.js and Next.js. Worked on real-world
+                projects within a team environment, gaining hands-on experience
+                with Git and GitHub workflows and collaborative development.
+                Collaborated with UI/UX engineers to convert designs into
+                responsive, production-ready applications and integrated
+                frontend interfaces with backend APIs, strengthening teamwork
+                and real project lifecycle experience.
               </p>
             </div>
           </div>

@@ -33,7 +33,7 @@ export default function Certification({ theme }: CertificationProps) {
   const Certifications: Certification[] = [
     {
       title: "Huma Volve",
-      date: "20/2/2026 - 5/12/2025",
+      date: "19/2/2026 - 5/12/2025",
       img: "/images/huma.webp",
       desc: "Practical training on real projects and simulations of the work environment and teamwork.",
       demoLink:
