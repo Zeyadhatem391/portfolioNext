@@ -17,6 +17,9 @@ interface Project {
   img: string;
   tech: string[];
   desc: string;
+  list?: {
+    [key: string]: string;
+  };
   demoLink?: string;
   githubLink?: string;
 }
@@ -38,10 +41,20 @@ export default function Projects({ theme }: ProjectsProps) {
       title: "PopFlix",
       subtitle: "Movies website",
       img: "/images/popflix.webp",
-      tech: ["JavaScript", "Bootstrap", "React", "Laravel", "MySQL"],
-      desc: "A full-featured movie discovery platform that allows users to explore, search, and save their favorite films with ease. The platform provides detailed movie information including cast members, ratings, trailers, and full descriptions. Users can also filter movies by release year, genre, and rating to quickly find exactly what they’re looking for. Designed to deliver a smooth and engaging browsing experience.",
-      demoLink: "https://popflix-ff5ab.web.app/",
-      githubLink: "https://github.com/Zeyadhatem391/Popfilex_React.git",
+      tech: ["Next.js", "React Query", "NextAuth", "Tailwind CSS", "Shadcn UI"],
+
+      desc: "A modern movie platform to explore films and actors with detailed information, search, filtering, and personalized features.",
+
+      list: {
+        1: "Browse trending and upcoming movies",
+        2: "View movie details (cast, ratings, trailers)",
+        3: "Actor pages with full filmography",
+        4: "Search for movies and actors",
+        5: "Authentication and favorites system",
+        6: "Responsive UI with Tailwind CSS and Shadcn UI",
+      },
+      demoLink: "https://popflix-tau.vercel.app/",
+      githubLink: "https://github.com/Zeyadhatem391/Popflix_Next",
     },
     {
       title: "Task Manager",
@@ -172,13 +185,27 @@ export default function Projects({ theme }: ProjectsProps) {
                   <div
                     className={`transition-all duration-500 overflow-hidden ${
                       openIndex === index
-                        ? "max-h-40 mt-4 opacity-100"
+                        ? "max-h-60 mt-4 opacity-100"
                         : "max-h-0 opacity-0"
                     }`}
                   >
+                    {/* Description */}
                     <p className={`text-sm leading-relaxed ${textColor}`}>
                       {project.desc}
                     </p>
+
+                    {/* List */}
+                    {project.list && (
+                      <ul
+                        className={`mt-3 space-y-1 text-sm leading-relaxed list-disc list-inside ${textColor}`}
+                      >
+                        {Object.values(project.list).map((item, i) => (
+                          <li key={i} className="opacity-90">
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </div>
               </div>
@@ -210,7 +237,9 @@ export default function Projects({ theme }: ProjectsProps) {
           animation: borderLoop 3s linear infinite;
         }
         .project-card {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
         }
         .project-card:hover {
           transform: translateY(-6px);
