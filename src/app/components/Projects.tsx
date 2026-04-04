@@ -41,7 +41,14 @@ export default function Projects({ theme }: ProjectsProps) {
       title: "PopFlix",
       subtitle: "Movies website",
       img: "/images/popflix.webp",
-      tech: ["Next.js", "React Query", "NextAuth", "Tailwind CSS", "Shadcn UI"],
+      tech: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "React Query",
+        "NextAuth",
+        "Shadcn UI",
+      ],
 
       desc: "A modern movie platform to explore films and actors with detailed information, search, filtering, and personalized features.",
 

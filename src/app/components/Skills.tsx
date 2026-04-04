@@ -24,6 +24,7 @@ import {
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { FaGlobe, FaShieldAlt } from "react-icons/fa";
 
 interface SkillsProps {
   theme?: "light" | "dark";
@@ -33,7 +34,9 @@ export default function Skills({ theme }: SkillsProps) {
   const bgPrimary = theme === "light" ? "bg-gray-100" : "bg-gray-900";
   const textColor = theme === "light" ? "text-gray-900" : "text-white";
   const cardBg = theme === "light" ? "bg-white" : "bg-gray-800";
-  const borderColor = theme === "light" ? "border-gray-300" : "border-gray-700";
+  const borderColor =
+    theme === "light" ? "border-gray-300" : "border-gray-700";
+
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -41,23 +44,17 @@ export default function Skills({ theme }: SkillsProps) {
       easing: "ease",
     });
   }, []);
-  // Skills categorized
+
   const skillsData = [
     {
       category: "Frontend",
       skills: [
-        { icon: <SiNextdotjs size={40} color="#61DAFB" />, name: "Next.js" },
+        { icon: <SiNextdotjs size={40} color="#000000" />, name: "Next.js" },
         { icon: <SiReact size={40} color="#61DAFB" />, name: "React" },
         { icon: <SiTailwindcss size={40} color="#38BDF8" />, name: "Tailwind" },
         { icon: <SiMui size={40} color="#007FFF" />, name: "Material UI" },
-        {
-          icon: <SiTypescript size={40} color="#3178C6" />,
-          name: "TypeScript",
-        },
-        {
-          icon: <SiJavascript size={40} color="#F7DF1E" />,
-          name: "JavaScript",
-        },
+        { icon: <SiTypescript size={40} color="#3178C6" />, name: "TypeScript" },
+        { icon: <SiJavascript size={40} color="#F7DF1E" />, name: "JavaScript" },
         { icon: <SiBootstrap size={40} color="#7952B3" />, name: "Bootstrap" },
         { icon: <SiThreedotjs size={40} color="#000000" />, name: "Three JS" },
       ],
@@ -88,16 +85,13 @@ export default function Skills({ theme }: SkillsProps) {
           icon: <SiReacthookform size={40} color="#EC5990" />,
           name: "React Hook Form",
         },
-        {
-          icon: <SiRedux size={40} color="#764ABC" />,
-          name: "redux toolkit",
-        },
+        { icon: <SiRedux size={40} color="#764ABC" />, name: "Redux Toolkit" },
         {
           icon: <SiReactquery size={40} color="#FF4154" />,
-          name: "Tanstack query",
+          name: "TanStack Query",
         },
-        { icon: <SiNextdotjs size={40} color="#000000" />, name: "Next Auth" },
-        { icon: <SiNextdotjs size={40} color="#4B5563" />, name: "Next Intl" },
+        { icon: <FaShieldAlt size={40} color="#6366F1" />, name: "Next Auth" },
+        { icon: <FaGlobe size={40} color="#10B981" />, name: "Next Intl" },
       ],
     },
   ];
@@ -107,7 +101,6 @@ export default function Skills({ theme }: SkillsProps) {
       className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary}`}
       id="skills"
     >
-      {/* Title */}
       <div className="text-center mb-14">
         <h2 className={`text-5xl font-bold mb-4 ${textColor}`}>Skills</h2>
         <p className={`text-lg opacity-70 ${textColor}`}>
@@ -116,32 +109,39 @@ export default function Skills({ theme }: SkillsProps) {
         <div className="w-28 h-1 mx-auto mt-4 bg-blue-600 rounded-full"></div>
       </div>
 
-      {/* Skills Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {skillsData.map((category) => (
           <div
             key={category.category}
-            className={`
-              relative p-6 rounded-2xl border-2 ${borderColor} ${cardBg} overflow-hidden
-              group transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]
-            `}
+            className={`relative p-6 rounded-2xl border-2 ${borderColor} ${cardBg} overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]`}
             data-aos="fade-up"
           >
-            {/* Border Animation Loop */}
             <span className="absolute inset-0 border-2 border-blue-500 rounded-2xl animate-borderLoop pointer-events-none"></span>
 
-            {/* Category Title */}
             <h3 className={`text-3xl font-bold mb-5 ${textColor}`}>
               {category.category}
             </h3>
 
-            {/* Skills Grid */}
             <div className="grid grid-cols-3 gap-6">
               {category.skills.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex flex-col items-center gap-2 cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-[0_0_12px_rgba(37,99,235,0.4)]"
+                  className="relative flex flex-col items-center group cursor-pointer transition-all duration-300 hover:scale-110"
                 >
+                  {/* Tooltip */}
+                  <span
+                    className={`
+                      absolute -top-10 px-3 py-1 text-sm rounded-md
+                      bg-black text-white whitespace-nowrap
+                      opacity-0 translate-y-2
+                      group-hover:opacity-100 group-hover:translate-y-0
+                      transition-all duration-300
+                      pointer-events-none
+                    `}
+                  >
+                    {skill.name}
+                  </span>
+
                   {skill.icon}
                 </div>
               ))}
@@ -150,7 +150,6 @@ export default function Skills({ theme }: SkillsProps) {
         ))}
       </div>
 
-      {/* Border Animation Keyframes */}
       <style>
         {`
           @keyframes borderLoop {

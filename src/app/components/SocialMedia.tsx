@@ -7,6 +7,7 @@ import {
   FaLinkedinIn,
   FaPlus,
   FaTimes,
+  FaGithub,
 } from "react-icons/fa";
 
 interface SocialMediaProps {
@@ -17,10 +18,31 @@ export default function SocialMedia({ theme }: SocialMediaProps) {
   const [open, setOpen] = useState(false);
 
   const icons = [
-    { icon: <FaFacebookF />, link: "https://www.facebook.com/share/19wmyZPHU6/?mibextid=wwXIfr", bg: "#1877F2" },
-    { icon: <FaInstagram />, link: "https://www.instagram.com/zeyad_hatme", bg: "#E1306C" },
-    { icon: <FaWhatsapp />, link: "https://wa.me/+201112079745", bg: "#25D366" },
-    { icon: <FaLinkedinIn />, link: "https://www.linkedin.com/in/zeyad-hatem-b95034340", bg: "#0A66C2" },
+    {
+      icon: <FaFacebookF />,
+      link: "https://www.facebook.com/share/19wmyZPHU6/?mibextid=wwXIfr",
+      bg: "#1877F2",
+    },
+    {
+      icon: <FaInstagram />,
+      link: "https://www.instagram.com/zeyad_hatme",
+      bg: "#E1306C",
+    },
+    {
+      icon: <FaWhatsapp />,
+      link: "https://wa.me/+201112079745",
+      bg: "#25D366",
+    },
+    {
+      icon: <FaLinkedinIn />,
+      link: "https://www.linkedin.com/in/zeyad-hatem-b95034340",
+      bg: "#0A66C2",
+    },
+    {
+      icon: <FaGithub />,
+      link: "https://github.com/Zeyadhatem391",
+      bg: "#181717",
+    },
   ];
 
   const themeClasses =
@@ -52,8 +74,8 @@ export default function SocialMedia({ theme }: SocialMediaProps) {
       <div className="md:hidden fixed right-6 bottom-20 z-50">
         <div className="relative w-12 h-12">
           {icons.map((item, index) => {
-            const angle = (index / (icons.length - 1)) * (Math.PI / 2);
-            const radius = open ? 80 : 0;
+            const angle = (index / (icons.length - 1.5)) * (Math.PI / 2);
+            const radius = open ? 85 : 0;
 
             const x = Math.cos(angle + Math.PI) * radius;
             const y = Math.sin(angle + Math.PI) * radius;
