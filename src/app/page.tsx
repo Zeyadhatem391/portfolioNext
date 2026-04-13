@@ -15,6 +15,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import ModeSwitcher from "./components/ModeSwitcher";
 import CustomCursor from "./components/CustomCursor";
 import StarsBackground from "./components/StarsBackground";
+import WorkFlow from "./components/WorkFlow";
 
 export default function Home() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
@@ -36,6 +37,7 @@ export default function Home() {
       <Certification theme={theme} />
       <Skills theme={theme} />
       <Projects theme={theme} />
+      <WorkFlow theme={theme} />
       <Contact theme={theme} />
       <Footer theme={theme} />
       <SocialMedia theme={theme} />

@@ -1,7 +1,7 @@
 import { Briefcase } from "lucide-react";
 import { useEffect } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css";
+
 
 interface ExperienceProps {
   theme?: "light" | "dark";

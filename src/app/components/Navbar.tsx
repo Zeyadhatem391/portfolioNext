@@ -15,6 +15,7 @@ export default function Navbar({ theme }: NavbarProps) {
     { name: "Cer", path: "#certification" },
     { name: "Skills", path: "#skills" },
     { name: "Projects", path: "#projects" },
+    { name: "Articles", path: "#articles" },
     { name: "Contact", path: "#contact" },
   ];
 
