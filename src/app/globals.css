@@ -1,4 +1,93 @@
 @import "tailwindcss";
+@import"../style/variables.css";
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+
+  /* ================= BACKGROUND ================= */
+  .ds-bg-primary {
+    background-color: var(--color-bg-primary);
+  }
+
+  .ds-bg-alt {
+    background-color: var(--color-bg-alt);
+  }
+
+  .ds-bg-form {
+    background-color: var(--color-bg-form);
+  }
+
+  /* ================= COLORS ================= */
+  .ds-text-primary {
+    color: var(--color-text-primary);
+  }
+
+  .ds-text-alt {
+    color: var(--color-text-alt);
+  }
+
+  .ds-text-secondary {
+    color: var(--color-text-secondary);
+  }
+
+  .ds-text-base {
+    color: var(--color-text-base);
+  }
+
+  /* ================= TYPOGRAPHY ================= */
+  .ds-text-sm {
+    font-size: var(--text-sm);
+  }
+
+  .ds-text-base {
+    font-size: var(--text-base);
+  }
+
+  .ds-text-lg {
+    font-size: var(--text-lg);
+  }
+
+  .ds-text-xl {
+    font-size: var(--text-xl);
+  }
+
+  .ds-text-2xl {
+    font-size: var(--text-2xl);
+  }
+
+  .ds-text-3xl {
+    font-size: var(--text-3xl);
+  }
+
+  .ds-text-4xl {
+    font-size: var(--text-4xl);
+  }
+
+  .ds-text-5xl {
+    font-size: var(--text-5xl);
+  }
+
+  .ds-font-regular {
+    font-weight: var(--font-regular);
+  }
+
+  .ds-font-bold {
+    font-weight: var(--font-bold);
+  }
+
+  /* border */
+  .ds-border-color {
+    border-color: var(--border-color);
+  }
+}
 
 
 /* hrro */
@@ -200,9 +289,11 @@
     transform: translateY(0);
     opacity: 0;
   }
+
   15% {
     opacity: 1;
   }
+
   100% {
     transform: translateY(110vh);
     opacity: 0;

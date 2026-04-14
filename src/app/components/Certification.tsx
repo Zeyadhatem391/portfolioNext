@@ -2,27 +2,14 @@
 import Image from "next/image";
 import { useEffect } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { Certifications } from "@/data/certificates";
 
 import AOS from "aos";
+import AddressSection from "@/components/molecules/AddressSection";
+import Title from "@/components/atoms/Title";
+import Text from "@/components/atoms/Text";
 
-
-interface CertificationProps {
-  theme?: "light" | "dark";
-}
-
-interface Certification {
-  title: string;
-  date: string;
-  img: string;
-  desc: string;
-  demoLink?: string;
-}
-
-export default function Certification({ theme }: CertificationProps) {
-  const bgPrimary = theme === "light" ? "bg-gray-100" : "bg-gray-900";
-  const textColor = theme === "light" ? "text-gray-900" : "text-white";
-  const cardBg = theme === "light" ? "bg-white" : "bg-gray-800";
-  const borderColor = theme === "light" ? "border-gray-300" : "border-gray-700";
+export default function Certification() {
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -30,49 +17,18 @@ export default function Certification({ theme }: CertificationProps) {
       easing: "ease",
     });
   }, []);
-  const Certifications: Certification[] = [
-    {
-      title: "Huma Volve",
-      date: "19/2/2026 - 5/12/2025",
-      img: "/images/huma.webp",
-      desc: "Practical training on real projects and simulations of the work environment and teamwork.",
-      demoLink:
-        "https://drive.google.com/drive/folders/1d_m0wAhjN1ZMxexNxSmh2bfrS-efKBLK",
-    },
-    {
-      title: "NTI",
-      date: "31/8/2025 - 25/9/2025",
-      img: "/images/nti.webp",
-      desc: "Full Stack Web Development training with hands-on experience.",
-      demoLink:
-        "https://drive.google.com/drive/folders/1uRaLfSiZY_RVPGxgPCZ-cVCXTyij2bU4?usp=sharing",
-    },
-    {
-      title: "Intern training",
-      date: "06/8/2024 - 24/11/2024",
-      img: "/images/dtm.webp",
-      desc: "Hands-on experience in modern full stack web development.",
-      demoLink:
-        "https://drive.google.com/drive/folders/1-VVPHAivFw_JouhUB4CczJkgDyxCI5Yx?usp=sharing",
-    },
-  ];
 
   return (
     <>
       <section
-        className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary}`}
+        className="w-full min-h-screen px-6 md:px-28 py-16 "
         id="certification"
       >
         {/* Title */}
-        <div className="text-center mb-14">
-          <h2 className={`text-5xl font-bold mb-4 ${textColor}`}>
-            Certifications
-          </h2>
-          <p className={`text-lg opacity-70 ${textColor}`}>
-            Certificates that reflect dedication and growth
-          </p>
-          <div className="w-28 h-1 mx-auto mt-4 bg-blue-600 rounded-full"></div>
-        </div>
+        <AddressSection
+          titel="Certifications"
+          text="Certificates that reflect dedication and growth"
+        />
 
         {/* Certification Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 place-items-center">
@@ -86,7 +42,7 @@ export default function Certification({ theme }: CertificationProps) {
               <div className="absolute inset-0 rounded-xl border-2 border-blue-600 animate-borderLoop pointer-events-none"></div>
 
               <div
-                className={`rounded-xl overflow-hidden shadow-lg border ${borderColor} ${cardBg} project-card`}
+                className={`rounded-xl overflow-hidden shadow-lg border ds-border-color ds-bg-alt project-card`}
               >
                 {/* Image */}
                 <div className="relative w-full h-48 overflow-hidden">
@@ -109,22 +65,20 @@ export default function Certification({ theme }: CertificationProps) {
                 <div className="p-6 relative">
                   {/* Title + Arrow */}
                   <div className="flex items-center justify-between cursor-pointer">
-                    <h3 className={`text-2xl font-semibold ${textColor}`}>
+                    <Title className="font-semibold" size="2xl">
                       {Certification.title}
-                    </h3>
+                    </Title>
                   </div>
 
-                  <p className={`mt-1 opacity-70 ${textColor}`}>
-                    {Certification.date}
-                  </p>
+                  <Text className="mt-1 opacity-70">{Certification.date}</Text>
 
                   {/* Description */}
                   <div
                     className={`transition-all duration-500 overflow-hidden `}
                   >
-                    <p className={`text-sm leading-relaxed ${textColor}`}>
+                    <Text size="sm" variant="base" className=" leading-relaxed">
                       {Certification.desc}
-                    </p>
+                    </Text>
                   </div>
                 </div>
               </div>

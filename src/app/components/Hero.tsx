@@ -1,23 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Text from "@/components/atoms/Text";
+import Title from "@/components/atoms/Title";
+import Portfolio from "@/assets/images/Portfolio.webp";
+import HeroSection from "@/assets/images/hero-bg.webp";
 
-interface HeroProps {
-  theme?: "light" | "dark";
-}
-
-export default function Hero({ theme }: HeroProps) {
-  const bgPrimary = theme === "light" ? "bg-gray-100" : "bg-gray-900";
-  const textColor = theme === "light" ? "text-gray-900" : "text-white";
-  const btnPrimary =
-    theme === "light"
-      ? "bg-blue-600 text-white hover:bg-blue-700"
-      : "bg-blue-500 text-white hover:bg-blue-600";
-  const btnOutline =
-    theme === "light"
-      ? "border border-blue-600 text-blue-600 hover:bg-blue-50"
-      : "border border-blue-500 text-blue-500 hover:bg-gray-700";
-
+export default function Hero() {
   const phrases = ["Full Stack Developer", "Web Developer", "Computer Science"];
   const [currentPhrase, setCurrentPhrase] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
@@ -33,9 +22,12 @@ export default function Hero({ theme }: HeroProps) {
       if (charIndex === current.length) clearInterval(typeInterval);
     }, 150);
 
-    const changePhraseTimeout = setTimeout(() => {
-      setCurrentPhrase((prev) => (prev + 1) % phrases.length);
-    }, current.length * 150 + 1000);
+    const changePhraseTimeout = setTimeout(
+      () => {
+        setCurrentPhrase((prev) => (prev + 1) % phrases.length);
+      },
+      current.length * 150 + 1000,
+    );
 
     return () => {
       clearInterval(typeInterval);
@@ -45,10 +37,10 @@ export default function Hero({ theme }: HeroProps) {
 
   return (
     <div
-      className={`w-full min-h-screen flex flex-col lg:flex-row items-center lg:items-stretch  ${bgPrimary} pt-15 relative bg-cover bg-center bg-no-repeat`}
+      className="w-full min-h-screen flex flex-col lg:flex-row items-center lg:items-stretch   pt-15 relative bg-cover bg-center bg-no-repeat"
       id="home"
       style={{
-        backgroundImage: "url('/images/hero-bg.webp')",
+        backgroundImage: `url(${HeroSection.src})`,
       }}
     >
       {/* صورة */}
@@ -57,7 +49,7 @@ export default function Hero({ theme }: HeroProps) {
       >
         <div className="relative w-full max-w-md h-[400px] md:h-[500px]">
           <Image
-            src="/images/Portfolio.webp"
+            src={Portfolio}
             alt="zeyad hatem"
             fill
             className="object-contain rounded-lg "
@@ -69,26 +61,26 @@ export default function Hero({ theme }: HeroProps) {
       <div
         className={`w-full lg:w-1/2  p-8 md:p-16 flex flex-col justify-center order-last lg:order-first`}
       >
-        <h1 className={`text-4xl md:text-5xl font-bold mb-4 ${textColor}`}>
+        <Title size="5xl" className="font-bold mb-4">
           Hi, I&apos;m <span className="text-blue-600">Zeyad Hatem</span>
-        </h1>
-        <h2 className={`text-2xl md:text-4xl font-semibold mb-6 ${textColor}`}>
+        </Title>
+        <Title size="4xl" className="font-semibold mb-6 ">
           {displayedText}
           <span className="blinking-cursor">|</span>
-        </h2>
-        <p className={`mb-8 text-lg md:text-xl ${textColor}`}>
+        </Title>
+        <Text size="xl" className="mb-8">
           Passionate Computer Science Developer crafting efficient,
           user-friendly web applications that make a real impact.
-        </p>
+        </Text>
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
           <a
-            className={`py-4 px-8 rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105 text-center ${btnPrimary}`}
+            className="py-4 px-8 rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105 text-center bg-blue-600 text-white hover:bg-blue-700 "
             href="#contact"
           >
             Contact me
           </a>
           <a
-            className={`py-4 px-8 rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105 text-center ${btnOutline}`}
+            className="py-4 px-8 rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105 text-center border border-blue-600 text-blue-600 hover:bg-blue-50"
             href="#projects"
           >
             Latest Works

@@ -1,18 +1,9 @@
+import Text from "@/components/atoms/Text";
+import Title from "@/components/atoms/Title";
+import AddressSection from "@/components/molecules/AddressSection";
 import Link from "next/link";
 
-interface WorkFlowProps {
-  theme?: "light" | "dark";
-}
-
-export default function WorkFlow({ theme }: WorkFlowProps) {
-  const isLight = theme === "light";
-
-  const sectionBg = isLight ? "bg-white" : "bg-gray-900";
-  const textPrimary = isLight ? "text-gray-900" : "text-white";
-  const textSecondary = isLight ? "text-gray-600" : "text-gray-400";
-  const cardBg = isLight ? "bg-white" : "bg-gray-800";
-  const borderColor = isLight ? "border-gray-200" : "border-gray-800";
-
+export default function WorkFlow() {
   const articles = [
     {
       title: "Git Flow",
@@ -32,50 +23,45 @@ export default function WorkFlow({ theme }: WorkFlowProps) {
   ];
 
   return (
-    <section className={`w-full min-h-screen px-6 md:px-28 py-20 ${sectionBg}`} id="articles">
+    <section className="w-full min-h-screen px-6 md:px-28 py-20 " id="articles">
       {/* Title */}
-      <div className="text-center mb-16">
-        <h2 className={`text-4xl md:text-5xl font-bold ${textPrimary}`}>
-          Engineering Articles
-        </h2>
-        <p className={`mt-4 text-lg ${textSecondary}`}>
-          Deep dives into workflow, architecture, and frontend systems
-        </p>
-        <div className="w-24 h-1 mx-auto mt-6 bg-blue-600 rounded-full"></div>
-      </div>
+      <AddressSection
+        titel="Engineering Articles"
+        text="Deep dives into workflow, architecture, and frontend systems"
+      />
 
       {/* Articles Grid */}
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         {articles.map((article) => (
           <div
             key={article.slug}
-            className={`rounded-2xl border ${borderColor} ${cardBg} p-8 shadow-md hover:shadow-xl transition duration-300`}
+            className={`rounded-2xl border ds-border-color ds-bg-alt p-8 shadow-md hover:shadow-xl transition duration-300`}
           >
             {/* Title Row */}
             <div className="flex justify-between items-center mb-4">
-              <h3 className={`text-xl font-semibold ${textPrimary}`}>
+              <Title size="xl" className="font-semibold">
                 {article.title}
-              </h3>
+              </Title>
 
               <Link
                 href={`/articles/#${article.slug}`}
-                className={`text-2xl ${textSecondary} hover:translate-x-2 transition`}
+                className={`text-2xl  hover:translate-x-2 transition`}
               >
                 →
               </Link>
             </div>
 
             {/* Description */}
-            <p className={`text-sm ${textSecondary} mb-6`}>
+            <Text size="sm" className="mb-6">
               Read detailed explanation and personal insights about{" "}
               {article.title}.
-            </p>
+            </Text>
 
             {/* Buttons */}
             <div className="flex gap-4">
               {/* Read Article */}
               <Link
-                href={`/articles/${article.slug}`}
+                href={`/articles/#${article.slug}`}
                 className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition"
               >
                 Read Article
@@ -86,7 +72,7 @@ export default function WorkFlow({ theme }: WorkFlowProps) {
                 href={article.docLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`px-4 py-2 text-sm rounded-lg border ${borderColor} ${textPrimary} hover:bg-blue-600 hover:text-white transition`}
+                className={`px-4 py-2 text-sm rounded-lg border ds-border-color ds-text-base hover:bg-blue-600 hover:text-white transition`}
               >
                 Documentation
               </a>

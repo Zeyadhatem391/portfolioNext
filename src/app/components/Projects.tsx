@@ -3,32 +3,14 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
+import { projects } from "@/data/projects";
 
 import AOS from "aos";
-import "aos/dist/aos.css";
+import AddressSection from "@/components/molecules/AddressSection";
+import Title from "@/components/atoms/Title";
+import Text from "@/components/atoms/Text";
 
-interface ProjectsProps {
-  theme?: "light" | "dark";
-}
-
-interface Project {
-  title: string;
-  subtitle: string;
-  img: string;
-  tech: string[];
-  desc: string;
-  list?: {
-    [key: string]: string;
-  };
-  demoLink?: string;
-  githubLink?: string;
-}
-
-export default function Projects({ theme }: ProjectsProps) {
-  const bgPrimary = theme === "light" ? "bg-gray-100" : "bg-gray-900";
-  const textColor = theme === "light" ? "text-gray-900" : "text-white";
-  const cardBg = theme === "light" ? "bg-white" : "bg-gray-800";
-  const borderColor = theme === "light" ? "border-gray-300" : "border-gray-700";
+export default function Projects() {
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -36,61 +18,6 @@ export default function Projects({ theme }: ProjectsProps) {
       easing: "ease",
     });
   }, []);
-  const projects: Project[] = [
-    {
-      title: "PopFlix",
-      subtitle: "Movies website",
-      img: "/images/popflix.webp",
-      tech: [
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "React Query",
-        "NextAuth",
-        "Shadcn UI",
-      ],
-
-      desc: "A modern movie platform to explore films and actors with detailed information, search, filtering, and personalized features.",
-
-      list: {
-        1: "Browse trending and upcoming movies",
-        2: "View movie details (cast, ratings, trailers)",
-        3: "Actor pages with full filmography",
-        4: "Search for movies and actors",
-        5: "Authentication and favorites system",
-        6: "Responsive UI with Tailwind CSS and Shadcn UI",
-      },
-      demoLink: "https://popflix-tau.vercel.app/",
-      githubLink: "https://github.com/Zeyadhatem391/Popflix_Next",
-    },
-    {
-      title: "Task Manager",
-      subtitle: "Web Application",
-      img: "/images/task_m.webp",
-      tech: ["TypeScript", "TailwindCSS", "Next.js", "Laravel", "MySQL"],
-      desc: "Another project built with TypeScript and modern UI/UX patterns.",
-      demoLink: "https://task-manager-eight-gray.vercel.app/",
-      githubLink: "https://github.com/Zeyadhatem391/task_manager",
-    },
-    {
-      title: "Portfolio",
-      subtitle: "Old Portfolio",
-      img: "/images/old-portfolio.jpg",
-      tech: ["HTML", "CSS", "Bootstrap", "JavaScript", "React.js"],
-      desc: "Responsive web application built with HTML, CSS, Bootstrap, JavaScript, and React.js, showcasing interactive UI components and modern frontend development skills.",
-      demoLink: "https://portfolio-88fc5.web.app/",
-      githubLink: "https://github.com/Zeyadhatem391/portfolio_old",
-    },
-    {
-      title: "Faster",
-      subtitle: "NTI Task",
-      img: "/images/faster.webp",
-      tech: ["HTML", "CSS", "Bootstrap", "Responsive"],
-      desc: "A responsive frontend web project developed as part of the NTI Full Stack Web Development training.The project was built using HTML, CSS, and Bootstrap, focusing on clean UI design, responsive layouts, and proper code structure.",
-      demoLink: "https://zeyadhatem391.github.io/NTI_Faster/",
-      githubLink: "https://github.com/Zeyadhatem391/NTI_Faster",
-    },
-  ];
 
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -101,17 +28,14 @@ export default function Projects({ theme }: ProjectsProps) {
   return (
     <>
       <section
-        className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary}`}
+        className="w-full min-h-screen px-6 md:px-28 py-16 "
         id="projects"
       >
         {/* Title */}
-        <div className="text-center mb-14">
-          <h2 className={`text-5xl font-bold mb-4 ${textColor}`}>Projects</h2>
-          <p className={`text-lg opacity-70 ${textColor}`}>
-            Building projects that make an impact
-          </p>
-          <div className="w-28 h-1 mx-auto mt-4 bg-blue-600 rounded-full"></div>
-        </div>
+        <AddressSection
+          titel="Projects"
+          text="Building projects that make an impact"
+        />
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-center">
@@ -125,7 +49,7 @@ export default function Projects({ theme }: ProjectsProps) {
               <div className="absolute inset-0 rounded-xl border-2 border-blue-600 animate-borderLoop pointer-events-none"></div>
 
               <div
-                className={`rounded-xl overflow-hidden shadow-lg border ${borderColor} ${cardBg} project-card`}
+                className={`rounded-xl overflow-hidden shadow-lg border ds-border-color ds-bg-alt project-card`}
               >
                 {/* Image */}
                 <div className="relative w-full h-56 overflow-hidden">
@@ -143,9 +67,9 @@ export default function Projects({ theme }: ProjectsProps) {
                     className="flex items-center justify-between cursor-pointer"
                     onClick={() => toggleProject(index)}
                   >
-                    <h3 className={`text-2xl font-semibold ${textColor}`}>
+                    <Title size="2xl" className="font-semibold">
                       {project.title}
-                    </h3>
+                    </Title>
                     <FiChevronDown
                       className={`text-3xl text-blue-500 transition-transform duration-300 ${
                         openIndex === index ? "rotate-180" : ""
@@ -153,9 +77,7 @@ export default function Projects({ theme }: ProjectsProps) {
                     />
                   </div>
 
-                  <p className={`mt-1 opacity-70 ${textColor}`}>
-                    {project.subtitle}
-                  </p>
+                  <Text className="mt-1 opacity-70">{project.subtitle}</Text>
 
                   {/* Tech Stack */}
                   <div className="mt-3 flex flex-wrap gap-2">
@@ -197,15 +119,13 @@ export default function Projects({ theme }: ProjectsProps) {
                     }`}
                   >
                     {/* Description */}
-                    <p className={`text-sm leading-relaxed ${textColor}`}>
+                    <Text size="sm" className="leading-relaxed">
                       {project.desc}
-                    </p>
+                    </Text>
 
                     {/* List */}
                     {project.list && (
-                      <ul
-                        className={`mt-3 space-y-1 text-sm leading-relaxed list-disc list-inside ${textColor}`}
-                      >
+                      <ul className="mt-3 space-y-1 text-sm leading-relaxed list-disc list-inside ds-text-base">
                         {Object.values(project.list).map((item, i) => (
                           <li key={i} className="opacity-90">
                             {item}

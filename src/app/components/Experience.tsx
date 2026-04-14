@@ -1,17 +1,12 @@
 import { Briefcase } from "lucide-react";
 import { useEffect } from "react";
+import { experiences } from "@/data/experience";
 import AOS from "aos";
+import AddressSection from "@/components/molecules/AddressSection";
+import Title from "@/components/atoms/Title";
+import Text from "@/components/atoms/Text";
 
-
-interface ExperienceProps {
-  theme?: "light" | "dark";
-}
-
-export default function Experience({ theme }: ExperienceProps) {
-  const bgPrimary = theme === "light" ? "bg-gray-100" : "bg-gray-900";
-  const textColor = theme === "light" ? "text-gray-900" : "text-white";
-  const cardBg = theme === "light" ? "bg-white" : "bg-gray-800";
-  const borderColor = theme === "light" ? "border-gray-300" : "border-gray-600";
+export default function Experience() {
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -22,110 +17,42 @@ export default function Experience({ theme }: ExperienceProps) {
   return (
     <>
       <section
-        className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary}`}
+        className="w-full min-h-screen px-6 md:px-28 py-16 "
         id="experience"
       >
         {/* Title */}
-        <div className="text-center mb-14">
-          <h2 className={`text-5xl font-bold mb-4 ${textColor}`}>Experience</h2>
-          <p className={`text-lg opacity-70 ${textColor}`}>
-            Turning challenges into achievements
-          </p>
-          <div className="w-28 h-1 mx-auto mt-4 bg-blue-600 rounded-full"></div>
-        </div>
+        <AddressSection
+          titel="Experience"
+          text="Turning challenges into achievements"
+        />
 
         {/* Cards  */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* CARD 1 */}
-          <div className="timeline-line" data-aos="fade-up">
-            <div className="moving-line" />
-            <div
-              className={` card w-full p-5 rounded-xl border-2 ${borderColor} ${cardBg}
+          {experiences.map((experience, index) => (
+            <div className="timeline-line" data-aos="fade-up" key={index}>
+              <div className="moving-line" />
+              <div
+                className={` card w-full p-5 rounded-xl border-2 ds-border-color ds-bg-alt
                duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]
               `}
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <Briefcase size={48} className="text-blue-600" />
-                <h3 className={`text-2xl font-bold ${textColor}`}>
-                  National Telecommunications Institute (NTI)
-                </h3>
-              </div>
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <Briefcase size={48} className="text-blue-600" />
+                  <Title size="2xl" className="font-bold">
+                    {experience.title}
+                  </Title>
+                </div>
 
-              <div className="text-green-400 text-xl font-semibold mb-2">
-                31/8/25 - 25/9/25
-              </div>
+                <div className="text-green-400 text-xl font-semibold mb-2">
+                  {experience.date}
+                </div>
 
-              <p className={`text-lg leading-relaxed ${textColor}`}>
-                Pleted 120 hours of intensive Full Stack Web Development
-                training, focusing on frontend and Laravel for backend. Gained
-                practical experience in building and deploying full-stack
-                applications, covering both frontend design and backend API
-                development with database integration.
-              </p>
+                <Text size="lg" className="leading-relaxed">
+                  {experience.desc}
+                </Text>
+              </div>
             </div>
-          </div>
-
-          {/* CARD 2 */}
-          <div className="timeline-line" data-aos="fade-up">
-            <div className="moving-line" />
-
-            <div
-              className={`card w-full p-5 rounded-xl border-2 ${borderColor} ${cardBg}
-              duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]
-            `}
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <Briefcase size={48} className="text-blue-600" />
-                <h3 className={`text-2xl font-bold ${textColor}`}>
-                  Intern at digital training center in Mansura university
-                </h3>
-              </div>
-
-              <div className="text-green-400 text-xl font-semibold mb-2">
-                06/8/24 - 24/11/24
-              </div>
-
-              <p className={`text-lg leading-relaxed ${textColor}`}>
-                Built full web applications using HTML, CSS, JavaScript, and
-                React.js, gaining hands-on experience with APIs, databases, and
-                Git, and completed 120 hours of training in full stack
-                development.
-              </p>
-            </div>
-          </div>
-
-          {/* CARD 2 */}
-          <div className="timeline-line" data-aos="fade-up">
-            <div className="moving-line" />
-
-            <div
-              className={`card w-full p-5 rounded-xl border-2 ${borderColor} ${cardBg}
-              duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]
-            `}
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <Briefcase size={48} className="text-blue-600" />
-                <h3 className={`text-2xl font-bold ${textColor}`}>
-                  Huma Volve
-                </h3>
-              </div>
-
-              <div className="text-green-400 text-xl font-semibold mb-2">
-                19/2/2026 - 5/12/2025
-              </div>
-
-              <p className={`text-lg leading-relaxed ${textColor}`}>
-                Completed an intensive, fully practical Frontend Development
-                training focused on React.js and Next.js. Worked on real-world
-                projects within a team environment, gaining hands-on experience
-                with Git and GitHub workflows and collaborative development.
-                Collaborated with UI/UX engineers to convert designs into
-                responsive, production-ready applications and integrated
-                frontend interfaces with backend APIs, strengthening teamwork
-                and real project lifecycle experience.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
     </>

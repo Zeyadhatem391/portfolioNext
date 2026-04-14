@@ -31,15 +31,15 @@ export default function Home() {
     <>
       <StarsBackground theme={theme} />
       <Navbar theme={theme} />
-      <Hero theme={theme} />
-      <About theme={theme} />
-      <Experience theme={theme} />
-      <Certification theme={theme} />
-      <Skills theme={theme} />
-      <Projects theme={theme} />
-      <WorkFlow theme={theme} />
-      <Contact theme={theme} />
-      <Footer theme={theme} />
+      <Hero />
+      <About />
+      <Experience />
+      <Certification  />
+      <Skills />
+      <Projects />
+      <WorkFlow />
+      <Contact />
+      <Footer />
       <SocialMedia theme={theme} />
       <ScrollToTop theme={theme} />
       <ModeSwitcher theme={theme} onToggle={handleModeChange} />

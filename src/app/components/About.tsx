@@ -1,33 +1,27 @@
-interface AboutProps {
-  theme?: "light" | "dark";
-}
+import AddressSection from "@/components/molecules/AddressSection";
 
-export default function About({ theme }: AboutProps) {
-  const bgPrimary = theme === "light" ? "bg-gray-100" : "bg-gray-900";
-  const textColor = theme === "light" ? "text-gray-900" : "text-white";
-
+export default function About() {
+ 
   return (
     <>
       <section
-        className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary} `}
+        className="w-full min-h-screen px-6 md:px-28 py-16 ds-text-base"
         id="about"
       >
         {/* Title */}
-        <div className="text-center mb-14">
-          <h2 className={`text-5xl font-bold mb-4 ${textColor}`}>About</h2>
-          <p className={`text-lg opacity-70 ${textColor}`}>
-            Crafting ideas into real experiences
-          </p>
-          <div className="w-28 h-1 mx-auto mt-4 bg-blue-600 rounded-full"></div>
-        </div>
+        <AddressSection
+          titel="About"
+          text="Crafting ideas into real experiences"
+        />
+
         {/* Description */}
-        <div className="mb-10">
-          <p className={`mb-5 text-3xl font-bold ${textColor}`}>
+        <div className="mb-10 ">
+          <p className="mb-5 text-3xl font-bold ">
             I&apos;m Zeyad Hatem and{" "}
             <span className="text-blue-600">Web Developer</span>
           </p>
 
-          <p className={`text-xl leading-relaxed ${textColor}`}>
+          <p className="text-xl leading-relaxed ">
             Beyond my technical expertise, I bring strong soft skills including
             problem-solving, self-learning, teamwork, time management, attention
             to detail, and adaptability. These abilities enable me to excel in
@@ -38,44 +32,32 @@ export default function About({ theme }: AboutProps) {
 
         {/* Info */}
         <div className="mb-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div
-            className={`pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ${textColor}`}
-          >
+          <div className="pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ">
             <span className="font-bold">Email : </span>
             zeyadhatem151177@gmail.com
           </div>
 
-          <div
-            className={`pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ${textColor}`}
-          >
+          <div className="pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ">
             <span className="font-bold">Education : </span>
             Computer Science
           </div>
 
-          <div
-            className={`pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ${textColor}`}
-          >
+          <div className="pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ">
             <span className="font-bold">Phone : </span>
             01112079745
           </div>
 
-          <div
-            className={`pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ${textColor}`}
-          >
+          <div className="pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ">
             <span className="font-bold">Nationality : </span>
             Egyptian
           </div>
 
-          <div
-            className={`pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ${textColor}`}
-          >
+          <div className="pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ">
             <span className="font-bold">City : </span>
             Mansoura
           </div>
 
-          <div
-            className={`pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ${textColor}`}
-          >
+          <div className="pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ">
             <span className="font-bold">Languages : </span>
             Arabic, English
           </div>

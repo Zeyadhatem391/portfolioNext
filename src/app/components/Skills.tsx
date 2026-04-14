@@ -23,19 +23,14 @@ import {
 
 import { useEffect } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css";
 import { FaGlobe, FaShieldAlt } from "react-icons/fa";
+import AddressSection from "@/components/molecules/AddressSection";
+import Title from "@/components/atoms/Title";
 
-interface SkillsProps {
-  theme?: "light" | "dark";
-}
 
-export default function Skills({ theme }: SkillsProps) {
-  const bgPrimary = theme === "light" ? "bg-gray-100" : "bg-gray-900";
-  const textColor = theme === "light" ? "text-gray-900" : "text-white";
-  const cardBg = theme === "light" ? "bg-white" : "bg-gray-800";
-  const borderColor =
-    theme === "light" ? "border-gray-300" : "border-gray-700";
+
+export default function Skills() {
+  
 
   useEffect(() => {
     AOS.init({
@@ -53,8 +48,14 @@ export default function Skills({ theme }: SkillsProps) {
         { icon: <SiReact size={40} color="#61DAFB" />, name: "React" },
         { icon: <SiTailwindcss size={40} color="#38BDF8" />, name: "Tailwind" },
         { icon: <SiMui size={40} color="#007FFF" />, name: "Material UI" },
-        { icon: <SiTypescript size={40} color="#3178C6" />, name: "TypeScript" },
-        { icon: <SiJavascript size={40} color="#F7DF1E" />, name: "JavaScript" },
+        {
+          icon: <SiTypescript size={40} color="#3178C6" />,
+          name: "TypeScript",
+        },
+        {
+          icon: <SiJavascript size={40} color="#F7DF1E" />,
+          name: "JavaScript",
+        },
         { icon: <SiBootstrap size={40} color="#7952B3" />, name: "Bootstrap" },
         { icon: <SiThreedotjs size={40} color="#000000" />, name: "Three JS" },
       ],
@@ -97,31 +98,18 @@ export default function Skills({ theme }: SkillsProps) {
   ];
 
   return (
-    <section
-      className={`w-full min-h-screen px-6 md:px-28 py-16 ${bgPrimary}`}
-      id="skills"
-    >
-      <div className="text-center mb-14">
-        <h2 className={`text-5xl font-bold mb-4 ${textColor}`}>Skills</h2>
-        <p className={`text-lg opacity-70 ${textColor}`}>
-          Technologies I master every day
-        </p>
-        <div className="w-28 h-1 mx-auto mt-4 bg-blue-600 rounded-full"></div>
-      </div>
+    <section className="w-full min-h-screen px-6 md:px-28 py-16 " id="skills">
+      <AddressSection titel="Skills" text="Technologies I master every day" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" data-aos="fade-up">
         {skillsData.map((category) => (
           <div
             key={category.category}
-            className={`relative p-6 rounded-2xl border-2 ${borderColor} ${cardBg} overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]`}
-            data-aos="fade-up"
+            className={`relative p-6 rounded-2xl border-2 ds-border-color ds-bg-alt overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]`}
+           
           >
             <span className="absolute inset-0 border-2 border-blue-500 rounded-2xl animate-borderLoop pointer-events-none"></span>
-
-            <h3 className={`text-3xl font-bold mb-5 ${textColor}`}>
-              {category.category}
-            </h3>
-
+            <Title size="3xl" className="font-bold mb-2">{category.category}</Title>
             <div className="grid grid-cols-3 gap-6">
               {category.skills.map((skill) => (
                 <div

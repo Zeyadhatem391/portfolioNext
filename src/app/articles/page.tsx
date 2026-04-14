@@ -5,6 +5,8 @@ import ModeSwitcher from "@/app/components/ModeSwitcher";
 import AtomicDesign from "./components/AtomicDesign";
 import GitFlow from "./components/GitFlow";
 import StarsBackground from "../components/StarsBackground";
+import ScrollToTop from "../components/ScrollToTop";
+import SocialMedia from "../components/SocialMedia";
 
 export default function Home() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
@@ -31,6 +33,8 @@ export default function Home() {
         <AtomicDesign theme={theme} />
         <DesignSystem theme={theme} />
 
+        <SocialMedia theme={theme} />
+        <ScrollToTop theme={theme} />
         <ModeSwitcher theme={theme} onToggle={handleModeChange} />
       </section>
     </>
