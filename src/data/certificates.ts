@@ -9,6 +9,7 @@ import Dtm from "@/assets/images/dtm.webp"
 
 export const Certifications: Certification[] = [
     {
+        id: 1,
         title: "Huma Volve",
         date: "19/2/2026 - 5/12/2025",
         img: Huma,
@@ -17,6 +18,7 @@ export const Certifications: Certification[] = [
             "https://drive.google.com/drive/folders/1d_m0wAhjN1ZMxexNxSmh2bfrS-efKBLK",
     },
     {
+        id: 2,
         title: "NTI",
         date: "31/8/2025 - 25/9/2025",
         img: Nti,
@@ -25,6 +27,7 @@ export const Certifications: Certification[] = [
             "https://drive.google.com/drive/folders/1uRaLfSiZY_RVPGxgPCZ-cVCXTyij2bU4?usp=sharing",
     },
     {
+        id: 3,
         title: "Intern training",
         date: "06/8/2024 - 24/11/2024",
         img: Dtm,
