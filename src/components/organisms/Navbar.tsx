@@ -10,16 +10,17 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full backdrop-blur-md shadow-md z-50 ds-bg-primary  ">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-10">
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 w-full backdrop-blur-md shadow-md z-50 ds-bg-primary">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10">
           <a
-            href=""
-            className="text-2xl font-extrabold tracking-wide px-5 py-3 ds-text-alt "
+            href="#"
+            className="text-2xl font-extrabold tracking-wide px-5 py-3 ds-text-alt"
           >
             ZH
           </a>
 
-          <div className="flex gap-4">
+          <div className="flex gap-6 items-center">
             <button
               onClick={toggleTheme}
               className="transition-all duration-500 hover:scale-110 ds-text-base"
@@ -31,47 +32,84 @@ export default function Navbar() {
               )}
             </button>
 
-            <button className="ds-text-base" onClick={() => setOpen(true)}>
-              <FaBars className="w-5 h-5 md:w-7 md:h-6" />
+            <button className="ds-text-base" onClick={() => setOpen(!open)}>
+              {open ? (
+                <FaTimes className="w-5 h-5 md:w-7 md:h-6" />
+              ) : (
+                <FaBars className="w-5 h-5 md:w-7 md:h-6" />
+              )}
             </button>
           </div>
         </div>
       </nav>
 
-      {/* MOBILE POPUP MENU */}
-      {open && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center ">
-          <div className="w-80 rounded-2xl shadow-2xl overflow-hidden animate-pop relative p-2 ds-bg-primary ds-text-base">
-            {/* Close Button */}
-            <button
-              className="absolute top-4 right-4 text-2xl transition hover:text-red-500 "
-              onClick={() => setOpen(false)}
-            >
-              <FaTimes />
-            </button>
+      {/* Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 ${
+          open ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={() => setOpen(false)}
+      />
 
-            <ul className="flex flex-col text-left mt-10 w-full">
-              {menu.map((item, index) => (
-                <li
-                  key={index}
-                  className="group cursor-pointer w-full hover:bg-blue-50 transition-all duration-200 border-b border-gray-100 last:border-none"
+      {/* Mobile Menu (Dropdown from Navbar) */}
+      <div
+        className={`fixed top-[55px] left-0 w-full md:hidden z-50 transform transition-all duration-500 ${
+          open
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-10 opacity-0 pointer-events-none"
+        } ds-bg-primary ds-text-base shadow-lg`}
+      >
+        <ul className="flex flex-col">
+          {menu.map((item, index) => (
+            <li
+              key={index}
+              className="border-b border-gray-200 last:border-none"
+            >
+              <a
+                href={item.path}
+                onClick={() => setOpen(false)}
+                className="block py-4 px-6 text-lg font-semibold hover:bg-blue-50 transition"
+              >
+                {item.name === "Exp"
+                  ? "Experiences"
+                  : item.name === "Cer"
+                    ? "Certifications"
+                    : item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Desktop Sidebar (Slide from Left) */}
+      <div
+        className={`fixed top-0 left-0 h-full w-72 hidden md:block z-50 transform transition-transform duration-500 ${
+          open ? "translate-x-0" : "-translate-x-full"
+        } ds-bg-primary ds-text-base shadow-xl`}
+      >
+        <div className="pt-24">
+          <ul className="flex flex-col">
+            {menu.map((item, index) => (
+              <li
+                key={index}
+                className="border-b border-gray-200 last:border-none"
+              >
+                <a
+                  href={item.path}
+                  onClick={() => setOpen(false)}
+                  className="block py-4 px-8 text-lg font-semibold hover:bg-blue-50 transition"
                 >
-                  <a
-                    href={item.path}
-                    className="block py-4 px-6 text-lg font-semibold transition  group-hover:text-blue-600"
-                  >
-                    {item.name === "Exp"
-                      ? "Experiences"
-                      : item.name === "Cer"
-                        ? "Certifications"
-                        : item.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+                  {item.name === "Exp"
+                    ? "Experiences"
+                    : item.name === "Cer"
+                      ? "Certifications"
+                      : item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-      )}
+      </div>
     </>
   );
 }
