@@ -1,10 +1,7 @@
 "use client";
 
 import type { CSSProperties } from "react";
-
-interface StarsProps {
-  theme?: "light" | "dark";
-}
+import { useTheme } from "@/context/ThemeContext";
 
 type Star = {
   left: string;
@@ -24,7 +21,8 @@ type StarStyle = CSSProperties & {
   "--star-size": string;
 };
 
-export default function StarsBackground({ theme = "dark" }: StarsProps) {
+export default function StarsBackground() {
+  const { theme } = useTheme();
   return (
     <div className={`stars-wrapper ${theme}`}>
       {STARS.map((star, i) => {

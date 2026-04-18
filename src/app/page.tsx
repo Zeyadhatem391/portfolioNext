@@ -1,7 +1,3 @@
-"use client";
-
-import { useState } from "react";
-
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Experience from "./components/Experience";
@@ -9,29 +5,13 @@ import Certification from "./components/Certification";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-
-import SocialMedia from "./components/SocialMedia";
-import ScrollToTop from "./components/ScrollToTop";
-import ModeSwitcher from "./components/ModeSwitcher";
 import CustomCursor from "./components/CustomCursor";
-import StarsBackground from "./components/StarsBackground";
 import WorkFlow from "./components/WorkFlow";
 import HomeLayout from "@/components/layout/HomeLayout";
 
 export default function Home() {
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
-
-  const handleModeChange = (newMode: "light" | "dark") => {
-    setTheme(newMode);
-
-    document.documentElement.classList.remove(theme);
-    document.documentElement.classList.add(newMode);
-  };
-
   return (
-    <HomeLayout >
-      <StarsBackground theme={theme} />
-
+    <HomeLayout>
       <Hero />
       <About />
       <Experience />
@@ -41,9 +21,6 @@ export default function Home() {
       <WorkFlow />
       <Contact />
 
-      <SocialMedia />
-      <ScrollToTop />
-      <ModeSwitcher theme={theme} onToggle={handleModeChange} />
       <div className="hidden lg:block">
         <CustomCursor />
       </div>

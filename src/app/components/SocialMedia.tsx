@@ -10,8 +10,6 @@ import {
   FaGithub,
 } from "react-icons/fa";
 
-
-
 export default function SocialMedia() {
   const [open, setOpen] = useState(false);
 
@@ -94,7 +92,7 @@ export default function SocialMedia() {
           {/* open and close  */}
           <button
             onClick={() => setOpen(!open)}
-            className={`absolute w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110 ds-bg-primary ds-text-base ds-border-color`}
+            className="absolute w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110 ds-bg-alt ds-text-base ds-border-color"
           >
             {open ? <FaTimes /> : <FaPlus />}
           </button>

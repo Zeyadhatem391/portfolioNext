@@ -1,3 +1,4 @@
+"use client"
 import { useEffect } from "react";
 import { experiences } from "@/data/experience";
 import AOS from "aos";

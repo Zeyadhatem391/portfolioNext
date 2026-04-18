@@ -1,15 +1,17 @@
 "use client";
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaMoon, FaSun, FaTimes } from "react-icons/fa";
 import { menu } from "@/data/menuNavbar";
+import { useTheme } from "@/context/ThemeContext";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full backdrop-blur-md shadow-md z-50 ds-bg-primary ds-text-base ">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
+      <nav className="fixed top-0 left-0 w-full backdrop-blur-md shadow-md z-50 ds-bg-primary  ">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-10">
           <a
             href=""
             className="text-2xl font-extrabold tracking-wide px-5 py-3 ds-text-alt "
@@ -17,29 +19,22 @@ export default function Navbar() {
             ZH
           </a>
 
-          <ul className="hidden lg:flex items-center">
-            {menu.map((item, index) => (
-              <li
-                key={index}
-                className="group relative cursor-pointer py-5 px-5"
-              >
-                <a
-                  href={item.path}
-                  className="text-xl font-semibold transition-all duration-300   group-hover:text-blue-600"
-                >
-                  {item.name}
-                </a>
-                <span className="absolute left-1/2 -bottom-1 w-0 h-[3px] rounded-full transition-all duration-300  bg-blue-600 group-hover:w-full group-hover:left-0" />
-              </li>
-            ))}
-          </ul>
+          <div className="flex gap-4">
+            <button
+              onClick={toggleTheme}
+              className="transition-all duration-500 hover:scale-110 ds-text-base"
+            >
+              {theme === "light" ? (
+                <FaSun className="w-5 h-5 md:w-7 md:h-6" />
+              ) : (
+                <FaMoon className="w-5 h-5 md:w-7 md:h-6" />
+              )}
+            </button>
 
-          <button
-            className="lg:hidden text-2xl ds-text-base"
-            onClick={() => setOpen(true)}
-          >
-            <FaBars />
-          </button>
+            <button className="ds-text-base" onClick={() => setOpen(true)}>
+              <FaBars className="w-5 h-5 md:w-7 md:h-6" />
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -77,18 +72,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-
-      <style>
-        {`
-          @keyframes pop {
-            from { transform: scale(0.85); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-          }
-          .animate-pop {
-            animation: pop 0.25s ease-out;
-          }
-        `}
-      </style>
     </>
   );
 }
