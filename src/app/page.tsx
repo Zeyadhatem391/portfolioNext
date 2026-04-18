@@ -29,7 +29,7 @@ export default function Home() {
   };
 
   return (
-    <HomeLayout theme={theme}>
+    <HomeLayout >
       <StarsBackground theme={theme} />
 
       <Hero />
@@ -41,8 +41,8 @@ export default function Home() {
       <WorkFlow />
       <Contact />
 
-      <SocialMedia theme={theme} />
-      <ScrollToTop theme={theme} />
+      <SocialMedia />
+      <ScrollToTop />
       <ModeSwitcher theme={theme} onToggle={handleModeChange} />
       <div className="hidden lg:block">
         <CustomCursor />

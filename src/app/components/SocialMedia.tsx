@@ -10,11 +10,9 @@ import {
   FaGithub,
 } from "react-icons/fa";
 
-interface SocialMediaProps {
-  theme?: "light" | "dark";
-}
 
-export default function SocialMedia({ theme }: SocialMediaProps) {
+
+export default function SocialMedia() {
   const [open, setOpen] = useState(false);
 
   const icons = [
@@ -45,16 +43,11 @@ export default function SocialMedia({ theme }: SocialMediaProps) {
     },
   ];
 
-  const themeClasses =
-    theme === "light"
-      ? "bg-white border-white text-gray-900"
-      : "bg-gray-800 border-gray-900 text-white";
-
   return (
     <>
       {/* ======= Desktop  ======= */}
       <div
-        className={`hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 flex-col items-center gap-4 z-50 py-6 px-3 rounded-t-full rounded-b-full border-4 ${themeClasses}`}
+        className={`hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 flex-col items-center gap-4 z-50 py-6 px-3 rounded-t-full rounded-b-full border-4 ds-bg-primary ds-text-base ds-border-color`}
       >
         {icons.map((item, index) => (
           <a
@@ -101,7 +94,7 @@ export default function SocialMedia({ theme }: SocialMediaProps) {
           {/* open and close  */}
           <button
             onClick={() => setOpen(!open)}
-            className={`absolute w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110 ${themeClasses}`}
+            className={`absolute w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110 ds-bg-primary ds-text-base ds-border-color`}
           >
             {open ? <FaTimes /> : <FaPlus />}
           </button>

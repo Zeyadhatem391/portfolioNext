@@ -1,15 +1,9 @@
-interface AtomicDesignProps {
-  theme?: "light" | "dark";
-}
+import Text from "@/components/atoms/Text";
+import Title from "@/components/atoms/Title";
+import AddressSection from "@/components/molecules/AddressSection";
 
-export default function AtomicDesign({ theme = "dark" }: AtomicDesignProps) {
-  const isLight = theme === "light";
 
-  const textPrimary = isLight ? "text-gray-900" : "text-white";
-  const textSecondary = isLight ? "text-gray-600" : "text-gray-400";
-  const cardBg = isLight ? "bg-white" : "bg-gray-900";
-  const borderColor = isLight ? "border-gray-200" : "border-gray-800";
-
+export default function AtomicDesign() {
   const levels = [
     {
       title: "1. Atoms",
@@ -45,28 +39,24 @@ export default function AtomicDesign({ theme = "dark" }: AtomicDesignProps) {
 
   return (
     <div className="mt-24" id="atomicDesign">
-      <div className="text-center mb-16">
-        <h2 className={`text-4xl md:text-5xl font-bold ${textPrimary}`}>
-          Atomic Design
-        </h2>
-        <p className={`mt-4 text-lg ${textSecondary}`}>
-          A structured way to build complex interfaces from simple components.
-        </p>
-        <div className="w-24 h-1 mx-auto mt-6 bg-blue-600 rounded-full"></div>
-      </div>
+      <AddressSection
+        titel="Atomic Design"
+        text="A structured way to build complex interfaces from simple components."
+      />
+
       {/* Main Card */}
       <div
-        className={`max-w-5xl mx-auto rounded-2xl border ${borderColor} ${cardBg} shadow-lg p-8 mb-12`}
+        className={`max-w-5xl mx-auto rounded-2xl border ds-bg-alt ds-border-color shadow-lg p-8 mb-12`}
       >
-        <h3 className={`text-2xl font-semibold mb-4 ${textPrimary}`}>
+        <Title size="2xl" className="font-semibold mb-4">
           Atomic Design
-        </h3>
-        <p className={`${textSecondary} leading-relaxed`}>
+        </Title>
+        <Text>
           Atomic Design is a methodology for creating scalable and reusable UI
           systems by breaking interfaces into smaller building blocks. It
           encourages structured thinking and improves maintainability in large
           frontend applications.
-        </p>
+        </Text>
       </div>
 
       {/* Levels Grid */}
@@ -74,18 +64,19 @@ export default function AtomicDesign({ theme = "dark" }: AtomicDesignProps) {
         {levels.map((level, index) => (
           <div
             key={index}
-            className={`rounded-2xl border ${borderColor} ${cardBg} p-6 shadow-md hover:shadow-xl transition duration-300`}
+            className={`rounded-2xl border ds-bg-alt ds-border-color p-6 shadow-md hover:shadow-xl transition duration-300`}
           >
-            <h4 className={`text-lg font-semibold mb-3 ${textPrimary}`}>
+            <Title size="lg" className="font-semibold mb-3">
+              {" "}
               {level.title}
-            </h4>
-
-            <p className={`${textSecondary} text-sm leading-relaxed mb-4`}>
+            </Title>
+            <Text size="sm" className=" leading-relaxed mb-4">
+              {" "}
               {level.description}
-            </p>
+            </Text>
 
             <div
-              className={`text-xs px-3 py-2 rounded-lg border ${borderColor} ${textSecondary}`}
+              className={`text-xs px-3 py-2 rounded-lg border ds-border-color ds-text-secondary `}
             >
               {level.example}
             </div>

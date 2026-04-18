@@ -3,14 +3,13 @@ import Footer from "../organisms/Footer";
 import Navbar from "../organisms/Navbar";
 
 interface Props {
-  theme?: "light" | "dark";
   children: ReactNode;
 }
 
-export default function HomeLayout({ children, theme }: Props) {
+export default function HomeLayout({ children }: Props) {
   return (
     <>
-      <Navbar theme={theme} />
+      <Navbar />
       {children}
       <Footer />
     </>

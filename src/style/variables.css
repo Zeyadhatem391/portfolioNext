@@ -1,7 +1,12 @@
 @layer theme {
     :root {
-        --color-bg-primary: #111827;
-        --color-bg-alt: #1F2937;
+        /* --color-bg-primary: #111827; */
+        --color-bg-primary: #030712;
+
+        /* --color-bg-alt: #1F2937; */
+        --color-bg-alt: #111827;
+
+
         --color-bg-form: #374151;
 
         --color-text-primary: #2563EB;

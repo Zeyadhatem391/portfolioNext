@@ -53,7 +53,7 @@ export default function Contact() {
                 <Title size="xl" className="font-semibold">
                   {item.title}
                 </Title>
-                <Text className="opacity-80">{item.info}</Text>
+                <Text >{item.info}</Text>
               </div>
             </div>
           ))}

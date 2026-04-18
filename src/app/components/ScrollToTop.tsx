@@ -3,11 +3,8 @@
 import { useState, useEffect } from "react";
 import { FaArrowUp } from "react-icons/fa";
 
-interface ScrollToTopProps {
-  theme?: "light" | "dark";
-}
 
-export default function ScrollToTop({ theme  }: ScrollToTopProps) {
+export default function ScrollToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -27,20 +24,11 @@ export default function ScrollToTop({ theme  }: ScrollToTopProps) {
   };
 
   // theme classes
-  const themeClasses =
-    theme === "light"
-      ? "bg-white text-gray-900 border border-gray-200"
-      : "bg-gray-800 text-white border border-gray-700";
-
+  
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-500 hover:scale-110 
-        ${themeClasses} ${
-          visible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-10 pointer-events-none"
-        }`}
+      className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-500 hover:scale-110  ds-bg-alt ds-text-base ds-border-color"
     >
       <FaArrowUp className="text-xl" />
     </button>

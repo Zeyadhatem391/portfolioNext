@@ -18,23 +18,16 @@ export default function Home() {
     document.documentElement.classList.add(newMode);
   };
 
-  const isLight = theme === "light";
-
-  const sectionBg = isLight ? "bg-gray-50" : "bg-gray-950";
-
   return (
     <>
       <StarsBackground theme={theme} />
-      <section
-        className={`w-full  px-6 md:px-28 py-20 ${sectionBg}`}
-        id="workflow"
-      >
-        <GitFlow theme={theme} />
-        <AtomicDesign theme={theme} />
-        <DesignSystem theme={theme} />
+      <section className="w-full  px-6 md:px-28 py-20 ">
+        <GitFlow />
+        <AtomicDesign />
+        <DesignSystem />
 
-        <SocialMedia theme={theme} />
-        <ScrollToTop theme={theme} />
+        <SocialMedia />
+        <ScrollToTop />
         <ModeSwitcher theme={theme} onToggle={handleModeChange} />
       </section>
     </>
