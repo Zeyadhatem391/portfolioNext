@@ -77,7 +77,7 @@ export default function Projects() {
                     />
                   </div>
 
-                  <Text className="mt-1 opacity-70">{project.subtitle}</Text>
+                  <Text className="mt-1 ">{project.subtitle}</Text>
 
                   {/* Tech Stack */}
                   <div className="mt-3 flex flex-wrap gap-2">

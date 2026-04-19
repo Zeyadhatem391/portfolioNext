@@ -43,7 +43,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Overlay */}
       <div
         className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 ${
           open ? "opacity-100 visible" : "opacity-0 invisible"
@@ -51,7 +50,6 @@ export default function Navbar() {
         onClick={() => setOpen(false)}
       />
 
-      {/* Mobile Menu (Dropdown from Navbar) */}
       <div
         className={`fixed top-[55px] left-0 w-full md:hidden z-50 transform transition-all duration-500 ${
           open
@@ -61,14 +59,11 @@ export default function Navbar() {
       >
         <ul className="flex flex-col">
           {menu.map((item, index) => (
-            <li
-              key={index}
-              className="border-b border-gray-200 last:border-none"
-            >
+            <li key={index} className="border-b ds-border-color ">
               <a
                 href={item.path}
                 onClick={() => setOpen(false)}
-                className="block py-4 px-6 text-lg font-semibold hover:bg-blue-50 transition"
+                className="block py-4 px-6 text-lg font-semibold transition ds-nav-hover"
               >
                 {item.name === "Exp"
                   ? "Experiences"
@@ -81,7 +76,6 @@ export default function Navbar() {
         </ul>
       </div>
 
-      {/* Desktop Sidebar (Slide from Left) */}
       <div
         className={`fixed top-0 left-0 h-full w-72 hidden md:block z-50 transform transition-transform duration-500 ${
           open ? "translate-x-0" : "-translate-x-full"
@@ -90,14 +84,11 @@ export default function Navbar() {
         <div className="pt-24">
           <ul className="flex flex-col">
             {menu.map((item, index) => (
-              <li
-                key={index}
-                className="border-b border-gray-200 last:border-none"
-              >
+              <li key={index} className="border-b  ds-border-color">
                 <a
                   href={item.path}
                   onClick={() => setOpen(false)}
-                  className="block py-4 px-8 text-lg font-semibold hover:bg-blue-50 transition"
+                  className="block py-4 px-8 text-lg font-semibold transition ds-nav-hover"
                 >
                   {item.name === "Exp"
                     ? "Experiences"

@@ -87,6 +87,12 @@
   .ds-border-color {
     border-color: var(--border-color);
   }
+
+  /* hover */
+  .ds-nav-hover:hover {
+    background-color: var(--hover-color-bg-nav);
+    color: var(--hover-color-text-nav);
+  }
 }
 
 
