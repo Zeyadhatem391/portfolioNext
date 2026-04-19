@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 interface Props {
   size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
-  variant?: "primary" | "secondary" | "alt" | "base";
+  variant?: "primary" | "secondary" | "alt" | "base" | "disabled";
   className?: string;
   center?: boolean;
   children: ReactNode;
@@ -11,7 +11,7 @@ interface Props {
 
 export default function Text({
   size = "md",
-  variant = "secondary",
+  variant = "disabled",
   className,
   center = false,
   children,
@@ -30,6 +30,7 @@ export default function Text({
     alt: "ds-text-alt ",
     base: "ds-text-base",
     primary: "ds-text-primary",
+    disabled: "ds-text-disabled",
   };
   return (
     <p

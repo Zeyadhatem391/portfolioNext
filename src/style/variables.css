@@ -10,7 +10,10 @@
         --color-text-primary: #2563EB;
         --color-text-secondary: #D1D5DB;
         --color-text-alt: #3B82F6;
+
+        --color-text-disabled: #E5E7EB;
         --color-text-base: #ffff;
+
 
         --font-sans: "Inter", sans-serif;
         --font-heading: "Poppins", sans-serif;
@@ -48,6 +51,7 @@
         --color-text-primary: #2563EB;
         --color-text-secondary: #4B5563;
         --color-text-base: #111827;
+        --color-text-disabled: #070a0f;
         --color-text-alt: #111827;
 
         --border-color: #D1D5DB;

@@ -42,6 +42,10 @@
     color: var(--color-text-base);
   }
 
+  .ds-text-disabled {
+    color: var(--color-text-disabled);
+  }
+
   /* ================= TYPOGRAPHY ================= */
   .ds-text-sm {
     font-size: var(--text-sm);

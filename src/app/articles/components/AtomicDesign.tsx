@@ -2,7 +2,6 @@ import Text from "@/components/atoms/Text";
 import Title from "@/components/atoms/Title";
 import AddressSection from "@/components/molecules/AddressSection";
 
-
 export default function AtomicDesign() {
   const levels = [
     {
@@ -74,12 +73,12 @@ export default function AtomicDesign() {
               {" "}
               {level.description}
             </Text>
-
-            <div
-              className={`text-xs px-3 py-2 rounded-lg border ds-border-color ds-text-secondary `}
+            <Text
+              size="sm"
+              className=" px-3 py-2 rounded-lg border ds-border-color"
             >
               {level.example}
-            </div>
+            </Text>
           </div>
         ))}
       </div>

@@ -45,13 +45,11 @@ export default function CertificationCard({
             </Title>
           </div>
 
-          <Text className="mt-1 opacity-70">{date}</Text>
+          <div className="mt-1 text-green-400">{date}</div>
 
           {/* Description */}
           <div className={`transition-all duration-500 overflow-hidden `}>
-            <Text size="sm" variant="base" className=" leading-relaxed">
-              {desc}
-            </Text>
+            <Text size="sm">{desc}</Text>
           </div>
         </div>
       </div>

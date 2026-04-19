@@ -56,7 +56,7 @@ export default function GitFlow() {
         <Title size="2xl" className="font-semibold mb-4">
           What is Git Flow?
         </Title>
-        <Text className="leading-relaxed">
+        <Text className="text-gray-200">
           Git Flow is a structured branching model that defines how teams manage
           features, releases, and hotfixes in a predictable way. It works best
           for projects with scheduled releases and multiple contributors,
@@ -84,11 +84,12 @@ export default function GitFlow() {
               {branch.details}
             </Text>
 
-            <div
-              className={`text-xs px-3 py-2 rounded-lg border ds-border-color ds-text-secondary `}
+            <Text
+              size="sm"
+              className="px-3 py-2 rounded-lg border ds-border-color"
             >
               {branch.example}
-            </div>
+            </Text>
           </div>
         ))}
       </div>
