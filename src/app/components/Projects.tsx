@@ -1,22 +1,16 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FiChevronDown, FaGithub } from "@/assets/icons/icons";
 import { projects } from "@/data/projects";
 
-import AOS from "aos";
 import AddressSection from "@/components/molecules/AddressSection";
 import Title from "@/components/atoms/Title";
 import Text from "@/components/atoms/Text";
+import useReveal from "@/animations/Reveal";
 
 export default function Projects() {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-      easing: "ease",
-    });
-  }, []);
+  useReveal(".Reveal-Section");
 
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -37,13 +31,9 @@ export default function Projects() {
         />
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-center Reveal-Section">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="relative w-[90%] md:w-[85%] group"
-              data-aos="fade-up"
-            >
+            <div key={index} className="relative w-[90%] md:w-[85%] group">
               {/* Blue animated border */}
               <div className="absolute inset-0 rounded-xl border-2 border-blue-600 animate-borderLoop pointer-events-none"></div>
 

@@ -1,23 +1,10 @@
 "use client";
-import Image from "next/image";
-import { useEffect } from "react";
-import { FaExternalLinkAlt } from "react-icons/fa";
 import { Certifications } from "@/data/certificates";
-
-import AOS from "aos";
 import AddressSection from "@/components/molecules/AddressSection";
-import Title from "@/components/atoms/Title";
-import Text from "@/components/atoms/Text";
 import CertificationCard from "@/components/molecules/CertificationCard";
 
 export default function Certification() {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-      easing: "ease",
-    });
-  }, []);
+
 
   return (
     <>

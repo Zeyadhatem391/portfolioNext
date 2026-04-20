@@ -1,11 +1,14 @@
+"use client";
 import { Briefcase } from "@/assets/icons/icons";
 import Title from "../atoms/Title";
 import Text from "../atoms/Text";
 import { Experience } from "@/types/experiences";
+import useReveal from "@/animations/Reveal";
 
 export default function ExperienceCard({ title, date, desc }: Experience) {
+  useReveal(".Reveal-Section");
   return (
-    <div className="timeline-line" data-aos="fade-up">
+    <div className="timeline-line Reveal-Section">
       <div className="moving-line" />
       <div
         className={` card w-full p-5 rounded-xl border-2 ds-border-color ds-bg-alt duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]`}

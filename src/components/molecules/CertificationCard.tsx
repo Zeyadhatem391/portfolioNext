@@ -1,8 +1,10 @@
+"use client";
 import Image from "@/components/atoms/Image";
 import Title from "../atoms/Title";
 import Text from "../atoms/Text";
 import { FaExternalLinkAlt } from "@/assets/icons/icons";
 import { Certification } from "@/types/certification";
+import useReveal from "@/animations/Reveal";
 
 export default function CertificationCard({
   title,
@@ -11,8 +13,9 @@ export default function CertificationCard({
   date,
   desc,
 }: Certification) {
+   useReveal(".Reveal-Section");
   return (
-    <div className="relative w-[90%] md:w-[85%] group" data-aos="fade-up">
+    <div className="relative w-[90%] md:w-[85%] group Reveal-Section" >
       {/* Blue animated border */}
       <div className="absolute inset-0 rounded-xl border-2 border-blue-600 animate-borderLoop pointer-events-none"></div>
 
