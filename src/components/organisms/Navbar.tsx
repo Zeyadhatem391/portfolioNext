@@ -1,13 +1,12 @@
 "use client";
 import { useState } from "react";
-import { FaBars, FaMoon, FaSun, FaTimes } from "@/assets/icons/icons";
+import { FaBars, FaTimes } from "@/assets/icons/icons";
 import { menu } from "@/data/menuNavbar";
-import { useTheme } from "@/context/ThemeContext";
 import Link from "next/link";
+import { ThemeToggle } from "../atoms/ThemeButton";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   return (
     <>
@@ -22,16 +21,7 @@ export default function Navbar() {
           </Link>
 
           <div className="flex gap-6 items-center">
-            <button
-              onClick={toggleTheme}
-              className="transition-all duration-500 hover:scale-110 ds-text-base"
-            >
-              {theme === "light" ? (
-                <FaSun className="w-5 h-5 md:w-7 md:h-6" />
-              ) : (
-                <FaMoon className="w-5 h-5 md:w-7 md:h-6" />
-              )}
-            </button>
+            <ThemeToggle />
 
             <button className="ds-text-base" onClick={() => setOpen(!open)}>
               {open ? (
