@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { FiChevronDown } from "react-icons/fi";
-import { FaGithub } from "react-icons/fa";
+import { FiChevronDown, FaGithub } from "@/assets/icons/icons";
 import { projects } from "@/data/projects";
 
 import AOS from "aos";

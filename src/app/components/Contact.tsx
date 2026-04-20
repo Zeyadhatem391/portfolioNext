@@ -2,29 +2,9 @@
 import Text from "@/components/atoms/Text";
 import Title from "@/components/atoms/Title";
 import AddressSection from "@/components/molecules/AddressSection";
-// import { useState } from "react";
-import { FaPhone, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
+import { FaPhone, FaMapMarkerAlt, FaEnvelope } from "@/assets/icons/icons";
 
 export default function Contact() {
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   email: "",
-  //   subject: "",
-  //   message: "",
-  // });
-
-  // const handleChange = (
-  //   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  // ) => {
-  //   setFormData({ ...formData, [e.target.name]: e.target.value });
-  // };
-
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   alert("Message sent!");
-  //   setFormData({ name: "", email: "", subject: "", message: "" });
-  // };
-
   return (
     <section className="py-24" id="contact">
       <AddressSection
@@ -53,7 +33,7 @@ export default function Contact() {
                 <Title size="xl" className="font-semibold">
                   {item.title}
                 </Title>
-                <Text >{item.info}</Text>
+                <Text>{item.info}</Text>
               </div>
             </div>
           ))}

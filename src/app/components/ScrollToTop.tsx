@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { FaArrowUp } from "react-icons/fa";
+import { FaArrowUp } from "@/assets/icons/icons";
 
 export default function ScrollToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
-      setVisible(window.scrollY > 200);
+      setVisible(window.scrollY > 210);
     };
 
     window.addEventListener("scroll", toggleVisibility);
@@ -21,8 +21,6 @@ export default function ScrollToTop() {
       behavior: "smooth",
     });
   };
-
-  // theme classes
 
   return (
     <button

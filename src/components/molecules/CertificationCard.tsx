@@ -1,7 +1,7 @@
 import Image from "@/components/atoms/Image";
 import Title from "../atoms/Title";
 import Text from "../atoms/Text";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt } from "@/assets/icons/icons";
 import { Certification } from "@/types/certification";
 
 export default function CertificationCard({

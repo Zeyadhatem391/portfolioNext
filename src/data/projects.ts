@@ -1,11 +1,5 @@
 import { Project } from "@/types/projects"
-import Popflix from "@/assets/images/popflix.webp"
-import Task from "@/assets/images/task_m.webp"
-import Portfolio from "@/assets/images/old-portfolio.jpg"
-import Faster from "@/assets/images/faster.webp"
-import Grocery from "@/assets/images/egrocery.jpg"
-
-
+import { Popflix, Task, Grocery, Faster, Portfolio } from "@/assets/images/images";
 
 export const projects: Project[] = [
     {

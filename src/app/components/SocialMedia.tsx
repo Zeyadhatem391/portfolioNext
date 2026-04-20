@@ -8,7 +8,7 @@ import {
   FaPlus,
   FaTimes,
   FaGithub,
-} from "react-icons/fa";
+} from "@/assets/icons/icons";
 
 export default function SocialMedia() {
   const [open, setOpen] = useState(false);

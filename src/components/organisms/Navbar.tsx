@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { FaBars, FaMoon, FaSun, FaTimes } from "react-icons/fa";
+import { FaBars, FaMoon, FaSun, FaTimes } from "@/assets/icons/icons";
 import { menu } from "@/data/menuNavbar";
 import { useTheme } from "@/context/ThemeContext";
 import Link from "next/link";

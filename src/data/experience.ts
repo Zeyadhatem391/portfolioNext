@@ -1,6 +1,5 @@
 import { Experience } from "@/types/experiences"
 
-
 export const experiences: Experience[] = [
     {
         id:1,

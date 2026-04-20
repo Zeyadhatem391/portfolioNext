@@ -1,4 +1,4 @@
-import { Briefcase } from "lucide-react";
+import { Briefcase } from "@/assets/icons/icons";
 import Title from "../atoms/Title";
 import Text from "../atoms/Text";
 import { Experience } from "@/types/experiences";

@@ -1,10 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
+import { PortfolioHero, HeroSection } from "@/assets/images/images";
 import Text from "@/components/atoms/Text";
 import Title from "@/components/atoms/Title";
-import Portfolio from "@/assets/images/Portfolio.webp";
-import HeroSection from "@/assets/images/hero-bg.webp";
+import Images from "@/components/atoms/Image";
 
 export default function Hero() {
   const phrases = ["Full Stack Developer", "Web Developer", "Computer Science"];
@@ -48,12 +47,7 @@ export default function Hero() {
         className={`w-full lg:w-1/2  flex items-center justify-center p-8 order-first lg:order-last`}
       >
         <div className="relative w-full max-w-md h-[400px] md:h-[500px]">
-          <Image
-            src={Portfolio}
-            alt="zeyad hatem"
-            fill
-            className="object-contain rounded-lg "
-          />
+          <Images src={PortfolioHero} alt="zeyad hatem" priority />
         </div>
       </div>
 

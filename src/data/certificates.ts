@@ -1,11 +1,5 @@
 import { Certification } from "@/types/certification"
-
-import Huma from "@/assets/images/huma.webp"
-import Nti from "@/assets/images/nti.webp"
-import Dtm from "@/assets/images/dtm.webp"
-
-
-
+import { Huma, Nti, Dtm } from "@/assets/images/images";
 
 export const Certifications: Certification[] = [
     {
