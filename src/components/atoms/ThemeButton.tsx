@@ -5,31 +5,31 @@ import { FaSun, FaMoon } from "@/assets/icons/icons";
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
 
-  const isDark = resolvedTheme === "dark";
+  const isDark = resolvedTheme === "light";
 
   return (
     <button
-      onClick={() => setTheme(isDark ? "light" : "dark")}
+      onClick={() => setTheme(isDark ? "dark" : "light")}
       className={`relative flex h-11 w-21 cursor-pointer items-center rounded-full p-1 transition-colors duration-500 md:h-9 md:w-18 ${
-        isDark ? "bg-gray-500" : "bg-gray-200"
+        isDark ? "bg-gray-200" : "bg-gray-500"
       } shadow-md`}
       aria-label="Toggle Theme"
     >
       <span
         className={`absolute left-1.5 h-8 w-8 transform rounded-full transition-transform duration-500 md:left-1 md:h-7 md:w-7 ${
-          isDark ? "translate-x-9 ds-bg-dark-gray" : "translate-x-0 bg-white"
+          isDark ? "translate-x-0 bg-white" : "translate-x-9  ds-bg-dark-gray"
         }`}
       />
 
       <span
         className={`absolute  justify-center left-2 transform text-xs transition-transform duration-500 md:left-1 ${
-          isDark ? "translate-x-10" : "translate-x-1"
+          isDark ? "translate-x-1" : "translate-x-10"
         }`}
       >
         {isDark ? (
-          <FaMoon className="text-white" />
-        ) : (
           <FaSun className="ds-text-alt ml-0 md:ml-1" size={16} />
+        ) : (
+          <FaMoon className="text-white" />
         )}
       </span>
       {/* <button
