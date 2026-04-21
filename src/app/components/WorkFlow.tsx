@@ -6,20 +6,17 @@ import AddressSection from "@/components/molecules/AddressSection";
 export default function WorkFlow() {
   return (
     <section className="w-full min-h-screen px-6 md:px-28 py-20 " id="articles">
-      {/* Title */}
       <AddressSection
         titel="Engineering Articles"
         text="Deep dives into workflow, architecture, and frontend systems"
       />
 
-      {/* Articles Grid */}
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         {articles.map((article) => (
           <WorkFlowCard key={article.id} {...article} />
         ))}
       </div>
 
-      {/* View All Button */}
       <div className="text-center">
         <Link
           href="/articles"

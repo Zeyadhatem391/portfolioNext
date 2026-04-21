@@ -1,20 +1,18 @@
 import AddressSection from "@/components/molecules/AddressSection";
+import { about } from "@/types/about";
 
 export default function About() {
- 
   return (
     <>
       <section
         className="w-full min-h-screen px-6 md:px-28 py-16 ds-text-base"
         id="about"
       >
-        {/* Title */}
         <AddressSection
           titel="About"
           text="Crafting ideas into real experiences"
         />
 
-        {/* Description */}
         <div className="mb-10 ">
           <p className="mb-5 text-3xl font-bold ">
             I&apos;m Zeyad Hatem and{" "}
@@ -30,40 +28,18 @@ export default function About() {
           </p>
         </div>
 
-        {/* Info */}
         <div className="mb-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ">
-            <span className="font-bold">Email : </span>
-            zeyadhatem151177@gmail.com
-          </div>
-
-          <div className="pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ">
-            <span className="font-bold">Education : </span>
-            Computer Science
-          </div>
-
-          <div className="pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ">
-            <span className="font-bold">Phone : </span>
-            01112079745
-          </div>
-
-          <div className="pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ">
-            <span className="font-bold">Nationality : </span>
-            Egyptian
-          </div>
-
-          <div className="pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ">
-            <span className="font-bold">City : </span>
-            Mansoura
-          </div>
-
-          <div className="pb-2 border-b-2 border-blue-600 animated-blue-line text-lg ">
-            <span className="font-bold">Languages : </span>
-            Arabic, English
-          </div>
+          {about.map((items) => (
+            <div
+              key={items.id}
+              className="pb-2 border-b-2 border-blue-600 animated-blue-line text-lg "
+            >
+              <span className="font-bold capitalize">{items.titel} : </span>
+              {items.desc}
+            </div>
+          ))}
         </div>
 
-        {/* View CV */}
         <div className="mt-10">
           <a
             href="cv.pdf"

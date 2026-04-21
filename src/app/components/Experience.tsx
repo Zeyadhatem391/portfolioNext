@@ -1,18 +1,9 @@
-"use client"
-import { useEffect } from "react";
 import { experiences } from "@/data/experience";
-import AOS from "aos";
 import AddressSection from "@/components/molecules/AddressSection";
 import ExperienceCard from "@/components/molecules/ExperienceCard";
 
 export default function Experience() {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-      easing: "ease",
-    });
-  }, []);
+ 
   return (
     <>
       <section

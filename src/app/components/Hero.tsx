@@ -42,7 +42,6 @@ export default function Hero() {
         backgroundImage: `url(${HeroSection.src})`,
       }}
     >
-      {/* صورة */}
       <div
         className={`w-full lg:w-1/2  flex items-center justify-center p-8 order-first lg:order-last`}
       >
@@ -51,7 +50,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* نصوص الكارد */}
       <div
         className={`w-full lg:w-1/2  p-8 md:p-16 flex flex-col justify-center order-last lg:order-first`}
       >

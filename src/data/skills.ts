@@ -19,9 +19,11 @@ import {
   SiReactquery,
   SiRedux,
   SiReacthookform,
-} from "react-icons/si";
+  FaShieldAlt,
+  FaGlobe,
+} from "@/assets/icons/icons";
 
-import { FaGlobe, FaShieldAlt } from "react-icons/fa";
+
 import { SkillCategory } from "@/types/skills"
 
 
