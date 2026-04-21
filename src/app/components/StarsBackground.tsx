@@ -1,7 +1,7 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/context/ThemeContext";
 
 type Star = {
   left: string;
@@ -22,10 +22,9 @@ type StarStyle = CSSProperties & {
 };
 
 export default function StarsBackground() {
-  const { resolvedTheme } = useTheme();
-
+  const { theme } = useTheme();
   return (
-    <div className={`stars-wrapper ${resolvedTheme}`}>
+    <div className={`stars-wrapper ${theme}`}>
       {STARS.map((star, i) => {
         const style: StarStyle = {
           left: star.left,

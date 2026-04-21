@@ -1,27 +1,35 @@
 "use client";
 import { useState } from "react";
-import { FaBars, FaTimes } from "@/assets/icons/icons";
+import { FaBars, FaMoon, FaSun, FaTimes } from "@/assets/icons/icons";
 import { menu } from "@/data/menuNavbar";
-import Link from "next/link";
-import { ThemeToggle } from "../atoms/ThemeButton";
+import { useTheme } from "@/context/ThemeContext";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <>
-      {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full backdrop-blur-md shadow-md z-50 ds-bg-primary">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10">
-          <Link
-            href="/"
+          <a
+            href="#"
             className="text-2xl font-extrabold tracking-wide px-5 py-3 ds-text-alt"
           >
             ZH
-          </Link>
+          </a>
 
           <div className="flex gap-6 items-center">
-            <ThemeToggle />
+            <button
+              onClick={toggleTheme}
+              className="transition-all duration-500 hover:scale-110 ds-text-base"
+            >
+              {theme === "light" ? (
+                <FaSun className="w-5 h-5 md:w-7 md:h-6" />
+              ) : (
+                <FaMoon className="w-5 h-5 md:w-7 md:h-6" />
+              )}
+            </button>
 
             <button className="ds-text-base" onClick={() => setOpen(!open)}>
               {open ? (
@@ -50,11 +58,14 @@ export default function Navbar() {
       >
         <ul className="flex flex-col">
           {menu.map((item, index) => (
-            <li key={index} className="border-b ds-border-color ">
+            <li
+              key={index}
+              className="border-b border-gray-200 last:border-none"
+            >
               <a
                 href={item.path}
                 onClick={() => setOpen(false)}
-                className="block py-4 px-6 text-lg font-semibold transition ds-nav-hover"
+                className="block py-4 px-6 text-lg font-semibold hover:bg-blue-50 transition"
               >
                 {item.name === "Exp"
                   ? "Experiences"
@@ -72,14 +83,17 @@ export default function Navbar() {
           open ? "translate-x-0" : "-translate-x-full"
         } ds-bg-primary ds-text-base shadow-xl`}
       >
-        <div className="pt-20">
+        <div className="pt-24">
           <ul className="flex flex-col">
             {menu.map((item, index) => (
-              <li key={index} className="border-b  ds-border-color">
+              <li
+                key={index}
+                className="border-b border-gray-200 last:border-none"
+              >
                 <a
                   href={item.path}
                   onClick={() => setOpen(false)}
-                  className="block py-4 px-8 text-lg font-semibold transition ds-nav-hover"
+                  className="block py-4 px-8 text-lg font-semibold hover:bg-blue-50 transition"
                 >
                   {item.name === "Exp"
                     ? "Experiences"
