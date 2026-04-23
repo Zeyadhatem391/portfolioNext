@@ -3,7 +3,7 @@ import Text from "../atoms/Text";
 import Title from "../atoms/Title";
 import { Articles } from "@/types/articles";
 
-export default function WorkFlowCard({ title, slug, docLink }: Articles) {
+export default function WorkFlowCard({ title, slug }: Articles) {
   return (
     <div
       className={`rounded-2xl border ds-border-color ds-bg-alt p-8 shadow-md hover:shadow-xl transition duration-300`}
@@ -32,15 +32,6 @@ export default function WorkFlowCard({ title, slug, docLink }: Articles) {
         >
           Read Article
         </Link>
-
-        <a
-          href={docLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`px-4 py-2 text-sm rounded-lg border ds-border-color ds-text-base hover:bg-blue-600 hover:text-white transition`}
-        >
-          Documentation
-        </a>
       </div>
     </div>
   );
