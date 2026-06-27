@@ -10,6 +10,7 @@ import Task from "@/assets/images/task_m.webp"
 import Portfolio from "@/assets/images/old-portfolio.jpg"
 import Faster from "@/assets/images/faster.webp"
 import Grocery from "@/assets/images/egrocery.jpg"
+import Dashboard from "@/assets/images/dashboard.png"
 
 
-export { PortfolioHero, HeroSection, Popflix, Task, Portfolio, Faster, Grocery, Huma, Nti, Dtm }
+export { PortfolioHero, HeroSection, Popflix, Task, Portfolio, Faster, Grocery, Huma, Nti, Dtm,Dashboard }

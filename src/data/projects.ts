@@ -1,5 +1,5 @@
 import { Project } from "@/types/projects"
-import { Popflix, Task, Grocery, Faster, Portfolio } from "@/assets/images/images";
+import { Popflix, Task, Grocery, Faster, Portfolio,Dashboard } from "@/assets/images/images";
 
 export const projects: Project[] = [
     {
@@ -31,6 +31,33 @@ export const projects: Project[] = [
     },
     {
         id: 2,
+        title: "E-Commerce Dashboard",
+        subtitle: "E-Commerce Management System",
+        img: Dashboard,
+        tech: [
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "NextAuth",
+            "Shadcn UI",
+        ],
+
+        desc: "A complete e-commerce management dashboard that enables administrators and staff to efficiently manage products, categories, orders, coupons, reports, and customer inquiries through a secure role-based access system.",
+
+        list: {
+            1: "Role-based authentication (Admin, Employee, User)",
+            2: "Manage products and categories",
+            3: "Track and update customer orders",
+            4: "Create and manage discount coupons",
+            5: "Analytics and reports dashboard",
+            6: "Inbox for handling customer messages",
+        },
+
+        demoLink: "https://ecommerce-dashboard-puce-pi.vercel.app/",
+        githubLink: "https://github.com/Zeyadhatem391/Ecommerce-dashboard",
+    },
+    {
+        id: 3,
         title: "Grocery",
         subtitle: "Grocery E-commerce Website",
         img: Grocery,
@@ -58,7 +85,7 @@ export const projects: Project[] = [
         githubLink: "https://github.com/Abdulrahmanfawzy/grocery-next",
     },
     {
-        id: 3,
+        id: 4,
         title: "Task Manager",
         subtitle: "Web Application",
         img: Task,
@@ -68,7 +95,7 @@ export const projects: Project[] = [
         githubLink: "https://github.com/Zeyadhatem391/task_manager",
     },
     {
-        id: 4,
+        id: 5,
         title: "Portfolio",
         subtitle: "Old Portfolio",
         img: Portfolio,
@@ -78,7 +105,7 @@ export const projects: Project[] = [
         githubLink: "https://github.com/Zeyadhatem391/portfolio_old",
     },
     {
-        id: 5,
+        id: 6,
         title: "Faster",
         subtitle: "NTI Task",
         img: Faster,

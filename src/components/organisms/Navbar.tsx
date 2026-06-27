@@ -82,7 +82,7 @@ export default function Navbar() {
                 <a
                   href={item.path}
                   onClick={() => setOpen(false)}
-                  className="block py-4 px-8 text-lg font-semibold hover:bg-blue-50 transition"
+                  className="block py-4 px-8 text-lg font-semibold hover:bg-gray-200 dark:hover:bg-sky-950 transition"
                 >
                   {item.name === "Exp"
                     ? "Experiences"
