@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FaBars, FaTimes } from "@/assets/icons/icons";
 import { menu } from "@/data/menuNavbar";
 import { ThemeToggle } from "../atoms/ThemeButton";
+import LanguageSwitcher from "../atoms/LanguageSwitcher";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -19,6 +20,7 @@ export default function Navbar() {
           </a>
 
           <div className="flex gap-6 items-center">
+            <LanguageSwitcher />
             <ThemeToggle />
             <button className="ds-text-base" onClick={() => setOpen(!open)}>
               {open ? (

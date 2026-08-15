@@ -2,45 +2,91 @@
 
 import { useTheme } from "next-themes";
 import { FaSun, FaMoon } from "@/assets/icons/icons";
+
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
 
-  const isDark = resolvedTheme === "light";
+  const isLight = resolvedTheme === "light";
+
+  const toggleTheme = () => {
+    setTheme(isLight ? "dark" : "light");
+  };
 
   return (
     <button
-      onClick={() => setTheme(isDark ? "dark" : "light")}
-      className={`relative flex h-11 w-21 cursor-pointer items-center rounded-full p-1 transition-colors duration-500 md:h-9 md:w-18 ${
-        isDark ? "bg-gray-200" : "bg-gray-900"
-      } shadow-md`}
+      onClick={toggleTheme}
       aria-label="Toggle Theme"
+      className={`
+        group
+        relative
+        flex
+        h-11
+        w-11
+        items-center
+        justify-center
+        overflow-hidden
+        rounded-full
+        transition-all
+        duration-500
+        active:scale-90
+        hover:scale-105
+        shadow-md
+
+        md:h-10
+        md:w-10
+
+        ${
+          isLight
+            ? "bg-gray-200 hover:bg-gray-300"
+            : "bg-gray-900 hover:bg-gray-800"
+        }
+      `}
     >
+      {/* Glow */}
       <span
-        className={`absolute left-1.5 h-8 w-8 transform rounded-full transition-transform duration-500 md:left-1 md:h-7 md:w-7 ${
-          isDark ? "translate-x-0 bg-white" : "translate-x-9  ds-bg-dark-gray"
-        }`}
+        className={`
+          absolute
+          inset-0
+          rounded-full
+          transition-all
+          duration-500
+          ${
+            isLight
+              ? "bg-gray-300/20 scale-100"
+              : "bg-sky-800/10 scale-125"
+          }
+        `}
       />
 
+      {/* Icon */}
       <span
-        className={`absolute  justify-center left-2 transform text-xs transition-transform duration-500 md:left-1 ${
-          isDark ? "translate-x-1" : "translate-x-10"
-        }`}
+        className={`
+          relative
+          z-10
+          flex
+          items-center
+          justify-center
+          transition-all
+          duration-500
+          ${
+            isLight
+              ? "rotate-0 scale-100"
+              : "rotate-180 scale-95"
+          }
+        `}
       >
-        {isDark ? (
-          <FaSun className="ds-text-alt ml-0 md:ml-1" size={16} />
+        {isLight ? (
+          <FaSun
+            size={18}
+            className="ds-text-alt transition-transform duration-500 group-hover:rotate-12"
+          />
         ) : (
-          <FaMoon className="text-white" />
+          <FaMoon
+            size={18}
+            className="text-white transition-transform duration-500 group-hover:-rotate-12"
+          />
         )}
       </span>
-      {/* <button
-                    className="transition-all duration-500 hover:scale-110 ds-text-base"
-                  >
-                    {theme === "light" ? (
-                      <FaSun className="w-5 h-5 md:w-7 md:h-6" />
-                    ) : (
-                      <FaMoon className="w-5 h-5 md:w-7 md:h-6" />
-                    )}
-                  </button> */}
     </button>
   );
 }

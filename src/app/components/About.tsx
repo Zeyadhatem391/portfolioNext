@@ -15,7 +15,7 @@ export default function About() {
 
         <div className="mb-10 ">
           <p className="mb-5 text-3xl font-bold ">
-            I&apos;m Zeyad Hatem and{" "}
+            I&apos;m Zeyad Hatem and
             <span className="text-blue-600">Web Developer</span>
           </p>
 
