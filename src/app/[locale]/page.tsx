@@ -18,7 +18,7 @@ export default function Home() {
       <Certification />
       <Skills />
       <Projects />
-      <WorkFlow />
+      {/* <WorkFlow /> */}
       <Contact />
 
       <div className="hidden lg:block">

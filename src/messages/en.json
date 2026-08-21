@@ -5,5 +5,30 @@
     "dec": " Passionate Computer Science Developer crafting efficient, user-friendly web applications that make a real impact.",
     "btn1": "Contact me",
     "btn2": "Latest Works"
+  },
+  "about": {
+    "title": "About",
+    "shortTitle": "Crafting ideas into real experiences",
+    "dec": " Beyond my technical expertise, I bring strong soft skills including problem-solving, self-learning, teamwork, time management, attention to detail, and adaptability. These abilities enable me to excel in both independent and collaborative environments — and to consistently deliver high-quality results."
+  },
+  "experience": {
+    "title": "Experience",
+    "shortTitle": "Turning challenges into achievements"
+  },
+  "certifications": {
+    "title": "Certifications",
+    "shortTitle": "Certificates that reflect dedication and growth"
+  },
+  "skills": {
+    "title": "Skills",
+    "shortTitle": "Technologies I master every day"
+  },
+  "projects": {
+    "title": "projects",
+    "shortTitle": "Building projects that make an impact"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "shortTitle": "Let's build something great together"
   }
 }

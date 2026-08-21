@@ -28,6 +28,7 @@ export default function LanguageSwitcher() {
         items-center
         justify-center
         overflow-hidden
+        cursor-pointer
         rounded-full
         transition-all
         duration-500

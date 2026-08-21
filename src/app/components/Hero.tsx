@@ -4,11 +4,14 @@ import { PortfolioHero, HeroSection } from "@/assets/images/images";
 import Text from "@/components/atoms/Text";
 import Title from "@/components/atoms/Title";
 import Images from "@/components/atoms/Image";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
   const phrases = ["Full Stack Developer", "Web Developer", "Computer Science"];
   const [currentPhrase, setCurrentPhrase] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
+
+   const t = useTranslations("Hero");
 
   useEffect(() => {
     let charIndex = 0;
@@ -61,21 +64,24 @@ export default function Hero() {
           <span className="blinking-cursor">|</span>
         </Title>
         <Text size="xl" className="mb-8">
-          Passionate Computer Science Developer crafting efficient,
-          user-friendly web applications that make a real impact.
+          {t("dec")}
         </Text>
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
           <a
             className="py-4 px-8 rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105 text-center bg-blue-600 text-white hover:bg-blue-700 "
             href="#contact"
           >
-            Contact me
+            
+          {t("btn1")}
+
           </a>
           <a
             className="py-4 px-8 rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105 text-center border border-blue-600 text-blue-600 hover:bg-blue-50"
             href="#projects"
           >
-            Latest Works
+          
+          {t("btn2")}
+
           </a>
         </div>
       </div>

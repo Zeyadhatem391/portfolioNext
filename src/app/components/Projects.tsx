@@ -1,8 +1,10 @@
 import { projects } from "@/data/projects";
 import AddressSection from "@/components/molecules/AddressSection";
 import ProjectCard from "@/components/molecules/ProjectCard";
+import { getTranslations } from "next-intl/server";
 
-export default function Projects() {
+export default async function Projects() {
+  const t = await getTranslations("projects");
   return (
     <>
       <section
@@ -10,8 +12,8 @@ export default function Projects() {
         id="projects"
       >
         <AddressSection
-          titel="Projects"
-          text="Building projects that make an impact"
+         titel={t("title")}
+        text={t("shortTitle")}
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-center">

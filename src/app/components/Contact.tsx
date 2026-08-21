@@ -1,13 +1,15 @@
 import AddressSection from "@/components/molecules/AddressSection";
 import ContactCard from "@/components/molecules/ContactCard";
 import { Contacts } from "@/data/contact";
+import { getTranslations } from "next-intl/server";
 
-export default function Contact() {
+export default async function Contact() {
+  const t = await getTranslations("contact");
   return (
     <section className="py-24" id="contact">
       <AddressSection
-        titel="Contact Me"
-        text="Let's build something great together"
+        titel={t("title")}
+        text={t("shortTitle")}
       />
 
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 px-6">

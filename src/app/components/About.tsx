@@ -1,7 +1,9 @@
 import AddressSection from "@/components/molecules/AddressSection";
 import { about } from "@/types/about";
+import { getTranslations } from "next-intl/server";
 
-export default function About() {
+export default async function About() {
+  const t = await getTranslations("about");
   return (
     <>
       <section
@@ -9,22 +11,18 @@ export default function About() {
         id="about"
       >
         <AddressSection
-          titel="About"
-          text="Crafting ideas into real experiences"
+          titel={t("title")}
+        text={t("shortTitle")}
         />
 
         <div className="mb-10 ">
           <p className="mb-5 text-3xl font-bold ">
             I&apos;m Zeyad Hatem and
-            <span className="text-blue-600">Web Developer</span>
+            <span className="text-blue-600"> Web Developer</span>
           </p>
 
           <p className="text-xl leading-relaxed ">
-            Beyond my technical expertise, I bring strong soft skills including
-            problem-solving, self-learning, teamwork, time management, attention
-            to detail, and adaptability. These abilities enable me to excel in
-            both independent and collaborative environments — and to
-            consistently deliver high-quality results.
+          {t("dec")}
           </p>
         </div>
 

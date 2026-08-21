@@ -1,8 +1,10 @@
 import { experiences } from "@/data/experience";
 import AddressSection from "@/components/molecules/AddressSection";
 import ExperienceCard from "@/components/molecules/ExperienceCard";
+import { getTranslations } from "next-intl/server";
 
-export default function Experience() {
+export default async function Experience() {
+  const t = await getTranslations("experience");
  
   return (
     <>
@@ -11,8 +13,8 @@ export default function Experience() {
         id="experience"
       >
         <AddressSection
-          titel="Experience"
-          text="Turning challenges into achievements"
+          titel={t("title")}
+        text={t("shortTitle")}
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
