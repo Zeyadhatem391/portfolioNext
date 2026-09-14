@@ -1,10 +1,9 @@
 "use client";
 import { ReactNode } from "react";
-import Footer from "../organisms/Footer";
-import Navbar from "../organisms/Navbar";
-import StarsBackground from "@/app/components/StarsBackground";
-import ScrollToTop from "@/app/components/ScrollToTop";
-import SocialMedia from "@/app/components/SocialMedia";
+import Navbar from "../navbar/Navbar";
+import StarsBackground from "@/shared/components/StarsBackground";
+import ScrollToTop from "@/shared/components/ScrollToTop";
+import SocialMedia from "@/shared/components/SocialMedia";
 
 interface Props {
   children: ReactNode;
@@ -17,7 +16,6 @@ export default function HomeLayout({ children }: Props) {
       <Navbar />
       {children}
       <SocialMedia />
-      <Footer />
       <ScrollToTop />
     </>
   );

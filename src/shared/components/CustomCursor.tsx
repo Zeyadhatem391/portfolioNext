@@ -2,9 +2,9 @@
 import { useEffect, useState } from "react";
 
 interface CustomCursorProps {
-  color?: string; 
-  shadowColor?: string; 
-  size?: number; 
+  color?: string;
+  shadowColor?: string;
+  size?: number;
 }
 
 export default function CustomCursor({
@@ -20,7 +20,7 @@ export default function CustomCursor({
       setPosition({ x: e.clientX, y: e.clientY });
       setTrail((prev) => {
         const newTrail = [...prev, { x: e.clientX, y: e.clientY }];
-        return newTrail.slice(-5); 
+        return newTrail.slice(-5);
       });
     };
     window.addEventListener("mousemove", move);
@@ -29,7 +29,6 @@ export default function CustomCursor({
 
   return (
     <>
-      {/* Trail */}
       {trail.map((pos, i) => (
         <div
           key={i}
@@ -41,7 +40,7 @@ export default function CustomCursor({
             height: `${size}px`,
             borderRadius: "50%",
             backgroundColor: shadowColor,
-            opacity: 0.3 - i * 0.05, 
+            opacity: 0.3 - i * 0.05,
             transform: "translate(-50%, -50%)",
             pointerEvents: "none",
             zIndex: 9998,
@@ -49,7 +48,6 @@ export default function CustomCursor({
         />
       ))}
 
-      {/* Main Cursor */}
       <div
         style={{
           position: "fixed",

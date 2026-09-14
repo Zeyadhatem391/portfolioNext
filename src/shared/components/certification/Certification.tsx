@@ -1,6 +1,6 @@
 import { Certifications } from "@/data/certificates";
 import AddressSection from "@/components/molecules/AddressSection";
-import CertificationCard from "@/components/molecules/CertificationCard";
+import CertificationCard from "@/shared/components/certification/CertificationCard";
 import { getTranslations } from "next-intl/server";
 
 export default async function Certification() {
@@ -16,7 +16,7 @@ export default async function Certification() {
         text={t("shortTitle")}
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 place-items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 place-items-center">
           {Certifications.map((Certification) => (
             <CertificationCard key={Certification.id} {...Certification} />
           ))}

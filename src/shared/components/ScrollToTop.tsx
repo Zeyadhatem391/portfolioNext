@@ -4,15 +4,18 @@ import { useState, useEffect } from "react";
 import { FaArrowUp } from "@/assets/icons/icons";
 
 export default function ScrollToTop() {
-  const [visible, setVisible] = useState(false);
+const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const toggleVisibility = () => {
-      setVisible(window.scrollY > 210);
+    const handleScroll = () => {
+      setShow(window.scrollY >= 220);
     };
 
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -21,6 +24,8 @@ export default function ScrollToTop() {
       behavior: "smooth",
     });
   };
+
+  if (!show) return null;
 
   return (
     <button

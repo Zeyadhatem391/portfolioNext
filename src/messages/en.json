@@ -1,4 +1,7 @@
 {
+  "Navbar": {
+    "btn": "Contact"
+  },
   "Hero": {
     "title": "Hi, I'm ",
     "name": "Zeyad Hatem",
@@ -9,7 +12,35 @@
   "about": {
     "title": "About",
     "shortTitle": "Crafting ideas into real experiences",
-    "dec": " Beyond my technical expertise, I bring strong soft skills including problem-solving, self-learning, teamwork, time management, attention to detail, and adaptability. These abilities enable me to excel in both independent and collaborative environments — and to consistently deliver high-quality results."
+    "intro": {
+      "before": "I'm Zeyad Hatem ,",
+      "highlight": "Web Developer"
+    },
+    "dec": " Beyond my technical expertise, I bring strong soft skills including problem-solving, self-learning, teamwork, time management, attention to detail, and adaptability. These abilities enable me to excel in both independent and collaborative environments — and to consistently deliver high-quality results.",
+    "email": {
+      "title": "Email",
+      "dec": ""
+    },
+    "education": {
+      "title": "Education",
+      "dec": ""
+    },
+    "phone": {
+      "title": "Phone",
+      "dec": ""
+    },
+    "nationality": {
+      "title": "Nationality",
+      "dec": ""
+    },
+    "city": {
+      "title": "City",
+      "dec": ""
+    },
+    "languages": {
+      "title": "Languages",
+      "dec": ""
+    }
   },
   "experience": {
     "title": "Experience",
@@ -27,8 +58,27 @@
     "title": "projects",
     "shortTitle": "Building projects that make an impact"
   },
-  "contact": {
+  "Contact": {
     "title": "Contact Me",
-    "shortTitle": "Let's build something great together"
+    "shortTitle": "Let's build something great together",
+    "dec": "Have a question or want to work together? Fill out the form and I'll get back to you as soon as possible.",
+    "input_1": {
+      "label": "Name",
+      "placeholder": "Enter your name"
+    },
+    "input_2": {
+      "label": "Email",
+      "placeholder": "Enter your email"
+    },
+    "input_3": {
+      "label": "Message",
+      "placeholder": "Write your message..."
+    },
+    "optional": "Optional",
+    "btn": "Send Message",
+    "validation": {
+      "email": "Please enter a valid email address",
+      "message": "Message must be at least 10 characters long"
+    }
   }
 }

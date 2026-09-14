@@ -1,5 +1,15 @@
-import { Certification } from "@/types/certification"
-import { Huma, Nti, Dtm, Zikola } from "@/assets/images/images";
+import { Huma, Nti, Dtm, Zikola, AfaaqWare } from "@/assets/images/images";
+
+import type { StaticImageData } from "next/image";
+
+export interface Certification {
+    id: number;
+    title: string;
+    date: string;
+    img: StaticImageData;
+    desc: string;
+    demoLink?: string;
+}
 
 export const Certifications: Certification[] = [
     {
@@ -38,5 +48,14 @@ export const Certifications: Certification[] = [
         desc: "Hands-on experience in advanced Frontend Development, focusing on modern technologies and real-world development practices.",
         demoLink:
             "https://drive.google.com/drive/folders/13MQh6LNICLI86BN_hzhuYJuNynVmrryd",
+    },
+    {
+        id: 5,
+        title: "AfaaqWare",
+        date: "13/8/2026 - 1/4/2026",
+        img: AfaaqWare,
+        desc: "Hands-on experience in advanced Frontend Development, focusing on modern technologies and real-world development practices.",
+        demoLink:
+            "https://drive.google.com/drive/folders/1b1Yp31I1M-QuqgoHdOGvagmeH8T8Wy6J",
     },
 ];

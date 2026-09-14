@@ -5,13 +5,14 @@ import Text from "@/components/atoms/Text";
 import Title from "@/components/atoms/Title";
 import Images from "@/components/atoms/Image";
 import { useTranslations } from "next-intl";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 export default function Hero() {
   const phrases = ["Full Stack Developer", "Web Developer", "Computer Science"];
   const [currentPhrase, setCurrentPhrase] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
 
-   const t = useTranslations("Hero");
+  const t = useTranslations("Hero");
 
   useEffect(() => {
     let charIndex = 0;
@@ -68,20 +69,16 @@ export default function Hero() {
         </Text>
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
           <a
-            className="py-4 px-8 rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105 text-center bg-blue-600 text-white hover:bg-blue-700 "
-            href="#contact"
+            className="py-4 px-8 rounded-full font-semibold cursor-pointer shadow-lg transition-all duration-300 hover:scale-105 text-center bg-blue-600 text-white hover:bg-blue-700 "
+            onClick={() => scrollToSection("contact")}
           >
-            
-          {t("btn1")}
-
+            {t("btn1")}
           </a>
           <a
-            className="py-4 px-8 rounded-full font-semibold shadow-lg transition-all duration-300 hover:scale-105 text-center border border-blue-600 text-blue-600 hover:bg-blue-50"
-            href="#projects"
+            className="py-4 px-8 rounded-full font-semibold cursor-pointer shadow-lg transition-all duration-300 hover:scale-105 text-center border border-blue-600 text-blue-600 hover:bg-blue-50"
+            onClick={() => scrollToSection("projects")}
           >
-          
-          {t("btn2")}
-
+            {t("btn2")}
           </a>
         </div>
       </div>
