@@ -14,6 +14,7 @@ import {
     FaGlobe,
 } from "react-icons/fa";
 import { FiChevronDown } from "react-icons/fi";
+import { SiShadcnui } from "react-icons/si";
 
 import { Briefcase } from "lucide-react";
 
@@ -49,5 +50,5 @@ export {
     FaExternalLinkAlt, Briefcase, FiChevronDown, FaPhone, FaEnvelope, FaMapMarkerAlt,
     SiReacthookform, SiRedux, SiReactquery, SiZod, SiFigma, SiFirebase, SiGithub,
     SiGit, SiMongodb, SiMysql, SiLaravel, SiPhp, SiThreedotjs, SiBootstrap, SiJavascript,
-    SiTypescript, SiMui, SiTailwindcss, SiNextdotjs, SiReact, FaGlobe, FaShieldAlt
+    SiTypescript, SiMui, SiTailwindcss, SiNextdotjs, SiReact, FaGlobe, FaShieldAlt,SiShadcnui
 }

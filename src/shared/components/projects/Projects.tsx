@@ -1,6 +1,6 @@
 import { projects } from "@/data/projects";
-import AddressSection from "@/components/molecules/AddressSection";
-import ProjectCard from "@/components/molecules/ProjectCard";
+import AddressSection from "@/shared/components/AddressSection";
+import ProjectCard from "@/shared/components/projects/ProjectCard";
 import { getTranslations } from "next-intl/server";
 
 export default async function Projects() {

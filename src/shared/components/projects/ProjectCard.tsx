@@ -1,11 +1,10 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import Text from "../atoms/Text";
-import Title from "../atoms/Title";
-import { Project } from "@/types/projects";
 
 import { FiChevronDown, FaGithub } from "@/assets/icons/icons";
+import { Project } from "@/data/projects";
+import useReveal from "@/animations/Reveal";
 
 export default function ProjectCard({
   id,
@@ -18,13 +17,15 @@ export default function ProjectCard({
   desc,
   list,
 }: Project) {
+      useReveal(".Reveal-Section");
+
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleProject = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <div className="relative w-[90%] md:w-[85%] group">
+    <div className="relative w-[90%] md:w-[85%] group Reveal-Section">
       <div className="absolute inset-0 rounded-xl border-2 border-blue-600 animate-borderLoop pointer-events-none"></div>
 
       <div
@@ -44,9 +45,7 @@ export default function ProjectCard({
             className="flex items-center justify-between cursor-pointer"
             onClick={() => toggleProject(id)}
           >
-            <Title size="2xl" className="font-semibold">
-              {title}
-            </Title>
+            <h1 className="font-semibold ds-text-2xl"> {title}</h1>
             <FiChevronDown
               className={`text-3xl text-blue-500 transition-transform duration-300 ${
                 openIndex === id ? "rotate-180" : ""
@@ -54,7 +53,7 @@ export default function ProjectCard({
             />
           </div>
 
-          <Text className="mt-1 ">{subtitle}</Text>
+          <p className="mt-1 ds-text-base">{subtitle}</p>
 
           <div className="mt-3 flex flex-wrap gap-2">
             {tech.map((tech, i) => (
@@ -92,9 +91,7 @@ export default function ProjectCard({
                 : "max-h-0 opacity-0"
             }`}
           >
-            <Text size="sm" className="leading-relaxed">
-              {desc}
-            </Text>
+            <p className="leading-relaxed ds-text-sm">{desc}</p>
 
             {list && (
               <ul className="mt-3 space-y-1 text-sm leading-relaxed list-disc list-inside ds-text-base">

@@ -1,5 +1,5 @@
-import AddressSection from "@/components/molecules/AddressSection";
-import { getAbout } from "@/types/about";
+import AddressSection from "@/shared/components/AddressSection";
+import { getAbout } from "@/data/about";
 import { getTranslations } from "next-intl/server";
 
 export default async function About() {

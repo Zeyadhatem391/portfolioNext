@@ -1,5 +1,5 @@
 import { Certifications } from "@/data/certificates";
-import AddressSection from "@/components/molecules/AddressSection";
+import AddressSection from "@/shared/components/AddressSection";
 import CertificationCard from "@/shared/components/certification/CertificationCard";
 import { getTranslations } from "next-intl/server";
 

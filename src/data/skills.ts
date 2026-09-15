@@ -19,13 +19,23 @@ import {
   SiReactquery,
   SiRedux,
   SiReacthookform,
+  SiShadcnui,
   FaShieldAlt,
   FaGlobe,
 } from "@/assets/icons/icons";
 
+import { IconType } from "react-icons";
 
-import { SkillCategory } from "@/types/skills"
+export interface Skill {
+  icon: IconType;
+  name: string;
+  color: string;
+}
 
+export interface SkillCategory {
+  category: string;
+  skills: Skill[];
+}
 
 export const skillsData: SkillCategory[] = [
   {
@@ -39,6 +49,7 @@ export const skillsData: SkillCategory[] = [
       { icon: SiJavascript, name: "JavaScript", color: "#F7DF1E" },
       { icon: SiBootstrap, name: "Bootstrap", color: "#7952B3" },
       { icon: SiThreedotjs, name: "Three JS", color: "#000000" },
+      { icon: SiShadcnui, name: "Shadcn", color: "#000000" },
     ],
   },
   {

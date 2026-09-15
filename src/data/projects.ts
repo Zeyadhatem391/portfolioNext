@@ -1,6 +1,19 @@
-import { Project } from "@/types/projects"
-import { Popflix, Task, Grocery, Faster, Portfolio,Dashboard } from "@/assets/images/images";
+import { Popflix, Task, Grocery, Faster, Portfolio, Dashboard } from "@/assets/images/images";
+import { StaticImageData } from "next/image";
 
+export interface Project {
+    id: number;
+    title: string;
+    subtitle: string;
+    img: StaticImageData;
+    tech: string[];
+    desc: string;
+    list?: {
+        [key: string]: string;
+    };
+    demoLink?: string;
+    githubLink?: string;
+}
 export const projects: Project[] = [
     {
         id: 1,
@@ -31,6 +44,16 @@ export const projects: Project[] = [
     },
     {
         id: 2,
+        title: "Task Manager",
+        subtitle: "Web Application",
+        img: Task,
+        tech: ["TypeScript", "TailwindCSS", "Next.js", "Laravel", "MySQL"],
+        desc: "Another project built with TypeScript and modern UI/UX patterns.",
+        demoLink: "https://workflow-khaki-one.vercel.app/",
+        githubLink: "https://github.com/Zeyadhatem391/workflow",
+    },
+    {
+        id: 3,
         title: "E-Commerce Dashboard",
         subtitle: "E-Commerce Management System",
         img: Dashboard,
@@ -57,7 +80,7 @@ export const projects: Project[] = [
         githubLink: "https://github.com/Zeyadhatem391/Ecommerce-dashboard",
     },
     {
-        id: 3,
+        id: 4,
         title: "Grocery",
         subtitle: "Grocery E-commerce Website",
         img: Grocery,
@@ -83,16 +106,6 @@ export const projects: Project[] = [
 
         demoLink: "https://grocere.netlify.app/",
         githubLink: "https://github.com/Abdulrahmanfawzy/grocery-next",
-    },
-    {
-        id: 4,
-        title: "Task Manager",
-        subtitle: "Web Application",
-        img: Task,
-        tech: ["TypeScript", "TailwindCSS", "Next.js", "Laravel", "MySQL"],
-        desc: "Another project built with TypeScript and modern UI/UX patterns.",
-        demoLink: "https://task-manager-eight-gray.vercel.app/",
-        githubLink: "https://github.com/Zeyadhatem391/task_manager",
     },
     {
         id: 5,

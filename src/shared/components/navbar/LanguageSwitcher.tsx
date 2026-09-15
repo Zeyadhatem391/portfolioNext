@@ -60,7 +60,7 @@ const LanguageButton = () => {
 
       {isOpen && (
         <div
-          className="absolute right-0 top-full z-50 mt-2 min-w-36 overflow-hidden rounded-md border bg-white dark:bg-black p-1 shadow-md"
+          className="absolute right-0 top-full z-50 mt-2 min-w-36 overflow-hidden rounded-md border ds-bg-primary p-1 shadow-md"
           role="menu"
           aria-label="Language options"
         >

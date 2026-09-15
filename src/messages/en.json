@@ -42,16 +42,12 @@
       "dec": ""
     }
   },
-  "experience": {
-    "title": "Experience",
-    "shortTitle": "Turning challenges into achievements"
-  },
   "certifications": {
     "title": "Certifications",
     "shortTitle": "Certificates that reflect dedication and growth"
   },
   "skills": {
-    "title": "Skills",
+    "title": "Skills & Expertise",
     "shortTitle": "Technologies I master every day"
   },
   "projects": {

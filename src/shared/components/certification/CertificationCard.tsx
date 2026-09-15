@@ -1,10 +1,8 @@
 "use client";
-import Image from "@/components/atoms/Image";
-import Title from "../../../components/atoms/Title";
-import Text from "../../../components/atoms/Text";
 import { FaExternalLinkAlt } from "@/assets/icons/icons";
 import useReveal from "@/animations/Reveal";
 import { Certification } from "@/data/certificates";
+import Image from "next/image";
 
 export default function CertificationCard({
   title,
@@ -39,15 +37,13 @@ export default function CertificationCard({
 
         <div className="p-6 relative">
           <div className="flex items-center justify-between cursor-pointer">
-            <Title className="font-semibold" size="2xl">
-              {title}
-            </Title>
+            <h1 className="font-semibold ds-text-2xl">{title}</h1>
           </div>
 
           <div className="mt-1 text-green-400">{date}</div>
 
           <div className={`transition-all duration-500 overflow-hidden `}>
-            <Text size="sm">{desc}</Text>
+            <p className="ds-text-sm">{desc}</p>
           </div>
         </div>
       </div>

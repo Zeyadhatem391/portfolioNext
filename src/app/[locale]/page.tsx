@@ -1,10 +1,9 @@
 import HomeLayout from "@/shared/components/layout/HomeLayout";
-import Hero from "../components/Hero";
+import Hero from "../../shared/components/hero/Hero";
 import About from "../../shared/components/about/About";
-import Experience from "../components/Experience";
 import Certification from "../../shared/components/certification/Certification";
-import Skills from "../components/Skills";
-import Projects from "../components/Projects";
+import Skills from "../../shared/components/skills/Skills";
+import Projects from "../../shared/components/projects/Projects";
 import Contact from "../../shared/components/contact/Contact";
 import CustomCursor from "../../shared/components/CustomCursor";
 
@@ -13,7 +12,6 @@ export default function Home() {
     <HomeLayout>
       <Hero />
       <About />
-      {/* <Experience /> */}
       <Certification />
       <Skills />
       <Projects />

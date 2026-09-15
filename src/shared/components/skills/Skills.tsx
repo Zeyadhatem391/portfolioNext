@@ -1,6 +1,6 @@
-import AddressSection from "@/components/molecules/AddressSection";
+import AddressSection from "@/shared/components/AddressSection";
 import { skillsData } from "@/data/skills";
-import SkillsCard from "@/components/molecules/SkillsCard";
+import SkillsCard from "@/shared/components/skills/SkillsCard";
 import { getTranslations } from "next-intl/server";
 
 export default async function Skills() {

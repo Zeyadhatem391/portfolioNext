@@ -1,5 +1,5 @@
 import { ContactImage } from "@/assets/images/images";
-import AddressSection from "@/components/molecules/AddressSection";
+import AddressSection from "@/shared/components/AddressSection";
 import ContactForm from "@/shared/components/contact/ContactForm";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";

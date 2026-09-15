@@ -1,11 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import { PortfolioHero, HeroSection } from "@/assets/images/images";
-import Text from "@/components/atoms/Text";
-import Title from "@/components/atoms/Title";
-import Images from "@/components/atoms/Image";
 import { useTranslations } from "next-intl";
 import { scrollToSection } from "@/lib/scrollToSection";
+import Image from "next/image";
 
 export default function Hero() {
   const phrases = ["Full Stack Developer", "Web Developer", "Computer Science"];
@@ -50,23 +48,23 @@ export default function Hero() {
         className={`w-full lg:w-1/2  flex items-center justify-center p-8 order-first lg:order-last`}
       >
         <div className="relative w-full max-w-md h-[400px] md:h-[500px]">
-          <Images src={PortfolioHero} alt="zeyad hatem" priority />
+          <Image src={PortfolioHero} alt="zeyad hatem" priority />
         </div>
       </div>
 
       <div
         className={`w-full lg:w-1/2  p-8 md:p-16 flex flex-col justify-center order-last lg:order-first`}
       >
-        <Title size="5xl" className="font-bold mb-4">
-          Hi, I&apos;m <span className="text-blue-600">Zeyad Hatem</span>
-        </Title>
-        <Title size="4xl" className="font-semibold mb-6 ">
+        <h1 className="font-bold mb-3 ds-text-5xl">
+          {t("title")} <span className="text-blue-600">{t("name")}</span>
+        </h1>
+
+        <h1 className="font-semibold mb-3 ds-text-4xl">
           {displayedText}
           <span className="blinking-cursor">|</span>
-        </Title>
-        <Text size="xl" className="mb-8">
-          {t("dec")}
-        </Text>
+        </h1>
+
+        <p className="mb-8 ds-text-xl">{t("dec")}</p>
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
           <a
             className="py-4 px-8 rounded-full font-semibold cursor-pointer shadow-lg transition-all duration-300 hover:scale-105 text-center bg-blue-600 text-white hover:bg-blue-700 "
