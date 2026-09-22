@@ -5,7 +5,7 @@ import Certification from "../../shared/components/certification/Certification";
 import Skills from "../../shared/components/skills/Skills";
 import Projects from "../../shared/components/projects/Projects";
 import Contact from "../../shared/components/contact/Contact";
-import CustomCursor from "../../shared/components/CustomCursor";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 export default function Home() {
   return (
@@ -17,9 +17,7 @@ export default function Home() {
       <Projects />
       <Contact />
 
-      <div className="hidden lg:block">
-        <CustomCursor />
-      </div>
+      <SmoothCursor />
     </HomeLayout>
   );
 }

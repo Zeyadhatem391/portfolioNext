@@ -112,13 +112,6 @@
   }
 }
 
-/* hrro */
-.blinking-cursor {
-  display: inline-block;
-  width: 1ch;
-  animation: blink 1s steps(2, start) infinite;
-}
-
 @keyframes moving-line {
   0% {
     transform: translateX(-100%);
@@ -153,126 +146,6 @@
   animation: moving-line 2.8s linear infinite;
 }
 
-/* exp */
-/* ===================== Timeline & Animations ===================== */
-
-/* Pulse Animation for Circle */
-@keyframes pulse-circle {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45);
-  }
-
-  70% {
-    transform: scale(1.12);
-    box-shadow: 0 0 12px 6px rgba(37, 99, 235, 0.1);
-  }
-
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
-  }
-}
-
-/* Moving stripe stays INSIDE the line only */
-@keyframes move-vertical-line {
-  0% {
-    top: 0%;
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 1;
-  }
-
-  100% {
-    top: 100%;
-    opacity: 0;
-  }
-}
-
-/* Timeline container */
-.timeline-line {
-  position: relative;
-  padding-left: 34px;
-  margin-bottom: 0.5rem;
-}
-
-/* Blue pulsing dot */
-.timeline-line::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 16px;
-  height: 16px;
-  background-color: #1d4ed8;
-  /* blue-700 */
-  border-radius: 50%;
-  z-index: 3;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
-  animation: pulse-circle 1.8s infinite ease-in-out;
-}
-
-/* Light blue main line */
-.timeline-line::after {
-  content: "";
-  position: absolute;
-  left: 6px;
-  top: 20px;
-  width: 4px;
-  height: calc(100% - 20px);
-  background-color: rgba(59, 130, 246, 0.55);
-  /* blue-500 خفيف */
-  border-radius: 2px;
-  z-index: 1;
-}
-
-/* Moving heavy-blue stripe INSIDE only */
-.timeline-line .moving-line {
-  position: absolute;
-  left: 6px;
-  width: 4px;
-  height: 28%;
-  background: blue;
-  border-radius: 2px;
-  z-index: 2;
-  top: 20px;
-  /* يبدأ تحت الدائرة مباشرة */
-  animation: move-vertical-line 1.6s linear infinite;
-}
-
-/* =============== Hover Effect for Cards =============== */
-.experience-card {
-  transition: transform 240ms cubic-bezier(.2, .8, .2, 1), box-shadow 240ms;
-}
-
-.experience-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.18);
-}
-
-/* mobile disable hover */
-@media (hover: none) {
-  .experience-card:hover {
-    transform: none;
-    box-shadow: none;
-  }
-}
-
-/* Responsive fix */
-@media (max-width: 768px) {
-  .timeline-line {
-    padding-left: 25px;
-  }
-
-  .timeline-line::after,
-  .timeline-line .moving-line {
-    left: 4px;
-    width: 3px;
-  }
-}
-
 /*  ============== stars ==============  */
 /* Wrapper */
 .stars-wrapper {
@@ -303,62 +176,6 @@
 .stars-wrapper.light .star {
   background: rgba(70, 70, 70, 0.5);
   box-shadow: 4 4 8px rgba(70, 70, 70, 0.3);
-}
-
-/* Animation */
-@keyframes fall {
-  0% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-
-  15% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(110vh);
-    opacity: 0;
-  }
-}
-
-/* ============= Certification ============= */
-
-@keyframes borderLoop {
-  0% {
-    clip-path: inset(0 100% 100% 0);
-  }
-
-  25% {
-    clip-path: inset(0 0 100% 0);
-  }
-
-  50% {
-    clip-path: inset(0 0 0 0);
-  }
-
-  75% {
-    clip-path: inset(100% 0 0 0);
-  }
-
-  100% {
-    clip-path: inset(0 100% 100% 0);
-  }
-}
-
-.animate-borderLoop {
-  animation: borderLoop 3s linear infinite;
-}
-
-.project-card {
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 25px rgba(0, 0, 255, 0.15);
 }
 
 @theme inline {
@@ -402,6 +219,16 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --animate-rippling: rippling var(--duration) ease-out;
+  @keyframes rippling {
+  0% {
+    opacity: 1;
+    }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+    }
+  }
 }
 
 :root {
@@ -471,4 +298,10 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }

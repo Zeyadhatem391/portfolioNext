@@ -3,15 +3,16 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import ButtonContact from "./ButtonContact";
 import SearchMenu from "./SearchMenu";
 import Link from "next/link";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
 
 export default function Navbar() {
   return (
-    <>
-      <nav className="fixed top-0 left-0 w-full backdrop-blur-md shadow-md z-50 ds-bg-primary">
+    <div className="fixed top-0 left-0 z-50 w-full backdrop-blur-md shadow-md ds-bg-primary">
+      <nav className="relative">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10">
           <Link
-              href="/"
-            className="text-2xl font-extrabold tracking-wide px-5 py-3 ds-text-alt"
+            href="/"
+            className="px-5 py-3 text-2xl font-extrabold tracking-wide ds-text-alt"
           >
             ZH
           </Link>
@@ -30,7 +31,8 @@ export default function Navbar() {
             </div>
           </div>
         </div>
+        <ScrollProgress className="absolute bottom-0 left-0 top-auto" />
       </nav>
-    </>
+    </div>
   );
 }

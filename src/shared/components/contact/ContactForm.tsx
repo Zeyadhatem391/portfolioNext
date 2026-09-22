@@ -3,13 +3,13 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Contact, ContactInput } from "./schema";
 import { cn } from "@/lib/utils";
 import emailjs from "@emailjs/browser";
+import { RippleButton } from "@/components/ui/ripple-button";
 
 function ContactForm() {
   const t = useTranslations("Contact");
@@ -109,14 +109,13 @@ function ContactForm() {
           <p className="text-sm text-red-500">{errors.message.message}</p>
         )}
       </div>
-
-      <Button
+      <RippleButton
         type="submit"
         disabled={isSubmitting}
-        className="h-9 w-full cursor-pointer"
+        className="h-9 w-full cursor-pointer bg-primary text-primary-foreground hover:bg-primary/80"
       >
         {isSubmitting ? "Sending..." : t("btn")}
-      </Button>
+      </RippleButton>
     </form>
   );
 }

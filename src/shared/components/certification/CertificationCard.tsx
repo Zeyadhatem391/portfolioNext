@@ -3,6 +3,7 @@ import { FaExternalLinkAlt } from "@/assets/icons/icons";
 import useReveal from "@/animations/Reveal";
 import { Certification } from "@/data/certificates";
 import Image from "next/image";
+import { BorderBeam } from "@/components/ui/border-beam";
 
 export default function CertificationCard({
   title,
@@ -13,11 +14,10 @@ export default function CertificationCard({
 }: Certification) {
   useReveal(".Reveal-Section");
   return (
-    <div className="relative w-[90%] group Reveal-Section">
-      <div className="absolute inset-0 rounded-xl border-2 border-blue-600 animate-borderLoop pointer-events-none"></div>
+    <div className="relative w-[90%] group Reveal-Section overflow-hidden">
 
       <div
-        className={`rounded-xl overflow-hidden shadow-lg border ds-border-color ds-bg-alt project-card`}
+        className={`rounded-xl overflow-hidden shadow-lg border ds-border-color ds-bg-alt`}
       >
         <div className="relative w-full h-48 overflow-hidden">
           <Image
@@ -46,6 +46,19 @@ export default function CertificationCard({
             <p className="ds-text-sm">{desc}</p>
           </div>
         </div>
+         <BorderBeam
+        duration={10}
+        size={400}
+        borderWidth={3}
+        className="from-transparent via-red-500 to-transparent"
+      />
+      <BorderBeam
+        duration={10}
+        delay={3}
+        size={400}
+        borderWidth={4}
+        className="from-transparent via-blue-500 to-transparent"
+      />
       </div>
     </div>
   );

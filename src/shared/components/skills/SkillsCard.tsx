@@ -1,3 +1,4 @@
+import { BorderBeam } from "@/components/ui/border-beam";
 import { SkillCategory } from "@/data/skills";
 
 
@@ -7,8 +8,6 @@ export default function SkillsCard({ category, skills }: SkillCategory) {
     <div
       className={`relative p-6 rounded-2xl border-2 ds-border-color ds-bg-alt overflow-hidden  transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]`}
     >
-      <span className="absolute inset-0 border-2 border-blue-500 rounded-2xl animate-borderLoop pointer-events-none"></span>
-
       <h1 className="font-bold mb-2 ds-text-3xl">{category}</h1>
 
       <div className="grid grid-cols-3 gap-6 pt-3">
@@ -43,6 +42,13 @@ export default function SkillsCard({ category, skills }: SkillCategory) {
           );
         })}
       </div>
+       <BorderBeam
+        duration={10}
+        delay={3}
+        size={400}
+        borderWidth={3}
+        className="from-transparent via-blue-500 to-transparent"
+      />
     </div>
   );
 }

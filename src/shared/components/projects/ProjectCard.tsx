@@ -5,6 +5,7 @@ import { useState } from "react";
 import { FiChevronDown, FaGithub } from "@/assets/icons/icons";
 import { Project } from "@/data/projects";
 import useReveal from "@/animations/Reveal";
+import { BorderBeam } from "@/components/ui/border-beam";
 
 export default function ProjectCard({
   id,
@@ -25,11 +26,10 @@ export default function ProjectCard({
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <div className="relative w-[90%] md:w-[85%] group Reveal-Section">
-      <div className="absolute inset-0 rounded-xl border-2 border-blue-600 animate-borderLoop pointer-events-none"></div>
+    <div className="relative w-[90%] md:w-[85%] group Reveal-Section  overflow-hidden">
 
       <div
-        className={`rounded-xl overflow-hidden shadow-lg border ds-border-color ds-bg-alt project-card`}
+        className={`rounded-xl overflow-hidden shadow-lg border ds-border-color ds-bg-alt`}
       >
         <div className="relative w-full h-56 overflow-hidden">
           <Image
@@ -103,7 +103,21 @@ export default function ProjectCard({
               </ul>
             )}
           </div>
+          
         </div>
+         <BorderBeam
+        duration={10}
+        size={400}
+        borderWidth={3}
+        className="from-transparent via-red-500 to-transparent"
+      />
+      <BorderBeam
+        duration={10}
+        delay={3}
+        size={400}
+        borderWidth={4}
+        className="from-transparent via-blue-500 to-transparent"
+      />
       </div>
     </div>
   );
