@@ -31,15 +31,15 @@
     },
     "nationality": {
       "title": "Nationality",
-      "dec": ""
+      "dec": "Egypt"
     },
     "city": {
       "title": "City",
-      "dec": ""
+      "dec": "Mansoura"
     },
     "languages": {
       "title": "Languages",
-      "dec": ""
+      "dec": "Arabic, English"
     }
   },
   "certifications": {
