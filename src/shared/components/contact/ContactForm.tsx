@@ -37,7 +37,7 @@ function ContactForm() {
         email: data.email,
         message: data.message,
       },
-      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+      "rG8T9iWmDEepT5Wla",
     );
 
     reset();

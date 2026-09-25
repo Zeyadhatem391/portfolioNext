@@ -52,7 +52,9 @@
   },
   "projects": {
     "title": "projects",
-    "shortTitle": "Building projects that make an impact"
+    "shortTitle": "Building projects that make an impact",
+    "btnMore": "View More",
+    "btn": "Follow me for more"
   },
   "Contact": {
     "title": "Contact Me",
