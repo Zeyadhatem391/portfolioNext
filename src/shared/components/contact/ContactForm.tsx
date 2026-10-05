@@ -30,8 +30,8 @@ function ContactForm() {
     console.log("data:", data);
 
     await emailjs.send(
-      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+      "service_rrrvlap",
+      "template_u0yejrj",
       {
         name: data.name,
         email: data.email,

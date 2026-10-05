@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { projects } from "@/data/projects";
+import { miniProjects, projects } from "@/data/projects";
 import AddressSection from "@/shared/components/AddressSection";
 import ProjectCard from "@/shared/components/projects/ProjectCard";
 import { useTranslations } from "next-intl";
 import { RippleButton } from "@/components/ui/ripple-button";
+import MiniProjectCard from "./MiniProjectCard";
 
 export default function Projects() {
   const t = useTranslations("projects");
@@ -29,6 +30,12 @@ export default function Projects() {
           <ProjectCard key={project.id} {...project} />
         ))}
       </div>
+
+      {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 place-items-center mt-8">
+        {miniProjects.map((project) => (
+          <MiniProjectCard key={project.id} {...project} />
+        ))}
+      </div> */}
 
       {projects.length > 2 && !isShowingAll && (
         <div className="flex justify-center mt-10">

@@ -16,6 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://zeyadhatem.vercel.app"),
+
   title: "Zeyad Hatem | Front-End Developer",
   description:
     "Portfolio of Zeyad Hatem, a Front-End Developer specializing in React, Next.js, TypeScript, and modern web technologies. Explore my projects, skills, and experience.",
@@ -24,7 +26,18 @@ export const metadata: Metadata = {
     title: "Zeyad Hatem | Front-End Developer",
     description:
       "Explore my portfolio showcasing React, Next.js, TypeScript, and modern web development projects.",
-    url: "https://your-domain.com",
+    url: "https://zeyadhatem.vercel.app",
+    images: [
+      {
+        url: PortfolioHero.src,
+        alt: "Zeyad Hatem Portfolio",
+      },
+    ],
+  },
+
+  twitter: {
+    title: "Zeyad Hatem | Front-End Developer",
+    card: "summary_large_image",
     images: [
       {
         url: PortfolioHero.src,

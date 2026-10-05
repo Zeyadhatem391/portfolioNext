@@ -1,35 +1,6 @@
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiMui,
-  SiTypescript,
-  SiJavascript,
-  SiBootstrap,
-  SiThreedotjs,
-  SiPhp,
-  SiLaravel,
-  SiMysql,
-  SiMongodb,
-  SiGit,
-  SiGithub,
-  SiFirebase,
-  SiFigma,
-  SiZod,
-  SiReactquery,
-  SiRedux,
-  SiReacthookform,
-  SiShadcnui,
-  FaShieldAlt,
-  FaGlobe,
-} from "@/assets/icons/icons";
-
-import { IconType } from "react-icons";
-
 export interface Skill {
-  icon: IconType;
   name: string;
-  color: string;
+  url: string;
 }
 
 export interface SkillCategory {
@@ -41,44 +12,55 @@ export const skillsData: SkillCategory[] = [
   {
     category: "Frontend",
     skills: [
-      { icon: SiNextdotjs, name: "Next.js", color: "#000000" },
-      { icon: SiReact, name: "React", color: "#61DAFB" },
-      { icon: SiTailwindcss, name: "Tailwind", color: "#38BDF8" },
-      { icon: SiMui, name: "Material UI", color: "#007FFF" },
-      { icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
-      { icon: SiJavascript, name: "JavaScript", color: "#F7DF1E" },
-      { icon: SiBootstrap, name: "Bootstrap", color: "#7952B3" },
-      { icon: SiThreedotjs, name: "Three JS", color: "#000000" },
-      { icon: SiShadcnui, name: "Shadcn", color: "#000000" },
+      { name: "Next.js", url: "https://nextjs.org/" },
+      { name: "React", url: "https://react.dev/" },
+      { name: "TypeScript", url: "https://www.typescriptlang.org/" },
+      {
+        name: "JavaScript",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      },
+      { name: "Three JS", url: "https://threejs.org/" },
+      { name: "Next Intl", url: "https://next-intl.dev/" },
+    ],
+  },
+  {
+    category: "UI / Styling",
+    skills: [
+      { name: "Bootstrap", url: "https://getbootstrap.com/" },
+      { name: "Tailwind", url: "https://tailwindcss.com/" },
+      { name: "Material UI", url: "https://mui.com/material-ui/" },
+      { name: "Shadcn", url: "https://ui.shadcn.com/" },
+      { name: "Magic UI", url: "https://magicui.design/" },
+      { name: "React Bits", url: "https://reactbits.dev/" },
     ],
   },
   {
     category: "Backend",
     skills: [
-      { icon: SiPhp, name: "PHP", color: "#777BB4" },
-      { icon: SiLaravel, name: "Laravel", color: "#FF2D20" },
-      { icon: SiMysql, name: "MySQL", color: "#4479A1" },
-      { icon: SiMongodb, name: "MongoDB", color: "#47A248" },
+      { name: "PHP", url: "https://www.php.net/" },
+      { name: "Laravel", url: "https://laravel.com/" },
+      { name: "MySQL", url: "https://www.mysql.com/" },
+      { name: "MongoDB", url: "https://www.mongodb.com/" },
     ],
   },
   {
-    category: "Tools / Others",
+    category: "Tools",
     skills: [
-      { icon: SiGit, name: "Git", color: "#F05032" },
-      { icon: SiGithub, name: "GitHub", color: "#181717" },
-      { icon: SiFirebase, name: "Firebase", color: "#FFCA28" },
-      { icon: SiFigma, name: "Figma", color: "#F24E1E" },
+      { name: "Git", url: "https://git-scm.com/" },
+      { name: "GitHub", url: "https://github.com/" },
+      { name: "Figma", url: "https://www.figma.com/" },
+      { name: "Firebase", url: "https://firebase.google.com/" },
     ],
   },
   {
     category: "Packages",
     skills: [
-      { icon: SiZod, name: "Zod", color: "#7C3AED" },
-      { icon: SiReacthookform, name: "React Hook Form", color: "#EC5990" },
-      { icon: SiRedux, name: "Redux Toolkit", color: "#764ABC" },
-      { icon: SiReactquery, name: "TanStack Query", color: "#FF4154" },
-      { icon: FaShieldAlt, name: "Next Auth", color: "#6366F1" },
-      { icon: FaGlobe, name: "Next Intl", color: "#10B981" },
+      { name: "Zustand", url: "https://zustand-demo.pmnd.rs/" },
+      { name: "Zod", url: "https://zod.dev/" },
+      { name: "React Hook Form", url: "https://react-hook-form.com/" },
+      { name: "Redux Toolkit", url: "https://redux-toolkit.js.org/" },
+      { name: "TanStack Query", url: "https://tanstack.com/query/latest" },
+      { name: "Next Auth", url: "https://authjs.dev/" },
     ],
   },
 ];

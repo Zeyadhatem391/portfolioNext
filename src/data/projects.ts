@@ -14,6 +14,18 @@ export interface Project {
     demoLink?: string;
     githubLink?: string;
 }
+
+export interface MiniProject {
+    id: number;
+    title: string;
+    subtitle: string;
+    desc: string;
+      tech: string[];
+    demoLink?: string;
+    githubLink?: string;
+}
+
+
 export const projects: Project[] = [
     {
         id: 1,
@@ -128,4 +140,26 @@ export const projects: Project[] = [
         demoLink: "https://zeyadhatem391.github.io/NTI_Faster/",
         githubLink: "https://github.com/Zeyadhatem391/NTI_Faster",
     },
+];
+
+
+export const miniProjects: MiniProject[] = [
+    {
+        id: 1,
+        title: "PopFlix",
+        subtitle: "Movies website",
+      
+        desc: "A modern movie platform to explore films and actors with detailed information.",
+        tech: [
+            "Next.js",
+            "Zustand",
+            "Shadcn UI",
+        ],
+    
+        demoLink: "https://popflix-tau.vercel.app/",
+        githubLink: "https://github.com/Zeyadhatem391/Popflix_Next",
+    },
+
+
+   
 ];
